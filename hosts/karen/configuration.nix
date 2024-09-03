@@ -89,6 +89,7 @@
     wget
     tmux
     git
+    zsh
   ];
 
   programs.neovim = {

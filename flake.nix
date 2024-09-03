@@ -3,9 +3,9 @@
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-stable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -28,7 +28,14 @@
         # the path to your home.nix.
         modules = [ 
           ({ pkgs, ... }: {
-            home.packages = [ pkgs.hello pkgs.btop ];
+            home.packages = [
+              pkgs.hello
+              pkgs.btop 
+              pkgs.starship 
+              pkgs.zoxide 
+              pkgs.fzf 
+              pkgs.antidote
+            ];
             home.stateVersion = "24.05";
             home.username = "paulo";
             home.homeDirectory = "/home/paulo";
