@@ -76,6 +76,7 @@
   users.users.paulo = {
     isNormalUser = true;
     extraGroups = [ "nixos-admin" "wheel" ]; # Enable ‘sudo’ for the user.
+    shell = pkgs.zsh;
     packages = with pkgs; [
       tree
     ];
@@ -89,7 +90,6 @@
     wget
     tmux
     git
-    zsh
   ];
 
   programs.neovim = {
@@ -98,6 +98,8 @@
     viAlias = true;
     vimAlias = true;
   };
+
+  programs.zsh.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

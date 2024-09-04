@@ -8,9 +8,14 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    f = {
+      url = "https://code.db.cafe/pauloo27/f.git";
+      type = "git";
+      ref = "master";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, f, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -34,6 +39,7 @@
               pkgs.starship 
               pkgs.zoxide 
               pkgs.fzf 
+              f.defaultPackage.${pkgs.system}
             ];
             home.stateVersion = "24.05";
             home.username = "paulo";
