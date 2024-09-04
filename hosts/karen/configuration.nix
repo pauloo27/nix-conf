@@ -33,7 +33,8 @@
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   # Use static ip
   networking = {
-      interfaces.eno1 = {
+    nameservers = [ "1.1.1.1" "9.9.9.9" ];
+    interfaces.eno1 = {
       ipv4.addresses = [{
         address = "10.0.0.77";
         prefixLength = 24;
