@@ -30,8 +30,20 @@
   networking.hostName = "karen"; # Define your hostname.
   networking.hostId = "65884294";
   # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  # Use static ip
+  networking = {
+      interfaces.eno1 = {
+      ipv4.addresses = [{
+        address = "10.0.0.77";
+        prefixLength = 24;
+      }];
+    };
+    defaultGateway = {
+      address = "10.0.0.10";
+      interface = "eno1";
+    };
+  };
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
