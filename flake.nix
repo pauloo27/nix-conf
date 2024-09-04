@@ -36,6 +36,7 @@
             home.packages = [
               pkgs.hello
               pkgs.btop 
+              pkgs.ripgrep
               pkgs.starship 
               pkgs.zoxide 
               pkgs.fzf 
