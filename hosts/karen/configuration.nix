@@ -132,6 +132,12 @@
     enable = true;
   };
 
+  services.openvpn.servers = {
+    karen = {
+      config = '' config /etc/ovpn/karen/karen.ovpn '';
+    };
+  };
+
   services.k3s = {
     enable = true;
     role = "server";
