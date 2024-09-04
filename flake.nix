@@ -34,7 +34,6 @@
               pkgs.starship 
               pkgs.zoxide 
               pkgs.fzf 
-              pkgs.antidote
             ];
             home.stateVersion = "24.05";
             home.username = "paulo";
