@@ -87,7 +87,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.paulo = {
     isNormalUser = true;
-    extraGroups = [ "nixos-admin" "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       tree
@@ -96,8 +96,6 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJZi/6VQsVTQLy58jWcG33/JttCoLfaweRX26U2gQ1JD git@pauloo27.dev"
     ];
   };
-
-  users.groups."nixos-admin" = {};
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -131,6 +129,12 @@
     settings.PermitRootLogin = "no";
     settings.PasswordAuthentication = false;
     enable = true;
+  };
+
+  services.k3s = {
+    enable = true;
+    role = "server";
+    clusterInit = true;
   };
 
   # Open ports in the firewall.
