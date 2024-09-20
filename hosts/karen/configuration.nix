@@ -35,6 +35,7 @@
   networking = {
     nameservers = [ "1.1.1.1" "9.9.9.9" ];
     interfaces.eno1 = {
+      wakeOnLan.enable = true;
       ipv4.addresses = [{
         address = "10.0.0.77";
         prefixLength = 24;
