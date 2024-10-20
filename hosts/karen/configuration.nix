@@ -107,7 +107,23 @@
     wget
     tmux
     git
+    powertop
   ];
+
+  # Power!
+  services.thermald.enable = true;
+  powerManagement = {
+    enable = true;
+    powertop.enable = true;
+    cpuFreqGovernor = "powersave";
+  };
+  services.zfs = {
+    autoScrub = {
+      enable = true;
+      interval = "monthly";
+      pools = [ "zroot" ];
+    };
+  };
 
   programs.neovim = {
     enable = true;
