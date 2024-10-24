@@ -108,6 +108,9 @@
     tmux
     git
     powertop
+    sdparm
+    sysstat
+    smartmontools
   ];
 
   # Power!
@@ -123,6 +126,26 @@
       interval = "monthly";
       pools = [ "zroot" ];
     };
+  };
+  services.smartd = {
+    enable = true;
+    devices = [
+      {
+        device = "/dev/sda"; 
+      }
+      {
+        device = "/dev/sdb"; 
+      }
+      {
+        device = "/dev/sdc"; 
+      }
+      {
+        device = "/dev/sdd"; 
+      }
+      {
+        device = "/dev/sde"; 
+      }
+    ];
   };
 
   programs.neovim = {
