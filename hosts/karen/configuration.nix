@@ -155,6 +155,11 @@
     vimAlias = true;
   };
 
+  programs.htop = {
+    enable = true;
+    settings.show_cpu_temperature = 1;
+  };
+
   programs.zsh.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
