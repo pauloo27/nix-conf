@@ -6,11 +6,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1726942188,
-        "narHash": "sha256-IdGbx51aA9I/1BoeKi17pYXsQu3Qud3vT1D1rCNNw8s=",
+        "lastModified": 1747056509,
+        "narHash": "sha256-EPsqimfGIU/4IYtYrOuIurEOyhaJIzCPRhxmisVsmxA=",
         "ref": "master",
-        "rev": "a907c20129e720279965d220bd172351fec1a298",
-        "revCount": 35,
+        "rev": "b436ff6a43288195e1717a7f2167e857099be143",
+        "revCount": 37,
         "type": "git",
         "url": "https://code.db.cafe/pauloo27/f.git"
       },
@@ -45,11 +45,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1745557122,
-        "narHash": "sha256-eqSo9ugzsqhFgaDFYUZj943nurlX4L6f+AW0skJ4W+M=",
+        "lastModified": 1747688870,
+        "narHash": "sha256-ypL9WAZfmJr5V70jEVzqGjjQzF0uCkz+AFQF7n9NmNc=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "dd26f75fb4ec1c731d4b1396eaf4439ce40a91c1",
+        "rev": "d5f1f641b289553927b3801580598d200a501863",
         "type": "github"
       },
       "original": {
@@ -77,11 +77,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1745487689,
-        "narHash": "sha256-FQoi3R0NjQeBAsEOo49b5tbDPcJSMWc3QhhaIi9eddw=",
+        "lastModified": 1748421225,
+        "narHash": "sha256-XXILOc80tvlvEQgYpYFnze8MkQQmp3eQxFbTzb3m/R0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "5630cf13cceac06cefe9fc607e8dfa8fb342dde3",
+        "rev": "78add7b7abb61689e34fc23070a8f55e1d26185b",
         "type": "github"
       },
       "original": {
