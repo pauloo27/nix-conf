@@ -38,6 +38,18 @@
         };
       };
 
+      homeConfigurations.zita = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        modules = [
+          ./hosts/zita/home.nix
+        ];
+
+        extraSpecialArgs = {
+          inherit f;
+        };
+      };
+
       homeConfigurations.melinda = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
