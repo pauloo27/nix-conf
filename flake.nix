@@ -26,29 +26,28 @@
           ./hosts/karen/configuration.nix
         ];
       };
-      homeConfigurations.paulo = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.karen = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
-        modules = [ 
-          ({ pkgs, ... }: {
-            home.packages = [
-              pkgs.hello
-              pkgs.btop 
-              pkgs.tree 
-              pkgs.ripgrep
-              pkgs.starship 
-              pkgs.zoxide 
-              pkgs.fzf 
-              f.defaultPackage.${pkgs.system}
-            ];
-            home.stateVersion = "24.05";
-            home.username = "paulo";
-            home.homeDirectory = "/home/paulo";
-          })
+        modules = [
+          ./hosts/karen/home.nix
         ];
 
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
+        extraSpecialArgs = {
+          inherit f;
+        };
+      };
+
+      homeConfigurations.melinda = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        modules = [
+          ./hosts/melinda/home.nix
+        ];
+
+        extraSpecialArgs = {
+          inherit f;
+        };
       };
     };
 }

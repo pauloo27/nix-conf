@@ -9,7 +9,7 @@ YELLOW='\033[1;33m'
 RED='\033[1;31m'
 RESET='\033[0m'
 
-USER_NAME="paulo"
+HOSTNAME=$(cat /etc/hostname)
 UPDATE_LOG="last-update.txt"
 
 info() {
@@ -31,16 +31,13 @@ error() {
 info "Updating flake inputs..."
 nix flake update
 
-info "Applying system configuration..."
+info "Applying system configuration for $HOSTNAME..."
+./apply-os.sh
+
+info "Applying home configuration for $HOSTNAME..."
 ./apply.sh
 
-info "Applying user configuration for $USER_NAME..."
-./apply-user.sh "$USER_NAME"
-
 info "Cleaning up old generations..."
-./clean-up-old.sh
-
-info "Storing update timestamp..."
-date -u +"Last update: %Y-%m-%d %H:%M UTC" > "$UPDATE_LOG"
+./clean-up.sh
 
 success "System updated successfully."

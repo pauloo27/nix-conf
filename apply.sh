@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-sudo nixos-rebuild switch --flake .#karen
+HOSTNAME=$(cat /etc/hostname)
+
+nix build .#homeConfigurations.$HOSTNAME.activationPackage && ./result/activate
