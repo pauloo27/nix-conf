@@ -2,6 +2,7 @@
   imports = [
     ./zsh.nix
     ./git.nix
+    ./tmux.nix
   ];
 
   # Common packages for all hosts
