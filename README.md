@@ -21,7 +21,7 @@
 ./apply.sh
 
 # Add zsh to system shells
-./add-zsh-to-shells.sh
+./add-zsh.sh
 
 # Set zsh as default shell
 chsh -s ~/.nix-profile/bin/zsh
