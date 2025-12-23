@@ -54,7 +54,7 @@
       expireDuplicatesFirst = true;
     };
 
-    initExtra = ''
+    initContent = ''
       export GPG_TTY=$(tty)
 
       # Enable interactive comments

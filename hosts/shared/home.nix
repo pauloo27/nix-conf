@@ -1,6 +1,7 @@
 { pkgs, f, ... }: {
   imports = [
     ./zsh.nix
+    ./git.nix
   ];
 
   # Common packages for all hosts
