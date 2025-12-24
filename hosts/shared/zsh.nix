@@ -56,6 +56,7 @@
 
     initContent = ''
       export GPG_TTY=$(tty)
+      eval $(ssh-agent -s)
 
       # Enable interactive comments
       setopt interactivecomments
