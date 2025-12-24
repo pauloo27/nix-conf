@@ -20,4 +20,13 @@
 
   # Common home-manager settings
   programs.home-manager.enable = true;
+
+  # Enable SSH agent
+  services.ssh-agent.enable = true;
+
+  # SSH configuration
+  programs.ssh = {
+    enable = true;
+    addKeysToAgent = "yes";
+  };
 }
