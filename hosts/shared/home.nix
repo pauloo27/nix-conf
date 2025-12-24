@@ -8,6 +8,8 @@
   # Common packages for all hosts
   home.packages = [
     pkgs.ripgrep 
+    pkgs.k9s 
+    pkgs.kubectl 
     pkgs.nerd-fonts.space-mono
     f.defaultPackage.${pkgs.system}
   ];
