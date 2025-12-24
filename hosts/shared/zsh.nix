@@ -102,6 +102,7 @@
       # Source aliases
       source ${./aliases.sh}
       source ${./zsh_keybinds}
+      source <(kubectl completion zsh)
 
       # System fetch on startup
       f

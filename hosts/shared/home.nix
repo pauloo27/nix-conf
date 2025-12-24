@@ -9,6 +9,8 @@
   home.packages = [
     pkgs.ripgrep 
     pkgs.k9s 
+    pkgs.go 
+    pkgs.gopls
     pkgs.kubectl 
     pkgs.nerd-fonts.space-mono
     f.defaultPackage.${pkgs.system}
