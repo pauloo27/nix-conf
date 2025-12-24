@@ -4,6 +4,7 @@
     ZDOTDIR = "$XDG_CONFIG_HOME/zsh";
     EDITOR = "nvim";
     GOPATH = "$HOME/dev/go";
+    ZVM_INIT_MODE="sourcing";
   };
 
   home.sessionPath = [
@@ -35,11 +36,11 @@
     antidote = {
       enable = true;
       plugins = [
+        "jeffreytse/zsh-vi-mode"
         "zsh-users/zsh-autosuggestions"
         "zsh-users/zsh-syntax-highlighting"
         "zsh-users/zsh-history-substring-search"
         "zsh-users/zsh-completions"
-        "jeffreytse/zsh-vi-mode"
       ];
     };
 
@@ -55,11 +56,6 @@
     };
 
     initContent = ''
-      export GPG_TTY=$(tty)
-
-      # Enable interactive comments
-      setopt interactivecomments
-
       # Source Nix environment
       if [ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
         source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
@@ -71,44 +67,61 @@
         export PATH="$HOME/.nix-profile/bin:$PATH"
       fi
 
-      # Enable bash completion compatibility
-      autoload bashcompinit
-      bashcompinit
+      export GPG_TTY=$(tty)
 
-      # Plugin configuration
-      # zsh-vi-mode: prevent conflicts with fzf
-      ZVM_INIT_MODE=sourcing
+      # Load Keybinds
+      autoload -U select-word-style
+      select-word-style bash
+      source ${./zsh_keybinds}
 
-      # zsh-autosuggestions strategy
-      ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion history)
+      # Completion
+      autoload -Uz compinit
+      compinit
 
-      # zsh-syntax-highlighting: dim comments
-      ZSH_HIGHLIGHT_STYLES[comment]='fg=8'
-
-      # Command line editing in $EDITOR (Ctrl+E)
-      autoload -z edit-command-line
-      zle -N edit-command-line
-      bindkey '^E' edit-command-line
-
-      # Completion styling
       zstyle ':completion:*' menu select
       zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
       zstyle ':completion:*' rehash true
       zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+      zstyle ':completion:*' list-colors '''
+      zstyle ':completion:*' menu select
       zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
       zstyle ':completion::complete:*' gain-privileges 1
+
+      ZSH_HIGHLIGHT_STYLES[comment]='fg=8'
+
+      # Support bash-like completition
+      autoload bashcompinit
+      bashcompinit
+
+      # Set history stuff
+      ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion history)
+      HISTFILE=$ZDOTDIR/.zsh_history
+      HISTSIZE=10000
+      SAVEHIST=10000
+      setopt appendhistory
+      setopt sharehistory
+      setopt hist_ignore_space
+      setopt hist_ignore_all_dups
+      setopt interactivecomments
+
+      # edit the command line in $EDITOR. Not in the keybinds file because it was being
+      # overwritten by the plugins
+      autoload -z edit-command-line
+      zle -N edit-command-line
+      bindkey '^E' edit-command-line
       zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
-      # Source aliases
+      # Source stuff
       source ${./aliases.sh}
-      source ${./zsh_keybinds}
       source <(kubectl completion zsh)
+      # Source extra config (secrets, machine-specific settings)
+      [ -f $HOME/.extra.zsh ] && source $HOME/.extra.zsh
+
+      # fzf for history search
+      eval "$(fzf --zsh)"
 
       # System fetch on startup
       f
-
-      # Source extra config (secrets, machine-specific settings)
-      [ -f $HOME/.extra.zsh ] && source $HOME/.extra.zsh
     '';
   };
 }
