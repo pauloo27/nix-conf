@@ -12,6 +12,10 @@ RESET='\033[0m'
 HOSTNAME=$(cat /etc/hostname)
 UPDATE_LOG="last-update.txt"
 
+# Source shared configuration
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/nixos-hosts.sh"
+
 info() {
   echo -e "${BLUE}[INFO]${RESET} $1"
 }
@@ -28,11 +32,24 @@ error() {
   echo -e "${RED}[ERROR]${RESET} $1"
 }
 
+is_nixos() {
+  for system in "${NIXOS_HOSTNAMES[@]}"; do
+    if [[ "$HOSTNAME" == "$system" ]]; then
+      return 0
+    fi
+  done
+  return 1
+}
+
 info "Updating flake inputs..."
 nix flake update
 
-info "Applying system configuration for $HOSTNAME..."
-./apply-os.sh
+if is_nixos; then
+  info "Applying system configuration for $HOSTNAME..."
+  ./apply-os.sh
+else
+  warning "Skipping system configuration (not a NixOS system)"
+fi
 
 info "Applying home configuration for $HOSTNAME..."
 ./apply.sh
