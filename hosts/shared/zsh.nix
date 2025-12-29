@@ -20,6 +20,37 @@
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
+    settings = {
+      "$schema" = "https://starship.rs/config-schema.json";
+      character = {
+        success_symbol = "[λ](green)";
+        error_symbol = "[λ](red)";
+      };
+      golang = {
+        symbol = " ";
+      };
+      battery = {
+        disabled = true;
+      };
+      nodejs = {
+        disabled = true;
+      };
+      rust = {
+        disabled = true;
+      };
+      package = {
+        disabled = true;
+      };
+      elixir = {
+        disabled = true;
+      };
+      deno = {
+        symbol = " ";
+      };
+      hostname = {
+        ssh_symbol = "󰖟 ";
+      };
+    };
   };
 
   programs.fzf = {
