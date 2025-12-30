@@ -8,6 +8,7 @@
   # Common packages for all hosts
   home.packages = [
     pkgs.ripgrep 
+    pkgs.gcc 
     pkgs.k9s 
     pkgs.go 
     pkgs.gopls
@@ -18,13 +19,13 @@
   
   fonts.fontconfig.enable = true;
 
-  # Common home-manager settings
   programs.home-manager.enable = true;
 
-  # Enable SSH agent
+  services.gpg-agent.enable = true;
+  services.gpg-agent.pinentryPackage = with pkgs; pinentry-tty;
+  programs.gpg.enable = true;
   services.ssh-agent.enable = true;
 
-  # SSH configuration
   programs.ssh = {
     enable = true;
     addKeysToAgent = "yes";

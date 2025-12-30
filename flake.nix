@@ -2,10 +2,9 @@
   description = "Home Manager configuration";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     f = {
@@ -15,7 +14,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, f, ... }:
+  outputs = { nixpkgs, home-manager, f, ... } @inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -31,6 +30,24 @@
 
         modules = [
           ./hosts/karen/home.nix
+        ];
+
+        extraSpecialArgs = {
+          inherit f;
+        };
+      };
+
+      nixosConfigurations.nancy = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/nancy/configuration.nix
+        ];
+      };
+      homeConfigurations.nancy = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        modules = [
+          ./hosts/nancy/home.nix
         ];
 
         extraSpecialArgs = {

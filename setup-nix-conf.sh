@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 
 NIX_CONF_DIR="$HOME/.config/nix"
