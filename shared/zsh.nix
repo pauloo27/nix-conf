@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   home.sessionVariables = {
     XDG_CONFIG_HOME = "$HOME/.config";
     ZDOTDIR = "$XDG_CONFIG_HOME/zsh";
@@ -60,7 +60,7 @@
 
   programs.zsh = {
     enable = true;
-    dotDir = ".config/zsh";
+    dotDir = "${config.xdg.configHome}/zsh";
 
     enableCompletion = true;
 

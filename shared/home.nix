@@ -22,12 +22,12 @@
   programs.home-manager.enable = true;
 
   services.gpg-agent.enable = true;
-  services.gpg-agent.pinentryPackage = with pkgs; pinentry-curses;
+  services.gpg-agent.pinentry.package = with pkgs; pinentry-curses;
   programs.gpg.enable = true;
   services.ssh-agent.enable = true;
 
   programs.ssh = {
     enable = true;
-    addKeysToAgent = "yes";
+    matchBlocks."*".addKeysToAgent = "yes";
   };
 }
