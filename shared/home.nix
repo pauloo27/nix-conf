@@ -22,7 +22,7 @@
   programs.home-manager.enable = true;
 
   services.gpg-agent.enable = true;
-  services.gpg-agent.pinentryPackage = with pkgs; pinentry-tty;
+  services.gpg-agent.pinentryPackage = with pkgs; pinentry-curses;
   programs.gpg.enable = true;
   services.ssh-agent.enable = true;
 
