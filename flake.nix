@@ -24,66 +24,69 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      lib = nixpkgs.lib;
+
+      hosts = {
+        karen = {
+          isNixOS = true;
+          isDesktop = false;
+          arch = "x86_64-linux";
+          stateVersion = "24.05";
+          extraNixosModules = [];
+        };
+        nancy = {
+          isNixOS = true;
+          isDesktop = true;
+          arch = "x86_64-linux";
+          stateVersion = "25.11";
+          extraNixosModules = [nix-flatpak.nixosModules.nix-flatpak];
+        };
+        zita = {
+          isNixOS = false;
+          isDesktop = false;
+          arch = "x86_64-linux";
+          stateVersion = "25.05";
+          extraNixosModules = [];
+        };
+        melinda = {
+          isNixOS = false;
+          isDesktop = false;
+          arch = "x86_64-linux";
+          stateVersion = "25.05";
+          extraNixosModules = [];
+        };
+      };
+
+      mkNixosSystem = name: config:
+        nixpkgs.lib.nixosSystem {
+          system = config.arch;
+          modules = [
+            ./hosts/${name}/configuration.nix
+          ] ++ config.extraNixosModules;
+        };
+
+      mkHomeSystem = name: config:
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [ ./hosts/${name}/home.nix ];
+          extraSpecialArgs = {
+            inherit f tldr;
+          };
+        };
+
     in {
-      nixosConfigurations.karen = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/karen/configuration.nix
-        ];
-      };
-      homeConfigurations.karen = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+      # Generate NixOS configurations for hosts with isNixOS = true
+      nixosConfigurations = lib.filterAttrs (_: v: v != {}) (
+        lib.mapAttrs (name: config:
+          if config.isNixOS
+          then mkNixosSystem name config
+          else {}
+        ) hosts
+      );
 
-        modules = [
-          ./hosts/karen/home.nix
-        ];
-
-        extraSpecialArgs = {
-          inherit f tldr;
-        };
-      };
-
-      nixosConfigurations.nancy = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/nancy/configuration.nix
-          nix-flatpak.nixosModules.nix-flatpak
-        ];
-      };
-      homeConfigurations.nancy = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        modules = [
-          ./hosts/nancy/home.nix
-        ];
-
-        extraSpecialArgs = {
-          inherit f tldr;
-        };
-      };
-
-      homeConfigurations.zita = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        modules = [
-          ./hosts/zita/home.nix
-        ];
-
-        extraSpecialArgs = {
-          inherit f tldr;
-        };
-      };
-
-      homeConfigurations.melinda = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        modules = [
-          ./hosts/melinda/home.nix
-        ];
-
-        extraSpecialArgs = {
-          inherit f tldr;
-        };
-      };
+      # Generate Home Manager configurations for all hosts
+      homeConfigurations = lib.mapAttrs (name: config:
+        mkHomeSystem name config
+      ) hosts;
     };
 }
