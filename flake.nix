@@ -7,6 +7,7 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     tldr = {
       url = "https://github.com/pauloo27/tldr.git";
       type = "git";
@@ -19,7 +20,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, f, tldr, ... } @inputs:
+  outputs = { nixpkgs, home-manager, nix-flatpak, f, tldr, ... } @inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -46,6 +47,7 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/nancy/configuration.nix
+          nix-flatpak.nixosModules.nix-flatpak
         ];
       };
       homeConfigurations.nancy = home-manager.lib.homeManagerConfiguration {
