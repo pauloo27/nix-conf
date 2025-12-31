@@ -13,7 +13,7 @@
     pkgs.go 
     pkgs.gopls
     pkgs.kubectl 
-    pkgs.nerd-fonts.space-mono
+    pkgs.nerd-fonts.ubuntu-mono
     f.defaultPackage.${pkgs.system}
   ];
   

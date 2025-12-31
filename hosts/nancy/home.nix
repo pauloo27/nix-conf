@@ -2,6 +2,7 @@
 
   imports = [
     ../../shared/home.nix
+    ../../shared/desktop.nix
     ../../shared/shared-linux.nix
   ];
 
