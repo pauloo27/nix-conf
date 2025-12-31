@@ -1,4 +1,4 @@
-{ pkgs, f, ... }: {
+{ pkgs, tldr, f, ... }: {
   imports = [
     ./zsh.nix
     ./git.nix
@@ -15,6 +15,7 @@
     pkgs.kubectl 
     pkgs.nerd-fonts.ubuntu-mono
     f.defaultPackage.${pkgs.system}
+    tldr.packages.${pkgs.system}.default
   ];
   
   fonts.fontconfig.enable = true;

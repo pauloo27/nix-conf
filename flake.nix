@@ -7,6 +7,11 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    tldr = {
+      url = "https://github.com/pauloo27/tldr.git";
+      type = "git";
+      ref = "master";
+    };
     f = {
       url = "https://code.db.cafe/pauloo27/f.git";
       type = "git";
@@ -14,7 +19,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, f, ... } @inputs:
+  outputs = { nixpkgs, home-manager, f, tldr, ... } @inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -33,7 +38,7 @@
         ];
 
         extraSpecialArgs = {
-          inherit f;
+          inherit f tldr;
         };
       };
 
@@ -51,7 +56,7 @@
         ];
 
         extraSpecialArgs = {
-          inherit f;
+          inherit f tldr;
         };
       };
 
@@ -63,7 +68,7 @@
         ];
 
         extraSpecialArgs = {
-          inherit f;
+          inherit f tldr;
         };
       };
 
@@ -75,7 +80,7 @@
         ];
 
         extraSpecialArgs = {
-          inherit f;
+          inherit f tldr;
         };
       };
     };

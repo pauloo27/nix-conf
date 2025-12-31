@@ -9,7 +9,12 @@ alias secret="cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n
 # Clear
 alias c=clear
 
+# Nix
+## Develop shell but not bash
+alias ,nd=nix develop -c $SHELL
+
 # Git cool
+alias g=git
 
 ## Init
 alias ,init="git init"
