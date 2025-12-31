@@ -10,12 +10,13 @@
     pkgs.ripgrep 
     pkgs.gcc 
     pkgs.k9s 
-    pkgs.go 
-    pkgs.gopls
     pkgs.kubectl 
     pkgs.nerd-fonts.ubuntu-mono
     f.defaultPackage.${pkgs.system}
     tldr.packages.${pkgs.system}.default
+    # TODO: remove this in favor of per-project flake
+    pkgs.go 
+    pkgs.gopls
   ];
   
   fonts.fontconfig.enable = true;
