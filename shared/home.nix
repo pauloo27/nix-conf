@@ -5,9 +5,12 @@
     ./tmux.nix
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   # Common packages for all hosts
   home.packages = [
     pkgs.ripgrep 
+    pkgs.claude-code
     pkgs.gcc 
     pkgs.k9s 
     pkgs.kubectl 
