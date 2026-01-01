@@ -29,30 +29,22 @@
       hosts = {
         karen = {
           isNixOS = true;
-          isDesktop = false;
           arch = "x86_64-linux";
-          stateVersion = "24.05";
           extraNixosModules = [];
         };
         nancy = {
           isNixOS = true;
-          isDesktop = true;
           arch = "x86_64-linux";
-          stateVersion = "25.11";
           extraNixosModules = [nix-flatpak.nixosModules.nix-flatpak];
         };
         zita = {
           isNixOS = false;
-          isDesktop = false;
           arch = "x86_64-linux";
-          stateVersion = "25.05";
           extraNixosModules = [];
         };
         melinda = {
           isNixOS = false;
-          isDesktop = false;
           arch = "x86_64-linux";
-          stateVersion = "25.05";
           extraNixosModules = [];
         };
       };
