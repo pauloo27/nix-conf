@@ -11,7 +11,7 @@ alias c=clear
 
 # Nix
 ## Develop shell but not bash
-alias ,nd=nix develop -c $SHELL
+alias ,nd="nix develop -c $SHELL"
 
 # Git cool
 alias g=git
