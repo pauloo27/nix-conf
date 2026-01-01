@@ -51,8 +51,8 @@
 
       mkNixosSystem = name: config:
         nixpkgs.lib.nixosSystem {
-          system = config.arch;
           modules = [
+            { nixpkgs.hostPlatform = config.arch; }
             ./hosts/${name}/configuration.nix
           ] ++ config.extraNixosModules;
         };
