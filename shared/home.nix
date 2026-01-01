@@ -26,6 +26,12 @@
 
   programs.home-manager.enable = true;
 
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
+  };
+
   services.gpg-agent.enable = true;
   services.gpg-agent.pinentry.package = with pkgs; pinentry-curses;
   programs.gpg.enable = true;
