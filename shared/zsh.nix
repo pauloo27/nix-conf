@@ -149,7 +149,14 @@
 
       # Source stuff
       source ${./aliases.sh}
-      source <(kubectl completion zsh)
+
+      # Lazy-load kubectl completion for faster startup
+      kubectl() {
+        unfunction kubectl
+        source <(command kubectl completion zsh)
+        kubectl "$@"
+      }
+
       # Source extra config (secrets, machine-specific settings)
       [ -f $HOME/.extra.zsh ] && source $HOME/.extra.zsh
 
