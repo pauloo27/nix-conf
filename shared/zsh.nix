@@ -62,7 +62,7 @@
     enable = true;
     dotDir = "${config.xdg.configHome}/zsh";
 
-    enableCompletion = true;
+    enableCompletion = false;
 
     antidote = {
       enable = true;
@@ -105,9 +105,14 @@
       select-word-style bash
       source ${./zsh_keybinds}
 
-      # Completion
+      # Completion - cache compinit for faster startup
       autoload -Uz compinit
-      compinit
+      setopt extended_glob
+      if [[ -n ''${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+        compinit
+      else
+        compinit -C
+      fi
 
       zstyle ':completion:*' menu select
       zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
