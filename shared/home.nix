@@ -3,22 +3,23 @@
     ./zsh.nix
     ./git.nix
     ./tmux.nix
+    tldr.homeManagerModules.default
   ];
 
   nixpkgs.config.allowUnfree = true;
 
   # Common packages for all hosts
   home.packages = [
-    pkgs.ripgrep 
+    pkgs.ripgrep
     pkgs.claude-code
-    pkgs.gcc 
-    pkgs.k9s 
-    pkgs.kubectl 
+    pkgs.gcc
+    pkgs.k9s
+    pkgs.kubectl
     pkgs.nerd-fonts.ubuntu-mono
-    f.defaultPackage.${pkgs.system}
-    tldr.packages.${pkgs.system}.default
+    pkgs.glow
+    f.defaultPackage.${pkgs.stdenv.hostPlatform.system}
     # TODO: remove this in favor of per-project flake
-    pkgs.go 
+    pkgs.go
     pkgs.gopls
   ];
   
@@ -30,6 +31,11 @@
     enable = true;
     enableZshIntegration = true;
     nix-direnv.enable = true;
+  };
+
+  programs.tldr-go = {
+    enable = true;
+    viewer = "glow";
   };
 
   services.gpg-agent.enable = true;

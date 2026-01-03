@@ -186,18 +186,17 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1767221615,
-        "narHash": "sha256-VhDkubwL4dWfJEk+hBt6palGGd41Op3j8hc7067mnCM=",
-        "ref": "master",
-        "rev": "164135fb7ecb941858db2589f6b6e93a1423f268",
-        "revCount": 40,
-        "type": "git",
-        "url": "https://github.com/pauloo27/tldr.git"
+        "lastModified": 1767402538,
+        "narHash": "sha256-cFeL80Mk7YjRmnWlaaOF1ELaDnb1Mt/cAzwS9SCehP4=",
+        "owner": "pauloo27",
+        "repo": "tldr",
+        "rev": "fa50377d8242b354bca1a1fa9717e0867300ccdb",
+        "type": "github"
       },
       "original": {
-        "ref": "master",
-        "type": "git",
-        "url": "https://github.com/pauloo27/tldr.git"
+        "owner": "pauloo27",
+        "repo": "tldr",
+        "type": "github"
       }
     }
   },
