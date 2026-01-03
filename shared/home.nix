@@ -17,6 +17,7 @@
     pkgs.kubectl
     pkgs.nerd-fonts.ubuntu-mono
     pkgs.glow
+    pkgs.file
     f.defaultPackage.${pkgs.stdenv.hostPlatform.system}
     # TODO: remove this in favor of per-project flake
     pkgs.go
