@@ -8,11 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
-    tldr = {
-      url = "https://github.com/pauloo27/tldr.git";
-      type = "git";
-      ref = "master";
-    };
+    tldr.url = "github:pauloo27/tldr";
     f = {
       url = "https://code.db.cafe/pauloo27/f.git";
       type = "git";
