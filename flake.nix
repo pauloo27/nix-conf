@@ -18,8 +18,6 @@
 
   outputs = { nixpkgs, home-manager, nix-flatpak, f, tldr, ... } @inputs:
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
       lib = nixpkgs.lib;
 
       hosts = {
@@ -55,7 +53,7 @@
 
       mkHomeSystem = name: config:
         home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
+          pkgs = nixpkgs.legacyPackages.${config.arch};
           modules = [ ./hosts/${name}/home.nix ];
           extraSpecialArgs = {
             inherit f tldr;
