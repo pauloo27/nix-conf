@@ -10,9 +10,11 @@
 
   # Common packages for all hosts
   home.packages = [
+    pkgs.gcc
+    pkgs.binutils
+    pkgs.glibc
     pkgs.ripgrep
     pkgs.claude-code
-    pkgs.gcc
     pkgs.k9s
     pkgs.kubectl
     pkgs.nerd-fonts.ubuntu-mono
