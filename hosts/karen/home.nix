@@ -1,7 +1,10 @@
 { pkgs, f, ... }: {
   imports = [
-    ../../shared/home.nix
-    ../../shared/shared-linux.nix
+    ../../shared/base.nix
+    ../../shared/zsh.nix
+    ../../shared/git.nix
+    ../../shared/tmux.nix
+    ../../shared/linux.nix
   ];
 
   home.packages = [ ];

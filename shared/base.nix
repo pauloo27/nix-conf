@@ -1,8 +1,5 @@
 { pkgs, tldr, f, ... }: {
   imports = [
-    ./zsh.nix
-    ./git.nix
-    ./tmux.nix
     tldr.homeManagerModules.default
   ];
 
@@ -23,7 +20,7 @@
     pkgs.go
     pkgs.gopls
   ];
-  
+
   fonts.fontconfig.enable = true;
 
   programs.home-manager.enable = true;

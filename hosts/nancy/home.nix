@@ -1,9 +1,12 @@
 { pkgs, inputs, ... }: {
 
   imports = [
-    ../../shared/home.nix
+    ../../shared/base.nix
+    ../../shared/zsh.nix
+    ../../shared/git.nix
+    ../../shared/tmux.nix
     ../../shared/desktop.nix
-    ../../shared/shared-linux.nix
+    ../../shared/linux.nix
   ];
 
   home.packages = [ 
