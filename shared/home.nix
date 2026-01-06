@@ -10,9 +10,7 @@
 
   # Common packages for all hosts
   home.packages = [
-    pkgs.gcc
-    pkgs.binutils
-    pkgs.glibc
+    pkgs.clang
     pkgs.ripgrep
     pkgs.claude-code
     pkgs.k9s
