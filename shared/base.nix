@@ -10,6 +10,7 @@
     pkgs.clang
     pkgs.ripgrep
     pkgs.claude-code
+    pkgs.btop
     pkgs.k9s
     pkgs.kubectl
     pkgs.nerd-fonts.ubuntu-mono
