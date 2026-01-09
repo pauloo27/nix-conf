@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../shared/nixos/flatpak.nix
     ];
 
   # Finger print sensor
@@ -67,17 +68,6 @@
   services.desktopManager.gnome.enable = true;
   services.gnome.games.enable = false;
   services.gnome.core-developer-tools.enable = false;
-
-  services.flatpak = {
-    enable = true;
-    packages = [
-      "io.github.zen_browser.zen"
-    ];
-    update.auto = {
-      enable = true;
-      onCalendar = "daily";
-    };
-  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
