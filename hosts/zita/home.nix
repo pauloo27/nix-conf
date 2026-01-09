@@ -6,6 +6,7 @@
     ../../shared/git.nix
     ../../shared/tmux.nix
     ../../shared/linux.nix
+    ../../shared/non-nix.nix
   ];
 
   home.packages = [ 

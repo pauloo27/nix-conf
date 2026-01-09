@@ -3,8 +3,10 @@
     ../../shared/base.nix
     ../../shared/zsh.nix
     ../../shared/git.nix
+    ../../shared/desktop.nix
     ../../shared/tmux.nix
     ../../shared/linux.nix
+    ../../shared/non-nix.nix
   ];
 
   home.packages = [ 
