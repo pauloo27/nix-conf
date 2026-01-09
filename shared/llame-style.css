@@ -1,0 +1,20 @@
+window {
+  min-height: 350px;
+  min-width: 650px;
+}
+
+button {
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 0;
+}
+
+button:focus {
+  background-color: #7f849c;
+}
+
+entry {
+  min-width: 400px;
+  padding: 10px 20px;
+  font-size: 22px;
+}

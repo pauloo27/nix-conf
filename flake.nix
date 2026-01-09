@@ -9,6 +9,7 @@
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     tldr.url = "github:pauloo27/tldr";
+    llame.url = "github:pauloo27/llame";
     f = {
       url = "https://code.db.cafe/pauloo27/f.git";
       type = "git";
@@ -16,7 +17,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nix-flatpak, f, tldr, ... } @inputs:
+  outputs = { nixpkgs, home-manager, nix-flatpak, f, tldr, llame, ... } @inputs:
     let
       lib = nixpkgs.lib;
 
@@ -56,7 +57,7 @@
           pkgs = nixpkgs.legacyPackages.${config.arch};
           modules = [ ./hosts/${name}/home.nix ];
           extraSpecialArgs = {
-            inherit f tldr;
+            inherit f tldr llame;
           };
         };
 
