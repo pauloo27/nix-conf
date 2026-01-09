@@ -2,6 +2,7 @@
   imports = [
     ../../shared/base.nix
     ../../shared/zsh.nix
+    ../../shared/desktop.nix
     ../../shared/git.nix
     ../../shared/tmux.nix
     ../../shared/linux.nix
