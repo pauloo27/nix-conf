@@ -13,7 +13,6 @@
     pkgs.btop
     pkgs.k9s
     pkgs.kubectl
-    pkgs.nerd-fonts.ubuntu-mono
     pkgs.glow
     pkgs.file
     f.packages.${pkgs.stdenv.hostPlatform.system}.default
@@ -21,8 +20,6 @@
     pkgs.go
     pkgs.gopls
   ];
-
-  fonts.fontconfig.enable = true;
 
   programs.home-manager.enable = true;
 

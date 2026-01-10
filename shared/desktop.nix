@@ -2,10 +2,19 @@
   home.packages = [
     pkgs.wl-clipboard
     pkgs.nemo
+    pkgs.nerd-fonts.symbols-only
+    pkgs.ubuntu-sans-mono
     llame.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   programs.eww.enable = true;
+
+  fonts.fontconfig = {
+    enable = true;
+    defaultFonts = {
+      monospace = ["Comic Code Medium" "Ubuntu Sans Mono"];
+    };
+  };
 
   programs.alacritty = {
     enable = true;
@@ -22,10 +31,11 @@
 
       font = {
         normal = {
-          family = "UbuntuMono Nerd Font";
+          # fallback to default monospaced
+          #family = "Ubuntu Sans Mono";
           style = "Regular";
         };
-        size = 12;
+        size = 11;
       };
 
       cursor = {
