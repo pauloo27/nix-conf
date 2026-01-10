@@ -13,8 +13,6 @@
     llame.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
-  programs.eww.enable = true;
-
   programs.alacritty = {
     enable = true;
     theme = "rose_pine";
