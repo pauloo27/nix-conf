@@ -2,13 +2,18 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   #boot.loader.systemd-boot.enable = true;
@@ -19,27 +24,38 @@
     efiSupport = true;
     efiInstallAsRemovable = true;
     mirroredBoots = [
-      { devices = [ "nodev"]; path = "/boot"; }
+      {
+        devices = [ "nodev" ];
+        path = "/boot";
+      }
     ];
   };
-  
+
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
   };
 
   networking.hostName = "karen"; # Define your hostname.
   networking.hostId = "65884294";
   # Pick only one of the below networking options.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
   # Use static ip
   networking = {
-    nameservers = [ "1.1.1.1" "9.9.9.9" ];
+    nameservers = [
+      "1.1.1.1"
+      "9.9.9.9"
+    ];
     interfaces.eno1 = {
       wakeOnLan.enable = true;
-      ipv4.addresses = [{
-        address = "10.0.0.77";
-        prefixLength = 24;
-      }];
+      ipv4.addresses = [
+        {
+          address = "10.0.0.77";
+          prefixLength = 24;
+        }
+      ];
     };
     defaultGateway = {
       address = "10.0.0.10";
@@ -131,19 +147,19 @@
     enable = true;
     devices = [
       {
-        device = "/dev/sda"; 
+        device = "/dev/sda";
       }
       {
-        device = "/dev/sdb"; 
+        device = "/dev/sdb";
       }
       {
-        device = "/dev/sdc"; 
+        device = "/dev/sdc";
       }
       {
-        device = "/dev/sdd"; 
+        device = "/dev/sdd";
       }
       {
-        device = "/dev/sde"; 
+        device = "/dev/sde";
       }
     ];
   };
@@ -181,7 +197,7 @@
 
   services.openvpn.servers = {
     karen = {
-      config = '' config /etc/ovpn/karen/karen.ovpn '';
+      config = "config /etc/ovpn/karen/karen.ovpn ";
     };
   };
 
@@ -222,4 +238,3 @@
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }
-

@@ -17,7 +17,16 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nix-flatpak, f, tldr, llame, ... } @inputs:
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      nix-flatpak,
+      f,
+      tldr,
+      llame,
+      ...
+    }@inputs:
     let
       lib = nixpkgs.lib;
 
@@ -25,34 +34,37 @@
         karen = {
           isNixOS = true;
           arch = "x86_64-linux";
-          extraNixosModules = [];
+          extraNixosModules = [ ];
         };
         nancy = {
           isNixOS = true;
           arch = "x86_64-linux";
-          extraNixosModules = [nix-flatpak.nixosModules.nix-flatpak];
+          extraNixosModules = [ nix-flatpak.nixosModules.nix-flatpak ];
         };
         zita = {
           isNixOS = false;
           arch = "x86_64-linux";
-          extraNixosModules = [];
+          extraNixosModules = [ ];
         };
         melinda = {
           isNixOS = false;
           arch = "x86_64-linux";
-          extraNixosModules = [];
+          extraNixosModules = [ ];
         };
       };
 
-      mkNixosSystem = name: config:
+      mkNixosSystem =
+        name: config:
         nixpkgs.lib.nixosSystem {
           modules = [
             { nixpkgs.hostPlatform = config.arch; }
             ./hosts/${name}/configuration.nix
-          ] ++ config.extraNixosModules;
+          ]
+          ++ config.extraNixosModules;
         };
 
-      mkHomeSystem = name: config:
+      mkHomeSystem =
+        name: config:
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${config.arch};
           modules = [ ./hosts/${name}/home.nix ];
@@ -61,19 +73,14 @@
           };
         };
 
-    in {
+    in
+    {
       # Generate NixOS configurations for hosts with isNixOS = true
-      nixosConfigurations = lib.filterAttrs (_: v: v != {}) (
-        lib.mapAttrs (name: config:
-          if config.isNixOS
-          then mkNixosSystem name config
-          else {}
-        ) hosts
+      nixosConfigurations = lib.filterAttrs (_: v: v != { }) (
+        lib.mapAttrs (name: config: if config.isNixOS then mkNixosSystem name config else { }) hosts
       );
 
       # Generate Home Manager configurations for all hosts
-      homeConfigurations = lib.mapAttrs (name: config:
-        mkHomeSystem name config
-      ) hosts;
+      homeConfigurations = lib.mapAttrs (name: config: mkHomeSystem name config) hosts;
     };
 }

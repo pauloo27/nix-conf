@@ -1,10 +1,11 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, ... }:
+{
   home.sessionVariables = {
     XDG_CONFIG_HOME = "$HOME/.config";
     ZDOTDIR = "$XDG_CONFIG_HOME/zsh";
     EDITOR = "nvim";
     GOPATH = "$HOME/dev/go";
-    ZVM_INIT_MODE="sourcing";
+    ZVM_INIT_MODE = "sourcing";
   };
 
   home.sessionPath = [

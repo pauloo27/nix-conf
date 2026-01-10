@@ -1,4 +1,10 @@
-{ pkgs, llame, config, ... }: {
+{
+  pkgs,
+  llame,
+  config,
+  ...
+}:
+{
   home.packages = [
     pkgs.wl-clipboard
     pkgs.nemo
@@ -12,7 +18,10 @@
   fonts.fontconfig = {
     enable = true;
     defaultFonts = {
-      monospace = ["Comic Code Medium" "Ubuntu Sans Mono"];
+      monospace = [
+        "Comic Code Medium"
+        "Ubuntu Sans Mono"
+      ];
     };
   };
 

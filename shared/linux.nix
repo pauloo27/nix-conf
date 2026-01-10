@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   # Linux-specific configuration
   # Don't import this on macOS hosts
 

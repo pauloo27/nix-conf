@@ -2,14 +2,19 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../../shared/nixos/flatpak.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../../shared/nixos/flatpak.nix
+  ];
 
   # Finger print sensor
   services.fprintd.enable = true;
@@ -45,9 +50,6 @@
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
-
-
-  
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -111,7 +113,10 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh = { enable = true; settings.PermitRootLogin = "yes"; };
+  services.openssh = {
+    enable = true;
+    settings.PermitRootLogin = "yes";
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -144,4 +149,3 @@
   system.stateVersion = "25.11"; # Did you read the comment?
 
 }
-

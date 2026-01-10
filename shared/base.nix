@@ -1,4 +1,10 @@
-{ pkgs, tldr, f, ... }: {
+{
+  pkgs,
+  tldr,
+  f,
+  ...
+}:
+{
   imports = [
     tldr.homeManagerModules.default
   ];
@@ -19,6 +25,7 @@
     # TODO: remove this in favor of per-project flake
     pkgs.go
     pkgs.gopls
+    pkgs.nil
   ];
 
   programs.home-manager.enable = true;

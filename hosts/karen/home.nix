@@ -1,4 +1,5 @@
-{ pkgs, f, ... }: {
+{ pkgs, f, ... }:
+{
   imports = [
     ../../shared/base.nix
     ../../shared/zsh.nix

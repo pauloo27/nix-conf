@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
     ../../shared/base.nix
     ../../shared/zsh.nix
@@ -9,7 +10,7 @@
     ../../shared/non-nix.nix
   ];
 
-  home.packages = [ 
+  home.packages = [
     pkgs.hello
   ];
 
