@@ -9,6 +9,7 @@
     ./fonts.nix
     ./flatpak.nix
     ./smsh/smsh.nix
+    ./waybar.nix
   ];
 
   home.packages = [
