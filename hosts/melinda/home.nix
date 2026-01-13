@@ -12,6 +12,7 @@
 
   home.packages = [
     pkgs.hello
+    pkgs.terraform
   ];
 
   home.stateVersion = "25.05";
