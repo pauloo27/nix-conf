@@ -39,7 +39,7 @@
         nancy = {
           isNixOS = true;
           arch = "x86_64-linux";
-          extraNixosModules = [ nix-flatpak.nixosModules.nix-flatpak ];
+          extraNixosModules = [ ];
         };
         zita = {
           isNixOS = false;
@@ -67,7 +67,10 @@
         name: config:
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${config.arch};
-          modules = [ ./hosts/${name}/home.nix ];
+          modules = [
+            ./hosts/${name}/home.nix
+            nix-flatpak.homeManagerModules.nix-flatpak
+          ];
           extraSpecialArgs = {
             inherit f tldr llame;
           };

@@ -5,7 +5,10 @@
   ...
 }:
 {
-  imports = [ ./fonts.nix ];
+  imports = [
+    ./fonts.nix
+    ./flatpak.nix
+  ];
 
   home.packages = [
     pkgs.wl-clipboard

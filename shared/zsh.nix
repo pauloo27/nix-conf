@@ -1,7 +1,6 @@
 { pkgs, config, ... }:
 {
   home.sessionVariables = {
-    XDG_CONFIG_HOME = "$HOME/.config";
     ZDOTDIR = "$XDG_CONFIG_HOME/zsh";
     EDITOR = "nvim";
     GOPATH = "$HOME/dev/go";

@@ -5,6 +5,9 @@
     packages = [
       "io.github.zen_browser.zen"
       "com.discordapp.Discord"
+      "com.github.iwalton3.jellyfin-media-player"
+      "com.stremio.Stremio"
+      "io.github.alainm23.planify"
     ];
     update.auto = {
       enable = true;
