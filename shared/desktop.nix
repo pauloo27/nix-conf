@@ -8,6 +8,7 @@
   imports = [
     ./fonts.nix
     ./flatpak.nix
+    ./smsh/smsh.nix
   ];
 
   home.packages = [

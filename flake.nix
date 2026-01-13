@@ -15,6 +15,11 @@
       type = "git";
       ref = "master";
     };
+    smsh = {
+      url = "https://code.db.cafe/pauloo27/smsh.git";
+      type = "git";
+      ref = "master";
+    };
   };
 
   outputs =
@@ -25,6 +30,7 @@
       f,
       tldr,
       llame,
+      smsh,
       ...
     }@inputs:
     let
@@ -72,7 +78,12 @@
             nix-flatpak.homeManagerModules.nix-flatpak
           ];
           extraSpecialArgs = {
-            inherit f tldr llame;
+            inherit
+              f
+              tldr
+              llame
+              smsh
+              ;
           };
         };
 
