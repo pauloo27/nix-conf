@@ -19,6 +19,8 @@
   services.fprintd.enable = true;
   services.fprintd.tod.driver = pkgs.libfprint-2-tod1-goodix; # Goodix driver module
 
+  services.flatpak.enable = true;
+
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   # boot.loader.grub.efiSupport = true;
