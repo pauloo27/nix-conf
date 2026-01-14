@@ -8,6 +8,7 @@
     ../../shared/tmux.nix
     ../../shared/desktop.nix
     ../../shared/linux.nix
+    ../../shared/hyprland.nix
   ];
 
   home.packages = [

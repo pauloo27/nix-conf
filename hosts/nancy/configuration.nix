@@ -21,6 +21,9 @@
 
   services.flatpak.enable = true;
 
+  # enable here, but configure at home manager
+  programs.hyprland.enable = true;
+
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   # boot.loader.grub.efiSupport = true;

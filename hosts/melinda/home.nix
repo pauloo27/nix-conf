@@ -15,6 +15,9 @@
     pkgs.terraform
   ];
 
+  # Override caps:swapescape for desktop (not needed with custom keyboard)
+  wayland.windowManager.hyprland.settings.input.kb_options = "";
+
   home.stateVersion = "25.05";
   home.username = "paulo";
   home.homeDirectory = "/home/paulo";
