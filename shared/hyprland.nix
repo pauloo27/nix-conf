@@ -105,7 +105,7 @@
         "$mainMod, Return, exec, alacritty msg --socket \"$XDG_RUNTIME_DIR/alacritty.sock\" create-window || alacritty --socket \"$XDG_RUNTIME_DIR/alacritty.sock\""
         "$mainMod SHIFT, Return, exec, llame"
         "$mainMod, D, exec, smsh ~/.config/smsh/prompt.lua | xargs sh -c"
-        "$mainMod, W, exec, zen-browser"
+        "$mainMod, W, exec, flatpak run app.zen_browser.zen"
         "$mainMod, A, exec, nemo"
         "$mainMod SHIFT, P, exec, rstroller-gui"
         "$mainMod SHIFT, E, exec, smsh ~/.config/smsh/power.lua"
