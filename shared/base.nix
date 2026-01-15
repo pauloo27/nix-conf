@@ -14,6 +14,7 @@
   # Common packages for all hosts
   home.packages = [
     pkgs.clang
+    pkgs.clang-tools
     pkgs.ripgrep
     pkgs.claude-code
     pkgs.btop
