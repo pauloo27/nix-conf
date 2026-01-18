@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    rose-pine-hyprcursor
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -7,6 +11,11 @@
       # General Config
       # =======
       "$mainMod" = "SUPER";
+
+      exec-once = [
+        "hyprctl setcursor rose-pine-hyprcursor 24"
+        "waybar"
+      ];
 
       input = {
         kb_layout = "us";
