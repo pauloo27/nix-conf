@@ -9,6 +9,7 @@
     ../../shared/desktop.nix
     ../../shared/linux.nix
     ../../shared/hyprland.nix
+    ../../shared/waybar_laptop.nix
   ];
 
   home.packages = [
