@@ -11,12 +11,18 @@
 
     backlight = {
       format = "{percent}% {icon}";
-      format-icons = [ "" "" ];
+      format-icons = [
+        ""
+        ""
+      ];
       scroll-step = 5;
     };
 
     "group/laptop" = {
-      modules = [ "battery" "backlight" ];
+      modules = [
+        "battery"
+        "backlight"
+      ];
       orientation = "horizontal";
       drawer = {
         transition-duration = 500;
@@ -33,9 +39,15 @@
         warning = 30;
         critical = 15;
       };
-      format = "{capacity}% {icon}";
+      format = "{icon} {capacity}%";
       format-charging = "{capacity}% 󰚥 {icon}";
-      format-icons = [ "" "" "" "" "" ];
+      format-icons = [
+        ""
+        ""
+        ""
+        ""
+        ""
+      ];
       max-length = 25;
     };
   };

@@ -55,29 +55,29 @@
 
         pulseaudio = {
           format = "{volume}% {icon} | {format_source}";
-          format-bluetooth = "{volume}% {icon} {format_source}";
-          format-bluetooth-muted = " {icon} {format_source}";
-          format-muted = " {format_source}";
-          format-source = "{volume}% ";
-          format-source-muted = "";
+          format-bluetooth = "{volume}% {icon} {format_source}";
+          format-bluetooth-muted = " {icon} {format_source}";
+          format-muted = " {format_source}";
+          format-source = "{volume}% ";
+          format-source-muted = "";
           format-icons = {
-            headphone = "";
-            hands-free = "";
-            headset = "";
-            phone = "";
-            portable = "";
+            headphone = "";
+            hands-free = "";
+            headset = "";
+            phone = "";
+            portable = "";
           };
           on-click = "pavucontrol";
         };
 
         clock = {
           on-click = "planify";
-          format = "<span color='#cba6f7'> </span>{:%H:%M}";
+          format = "<span color='#cba6f7'> </span>{:%H:%M}";
           tooltip-format = "<big>{:%a, %d %b • %H:%M}</big>\n<tt><small>{calendar}</small></tt>";
         };
 
         "hyprland/window" = {
-          format = " {}";
+          format = "  {}";
           max-length = 40;
           separate-outputs = true;
         };
