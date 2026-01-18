@@ -227,6 +227,31 @@
         ",XF86AudioNext,exec,rstroller next"
         ",XF86AudioPrev,exec,rstroller previous"
       ];
+
+      # =======
+      # Window Rules
+      # =======
+      windowrulev2 = [
+        "float,class:^(cafe.ndo.Llame)$"
+        "noanim,class:^(cafe.ndo.Llame)$"
+        "center,class:^(cafe.ndo.Llame)$"
+        "size 550 300,class:^(cafe.ndo.Llame)$"
+
+        "float,class:^(cafe.ndo.Rstroller)$"
+        "noanim,class:^(cafe.ndo.Rstroller)$"
+        "center,class:^(cafe.ndo.Rstroller)$"
+        "size 250 200,class:^(cafe.ndo.Rstroller)$"
+
+        "float,class:^(cafe.ndo.SMSH)(.*)$"
+        "noanim,class:^(cafe.ndo.SMSH)(.*)$"
+        "center,class:^(cafe.ndo.SMSH)(.*)$"
+        "size 0 0,class:^(cafe.ndo.SMSH)(.*)$"
+
+        "float,class:^(cafe.ndo.Emo)$"
+        "noanim,class:^(cafe.ndo.Emo)$"
+        "center,class:^(cafe.ndo.Emo)$"
+        "size 450 200,class:^(cafe.ndo.Emo)$"
+      ];
     };
   };
 }
