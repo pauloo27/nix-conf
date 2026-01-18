@@ -4,6 +4,15 @@
     rose-pine-hyprcursor
   ];
 
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      splash = false;
+      preload = "/home/paulo/medias/pictures/wp.png";
+      wallpaper = ",/home/paulo/medias/pictures/wp.png";
+    };
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
