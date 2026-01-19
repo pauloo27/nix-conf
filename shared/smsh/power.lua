@@ -18,7 +18,7 @@ new_window({
 				text = "",
 				tooltip = "Lock",
 				action = function()
-					os.execute("hyprlock")
+					os.execute("hyprlock &")
 					os.exit(0)
 				end,
 			},
