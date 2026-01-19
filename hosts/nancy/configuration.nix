@@ -16,8 +16,8 @@
   ];
 
   # Finger print sensor
-  services.fprintd.enable = true;
-  services.fprintd.tod.driver = pkgs.libfprint-2-tod1-goodix; # Goodix driver module
+  #services.fprintd.enable = true;
+  #services.fprintd.tod.driver = pkgs.libfprint-2-tod1-goodix; # Goodix driver module
 
   services.flatpak.enable = true;
 
@@ -73,10 +73,7 @@
   #   pulse.enable = true;
   # };
 
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-  services.gnome.games.enable = false;
-  services.gnome.core-developer-tools.enable = false;
+  services.displayManager.ly.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
@@ -99,7 +96,6 @@
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     git
-    gnome-tweaks
   ];
 
   programs.neovim = {
