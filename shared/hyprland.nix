@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./hyprlock.nix
+  ];
+
   home.packages = with pkgs; [
     rose-pine-hyprcursor
     xfce.xfce4-notifyd

@@ -84,6 +84,7 @@
               llame
               smsh
               ;
+            hostname = name;
           };
         };
 

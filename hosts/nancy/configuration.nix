@@ -24,6 +24,9 @@
   # enable here, but configure at home manager
   programs.hyprland.enable = true;
 
+  # PAM configuration for hyprlock
+  security.pam.services.hyprlock = {};
+
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   # boot.loader.grub.efiSupport = true;
