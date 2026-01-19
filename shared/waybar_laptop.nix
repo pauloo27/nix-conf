@@ -2,11 +2,7 @@
 {
   programs.waybar.settings.mainBar = {
     modules-right = [
-      "pulseaudio"
       "group/laptop"
-      "tray"
-      "privacy"
-      "clock"
     ];
 
     backlight = {

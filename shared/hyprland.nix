@@ -2,6 +2,8 @@
 {
   home.packages = with pkgs; [
     rose-pine-hyprcursor
+    xfce.xfce4-notifyd
+    pavucontrol
   ];
 
   services.hyprpaper = {
@@ -24,6 +26,7 @@
       exec-once = [
         "hyprctl setcursor rose-pine-hyprcursor 24"
         "waybar"
+        "xfce4-notifyd"
       ];
 
       input = {
