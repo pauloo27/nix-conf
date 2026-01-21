@@ -6,6 +6,7 @@
 
   home.packages = with pkgs; [
     grimblast
+    hyprpicker
     rose-pine-hyprcursor
     xfce.xfce4-notifyd
     pavucontrol
@@ -136,8 +137,7 @@
         "$mainMod SHIFT, P, exec, rstroller-gui"
         "$mainMod SHIFT, E, exec, smsh ~/.config/smsh/power.lua"
         "$mainMod SHIFT, S, exec, grimblast copy area"
-        ",Print, exec, smsh ~/.config/smsh/print/main.lua"
-        "$mainMod CTRL, S,  exec, smsh ~/.config/smsh/print/main.lua"
+        ",Print, exec, smsh ~/.config/smsh/print.lua"
         ",mouse:276, exec, rstroller play-pause"
         ",mouse:21958, exec, rstroller play-pause"
         ",mouse:275, exec, xte \"key F8\""

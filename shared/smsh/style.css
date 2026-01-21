@@ -13,6 +13,5 @@ button {
 }
 
 button:focus {
-  background-color: #7f849c;
-  color: #fff;
+  outline: 4px solid #7f849c;
 }
