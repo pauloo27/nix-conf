@@ -1,4 +1,3 @@
-require("helpers")
 require("wrapper")
 
 load_stylesheet("./style.css")
