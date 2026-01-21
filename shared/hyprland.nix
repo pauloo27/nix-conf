@@ -9,6 +9,8 @@
     xfce.xfce4-notifyd
     pavucontrol
   ];
+  
+  services.hyprpolkitagent.enable = true;
 
   services.hyprpaper = {
     enable = true;
