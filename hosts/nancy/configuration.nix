@@ -30,7 +30,7 @@
   };
 
   # TODO: move so its reusable
-  services.displayManager.ly.enable = true;
+  services.displayManager.gdm.enable = true;
 
   # TODO: move so its reusable
   # PAM configuration for hyprlock
