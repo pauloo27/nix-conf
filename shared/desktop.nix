@@ -17,6 +17,7 @@
   home.packages = [
     pkgs.wl-clipboard
     pkgs.nemo
+    pkgs.eog
     llame.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
