@@ -10,10 +10,17 @@
     export PATH=$HOME/.nix-profile/bin:$PATH
   '';
 
+  # Fix cursor size for XWayland apps (like Discord flatpak)
+  home.sessionVariables = {
+    XCURSOR_SIZE = "16";
+    XCURSOR_THEME = "BreezeX-RosePine-Linux";
+  };
+
   home.packages = with pkgs; [
     grimblast
     hyprpicker
     rose-pine-hyprcursor
+    rose-pine-cursor
     xfce.xfce4-notifyd
     pavucontrol
     uwsm
