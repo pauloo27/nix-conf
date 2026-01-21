@@ -11,6 +11,10 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  home.sessionPath = [
+    "$HOME/.nix-profile/bin"
+  ];
+
   # Common packages for all hosts
   home.packages = [
     pkgs.clang

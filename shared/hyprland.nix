@@ -2,7 +2,13 @@
 {
   imports = [
     ./hyprlock.nix
+    ./smsh/smsh.nix
+    ./waybar.nix
   ];
+
+  xdg.configFile."uwsm/env".text = ''
+    export PATH=$HOME/.nix-profile/bin:$PATH
+  '';
 
   home.packages = with pkgs; [
     grimblast
@@ -10,8 +16,9 @@
     rose-pine-hyprcursor
     xfce.xfce4-notifyd
     pavucontrol
+    uwsm
   ];
-  
+
   services.hyprpolkitagent.enable = true;
 
   services.hyprpaper = {

@@ -8,9 +8,8 @@
   imports = [
     ./fonts.nix
     ./flatpak.nix
-    ./smsh/smsh.nix
-    ./waybar.nix
     ./gtk.nix
+    ./hyprland.nix
     ./alacritty.nix
   ];
 

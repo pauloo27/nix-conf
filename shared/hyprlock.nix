@@ -1,19 +1,15 @@
-{ pkgs, lib, hostname, ... }:
+{
+  pkgs,
+  lib,
+  hostname,
+  ...
+}:
 {
   programs.hyprlock = {
     enable = true;
     settings = {
       general = {
         hide_cursor = false;
-      };
-
-      auth = lib.optionalAttrs (hostname == "nancy") {
-        fingerprint = {
-          enabled = true;
-          ready_message = "Scan fingerprint to unlock";
-          present_message = "Scanning...";
-          retry_delay = 250;
-        };
       };
 
       animations = {

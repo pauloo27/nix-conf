@@ -99,26 +99,29 @@
       homeConfigurations = lib.mapAttrs (name: config: mkHomeSystem name config) hosts;
 
       # Development shell
-      devShells = lib.genAttrs [
-        "x86_64-linux"
-        "aarch64-linux"
-        "x86_64-darwin"
-        "aarch64-darwin"
-      ] (
-        system:
-        let
-          pkgs = nixpkgs.legacyPackages.${system};
-        in
-        {
-          default = pkgs.mkShell {
-            packages = with pkgs; [
-              nil # Nix language server
-              nixfmt-rfc-style # Nix formatter
-              stylua # Lua formatter
-              lua-language-server # Lua language server
-            ];
-          };
-        }
-      );
+      devShells =
+        lib.genAttrs
+          [
+            "x86_64-linux"
+            "aarch64-linux"
+            "x86_64-darwin"
+            "aarch64-darwin"
+          ]
+          (
+            system:
+            let
+              pkgs = nixpkgs.legacyPackages.${system};
+            in
+            {
+              default = pkgs.mkShell {
+                packages = with pkgs; [
+                  nil # Nix language server
+                  nixfmt-rfc-style # Nix formatter
+                  stylua # Lua formatter
+                  lua-language-server # Lua language server
+                ];
+              };
+            }
+          );
     };
 }

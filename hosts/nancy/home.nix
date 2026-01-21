@@ -7,9 +7,8 @@
     ../../shared/git.nix
     ../../shared/tmux.nix
     ../../shared/desktop.nix
-    ../../shared/linux.nix
-    ../../shared/hyprland.nix
     ../../shared/waybar_laptop.nix
+    ../../shared/linux.nix
   ];
 
   home.packages = [
