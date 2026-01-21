@@ -24,6 +24,7 @@
     pkgs.btop
     pkgs.k9s
     pkgs.kubectl
+    pkgs.helm
     pkgs.glow
     pkgs.file
     pkgs.nix-index
