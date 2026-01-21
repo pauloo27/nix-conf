@@ -11,6 +11,7 @@ local options = {
 		type = "button",
 		text = "",
 		tooltip = "Lock",
+		classes = { "main_button" },
 		action = function()
 			os.execute("hyprlock &")
 			os.exit(0)
@@ -20,6 +21,7 @@ local options = {
 		type = "button",
 		text = "",
 		tooltip = "Shutdown",
+		classes = { "main_button" },
 		action = function()
 			confirm({
 				message = "Shutdown?",
@@ -36,6 +38,7 @@ local options = {
 		type = "button",
 		text = "",
 		tooltip = "Reboot",
+		classes = { "main_button" },
 		action = function()
 			confirm({
 				message = "Reboot?",
@@ -52,6 +55,7 @@ local options = {
 		type = "button",
 		text = "󰗽",
 		tooltip = "Logout",
+		classes = { "main_button" },
 		action = function()
 			confirm({
 				message = "Logout?",
@@ -71,6 +75,7 @@ if has_windows then
 		type = "button",
 		text = "",
 		tooltip = "Reboot into Windows",
+		classes = { "main_button" },
 		action = function()
 			confirm({
 				message = "Reboot into Windows?",
@@ -94,6 +99,7 @@ new_window({
 	root = {
 		type = "container",
 		orientation = "vertical",
+		classes = { "padded" },
 		children = options,
 	},
 })

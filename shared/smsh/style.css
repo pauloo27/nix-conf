@@ -1,17 +1,24 @@
-box {
+box.padded {
   padding: 20px;
 }
 
-label {
-  font-size: 20px;
+label.title {
+  font-size: 30px;
 }
 
-button {
+button.main_button {
   margin: 10px;
-  font-size: 30px;
+  font-size: 20px;
   padding: 30px;
+}
+
+button.toggle_button {
+  margin: 5px;
+  font-size: 16px;
+  padding: 15px;
 }
 
 button:focus {
   outline: 4px solid #7f849c;
+  outline-offset: 2px;
 }

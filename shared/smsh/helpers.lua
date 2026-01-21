@@ -30,16 +30,19 @@ function confirm(opts)
 		root = {
 			type = "container",
 			orientation = "vertical",
+			classes = { "padded" },
 			children = {
 				{
 					type = "label",
 					text = opts.message or "Are you sure?",
 					tooltip = opts.tooltip or "",
+					classes = { "title" },
 				},
 				{
 					type = "button",
 					text = opts.yes_text or "Yes",
 					tooltip = opts.yes_tooltip or "Yes!",
+					classes = { "main_button" },
 					action = opts.on_yes or function()
 						os.exit(0)
 					end,
@@ -48,6 +51,7 @@ function confirm(opts)
 					type = "button",
 					text = opts.no_text or "No",
 					tooltip = opts.no_tooltip or "No",
+					classes = { "main_button" },
 					action = opts.on_no or function()
 						os.exit(1)
 					end,
@@ -82,6 +86,7 @@ function prompt(opts)
 		root = {
 			type = "container",
 			orientation = opts.orientation or "horizontal",
+			classes = { "padded" },
 			children = {
 				{
 					type = "entry",

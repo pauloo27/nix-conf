@@ -14,10 +14,12 @@ new_window({
 	root = {
 		type = "container",
 		orientation = "vertical",
+		classes = { "padded" },
 		children = {
 			{
 				type = "label",
 				text = "Pick an option",
+				classes = { "title" },
 			},
 			{
 				type = "container",
@@ -27,6 +29,7 @@ new_window({
 						type = "button",
 						text = "󰴱",
 						tooltip = "Pick a color",
+						classes = { "main_button" },
 						action = function()
 							os.execute("hyprpicker -a &")
 							os.exit(0)
@@ -36,6 +39,7 @@ new_window({
 						type = "button",
 						text = "",
 						tooltip = "Print the active window",
+						classes = { "main_button" },
 						action = function()
 							-- TODO:
 							print(save_to_clipboard)
@@ -45,15 +49,22 @@ new_window({
 						type = "button",
 						text = "󰩬",
 						tooltip = "Print a specific area",
+						classes = { "main_button" },
 						action = function() end,
 					},
 					{
 						type = "button",
 						text = "󰹑",
 						tooltip = "Print the entire screen",
+						classes = { "main_button" },
 						action = function() end,
 					},
 				},
+			},
+			{
+				type = "label",
+				text = "Where to save",
+				classes = { "title" },
 			},
 			{
 				type = "togglebuttongroup",
@@ -61,15 +72,19 @@ new_window({
 				halign = "center",
 				buttons = {
 					{
-						text = "",
+						text = "",
 						active = save_to_clipboard,
+						classes = { "toggle_button" },
+						tooltip = "Save to clipboard",
 						action = function(state)
 							save_to_clipboard = state
 						end,
 					},
 					{
-						text = "",
+						text = "",
 						active = false,
+						tooltip = "Save to file",
+						classes = { "toggle_button" },
 						-- no action since the group handles exclusivity
 					},
 				},
