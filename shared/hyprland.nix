@@ -13,14 +13,11 @@
   # Fix cursor size for XWayland apps (like Discord flatpak)
   home.sessionVariables = {
     XCURSOR_SIZE = "16";
-    XCURSOR_THEME = "BreezeX-RosePine-Linux";
   };
 
   home.packages = with pkgs; [
     grimblast
     hyprpicker
-    rose-pine-hyprcursor
-    rose-pine-cursor
     xfce.xfce4-notifyd
     pavucontrol
     uwsm
@@ -46,7 +43,7 @@
       "$mainMod" = "SUPER";
 
       exec-once = [
-        "hyprctl setcursor rose-pine-hyprcursor 24"
+        "hyprctl setcursor Adwaita 16"
       ];
 
       input = {
