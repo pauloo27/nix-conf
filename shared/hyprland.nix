@@ -29,8 +29,6 @@
 
       exec-once = [
         "hyprctl setcursor rose-pine-hyprcursor 24"
-        "waybar"
-        "xfce4-notifyd"
       ];
 
       input = {

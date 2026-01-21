@@ -19,11 +19,20 @@
   #services.fprintd.enable = true;
   #services.fprintd.tod.driver = pkgs.libfprint-2-tod1-goodix; # Goodix driver module
 
+  # TODO: move so its reusable
   services.flatpak.enable = true;
 
+  # TODO: move so its reusable
   # enable here, but configure at home manager
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true; # recommended for most users
+  };
 
+  # TODO: move so its reusable
+  services.displayManager.ly.enable = true;
+
+  # TODO: move so its reusable
   # PAM configuration for hyprlock
   security.pam.services.hyprlock = {};
 
@@ -72,8 +81,6 @@
   #   enable = true;
   #   pulse.enable = true;
   # };
-
-  services.displayManager.ly.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
