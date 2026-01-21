@@ -5,6 +5,7 @@
   ];
 
   home.packages = with pkgs; [
+    grimblast
     rose-pine-hyprcursor
     xfce.xfce4-notifyd
     pavucontrol
