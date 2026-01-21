@@ -45,6 +45,7 @@
           font_family = "Monospace";
           placeholder_text = "Input password...";
           fail_text = "$PAMFAIL";
+          hide_input = false;
           dots_spacing = 0.3;
           position = "0, -20";
           halign = "center";
@@ -70,6 +71,42 @@
           position = "-30, -150";
           halign = "right";
           valign = "top";
+        }
+        {
+          monitor = "";
+          text = "$LAYOUT";
+          font_size = 20;
+          font_family = "Monospace";
+          position = "0, -100";
+          halign = "center";
+          valign = "center";
+        }
+        {
+          monitor = "";
+          text = "User: $USER | Attempts: $ATTEMPTS";
+          font_size = 16;
+          font_family = "Monospace";
+          position = "0, -140";
+          halign = "center";
+          valign = "center";
+        }
+        {
+          monitor = "";
+          text = "Last fail: $FAIL";
+          font_size = 16;
+          font_family = "Monospace";
+          position = "0, -170";
+          halign = "center";
+          valign = "center";
+        }
+        {
+          monitor = "";
+          text = "PAM prompt: $PAMPROMPT";
+          font_size = 16;
+          font_family = "Monospace";
+          position = "0, -200";
+          halign = "center";
+          valign = "center";
         }
       ];
     };
