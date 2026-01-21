@@ -22,6 +22,7 @@
     pkgs.kubectl
     pkgs.glow
     pkgs.file
+    pkgs.nix-index
     f.packages.${pkgs.stdenv.hostPlatform.system}.default
     # TODO: remove this in favor of per-project flake
     pkgs.go
