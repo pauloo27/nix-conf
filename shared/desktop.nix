@@ -17,6 +17,7 @@
     pkgs.wl-clipboard
     pkgs.nemo
     pkgs.eog
+    pkgs.xdg-desktop-portal-gtk
     llame.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
