@@ -17,7 +17,6 @@
     pkgs.wl-clipboard
     pkgs.nemo
     pkgs.xfce.ristretto
-    pkgs.xdg-desktop-portal-gtk
     pkgs.xarchiver
     pkgs.freelens-bin
     llame.packages.${pkgs.stdenv.hostPlatform.system}.default

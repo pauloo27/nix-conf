@@ -10,6 +10,17 @@
     export PATH=$HOME/.nix-profile/bin:$PATH
   '';
 
+  # Configure XDG desktop portals - GTK for file chooser, Hyprland for screensharing
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config.common = {
+      default = [ "gtk" ];
+      "org.freedesktop.impl.portal.Screenshot" = [ "hyprland" ];
+      "org.freedesktop.impl.portal.ScreenCast" = [ "hyprland" ];
+    };
+  };
+
   # Fix cursor size for XWayland apps (like Discord flatpak)
   home.sessionVariables = {
     XCURSOR_SIZE = "16";
@@ -21,6 +32,7 @@
     xfce.xfce4-notifyd
     pavucontrol
     uwsm
+    xdg-desktop-portal-gtk
   ];
 
   services.hyprpolkitagent.enable = true;
