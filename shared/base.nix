@@ -33,10 +33,6 @@
     pkgs.unzip
     pkgs.imagemagick
     f.packages.${pkgs.stdenv.hostPlatform.system}.default
-    # TODO: remove this in favor of per-project flake
-    pkgs.go
-    pkgs.gopls
-    pkgs.nil
   ];
 
   programs.home-manager.enable = true;

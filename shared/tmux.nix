@@ -2,6 +2,7 @@
 {
   programs.tmux = {
     enable = true;
+    shell = "${pkgs.zsh}/bin/zsh";
     extraConfig = ''
       # make color and stuff work
       set -g default-terminal 'tmux-256color'

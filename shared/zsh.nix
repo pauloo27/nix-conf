@@ -160,8 +160,8 @@
       # Source extra config (secrets, machine-specific settings)
       [ -f $HOME/.extra.zsh ] && source $HOME/.extra.zsh
 
-      # System fetch on startup
-      f
+      # System fetch on startup (skip if in nix dev profile)
+      [ -z "$USING_NIX_DEV" ] && f
     '';
   };
 }
