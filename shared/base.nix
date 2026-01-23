@@ -32,6 +32,7 @@
     pkgs.zip
     pkgs.unzip
     pkgs.imagemagick
+    pkgs.awscli2
     f.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
