@@ -22,6 +22,7 @@
     pkgs.ripgrep
     pkgs.claude-code
     pkgs.btop
+    pkgs.wget
     pkgs.k9s
     pkgs.kubectl
     pkgs.helm
