@@ -25,7 +25,7 @@
     pkgs.wget
     pkgs.k9s
     pkgs.kubectl
-    pkgs.helm
+    pkgs.kubernetes-helm
     pkgs.glow
     pkgs.file
     pkgs.nix-index
