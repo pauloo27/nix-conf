@@ -25,6 +25,22 @@
 
   services.hyprpolkitagent.enable = true;
 
+  services.hyprsunset = {
+    enable = true;
+    settings = {
+      profile = [
+        {
+          time = "7:30";
+          identity = true;
+        }
+        {
+          time = "21:00";
+          temperature = 4500;
+        }
+      ];
+    };
+  };
+
   services.hyprpaper = {
     enable = true;
     settings = {
