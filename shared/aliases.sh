@@ -17,29 +17,6 @@ NIX_DEV_PROFILES_PATH="$HOME/.config/nix-conf/dev"
   USING_NIX_DEV="local" nix develop -c $SHELL
 }
 
-## Load a dev profile
-,np() {
-  PROFILE=$1
-  if [ -z "$PROFILE" ]; then
-    ,nd
-    return 0
-  fi
-
-  if [ "$PROFILE" = "local" ]; then
-    ,nd
-    return 0
-  fi
-
-  PROFILE_PATH="$NIX_DEV_PROFILES_PATH/$PROFILE"
-  if [ ! -d "$PROFILE_PATH" ]; then
-    echo "profile '$PROFILE' not found"
-    echo "available profiles: $(ls -1 $NIX_DEV_PROFILES_PATH | tr '\n' ' ')"
-    return 1
-  fi
-
-  USING_NIX_DEV="$PROFILE" nix develop "$PROFILE_PATH" -c $SHELL
-}
-
 # Git cool
 alias g=git
 
