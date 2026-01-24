@@ -2,13 +2,13 @@
 {
 
   imports = [
-    ../../shared/base.nix
-    ../../shared/zsh.nix
-    ../../shared/git.nix
-    ../../shared/tmux.nix
-    ../../shared/desktop.nix
-    ../../shared/waybar_laptop.nix
-    ../../shared/linux.nix
+    ../../shared/home/base.nix
+    ../../shared/home/zsh.nix
+    ../../shared/home/git.nix
+    ../../shared/home/tmux.nix
+    ../../shared/home/desktop.nix
+    ../../shared/home/waybar_laptop.nix
+    ../../shared/home/linux.nix
   ];
 
   home.packages = [

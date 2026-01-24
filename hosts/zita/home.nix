@@ -1,14 +1,14 @@
 { pkgs, ... }:
 {
   imports = [
-    ../../shared/base.nix
-    ../../shared/zsh.nix
-    ../../shared/desktop.nix
-    ../../shared/waybar_laptop.nix
-    ../../shared/git.nix
-    ../../shared/tmux.nix
-    ../../shared/linux.nix
-    ../../shared/non-nix.nix
+    ../../shared/home/base.nix
+    ../../shared/home/zsh.nix
+    ../../shared/home/desktop.nix
+    ../../shared/home/waybar_laptop.nix
+    ../../shared/home/git.nix
+    ../../shared/home/tmux.nix
+    ../../shared/home/linux.nix
+    ../../shared/home/non-nix.nix
   ];
 
   home.packages = [
