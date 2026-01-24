@@ -105,8 +105,6 @@
       select-word-style bash
       source ${./zsh_keybinds}
 
-      fpath=(~/.config/zsh/completions $fpath)
-
       # Completion - cache compinit for faster startup
       autoload -Uz compinit
       setopt extended_glob

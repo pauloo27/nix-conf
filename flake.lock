@@ -8,14 +8,13 @@
       "locked": {
         "lastModified": 1767413008,
         "narHash": "sha256-5ghQpwr9Z14y1PmnLaNq0nGEAJvd1YuAjkpj4G2BQiM=",
-        "ref": "master",
+        "ref": "refs/heads/master",
         "rev": "e95e3fcafd21ca3f45703536419c900cf88d3a2d",
         "revCount": 41,
         "type": "git",
         "url": "https://code.db.cafe/pauloo27/f.git"
       },
       "original": {
-        "ref": "master",
         "type": "git",
         "url": "https://code.db.cafe/pauloo27/f.git"
       }
@@ -77,6 +76,24 @@
     "flake-utils_4": {
       "inputs": {
         "systems": "systems_4"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_5": {
+      "inputs": {
+        "systems": "systems_5"
       },
       "locked": {
         "lastModified": 1731533236,
@@ -198,6 +215,22 @@
     },
     "nixpkgs_4": {
       "locked": {
+        "lastModified": 1769089682,
+        "narHash": "sha256-9yA/LIuAVQq0lXelrZPjLuLVuZdm03p8tfmHhnDIkms=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "078d69f03934859a181e81ba987c2bb033eebfc5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-25.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_5": {
+      "locked": {
         "lastModified": 1767892417,
         "narHash": "sha256-dhhvQY67aboBk8b0/u0XB6vwHdgbROZT3fJAjyNh5Ww=",
         "owner": "NixOS",
@@ -212,7 +245,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_5": {
+    "nixpkgs_6": {
       "locked": {
         "lastModified": 1766902085,
         "narHash": "sha256-coBu0ONtFzlwwVBzmjacUQwj3G+lybcZ1oeNSQkgC0M=",
@@ -228,6 +261,25 @@
         "type": "github"
       }
     },
+    "np": {
+      "inputs": {
+        "flake-utils": "flake-utils_3",
+        "nixpkgs": "nixpkgs_4"
+      },
+      "locked": {
+        "lastModified": 1769228505,
+        "narHash": "sha256-oOYyQ8tByJ8/M6EksBu9+f4cCZFgAnbPRWx3I9lD9Mc=",
+        "ref": "refs/heads/main",
+        "rev": "b79ccb2b25a84298fb77555a7e383ef5f5728eec",
+        "revCount": 12,
+        "type": "git",
+        "url": "https://code.db.cafe/pauloo27/np.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://code.db.cafe/pauloo27/np.git"
+      }
+    },
     "root": {
       "inputs": {
         "f": "f",
@@ -235,26 +287,26 @@
         "llame": "llame",
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs_3",
+        "np": "np",
         "smsh": "smsh",
         "tldr": "tldr"
       }
     },
     "smsh": {
       "inputs": {
-        "flake-utils": "flake-utils_3",
-        "nixpkgs": "nixpkgs_4"
+        "flake-utils": "flake-utils_4",
+        "nixpkgs": "nixpkgs_5"
       },
       "locked": {
         "lastModified": 1768963253,
         "narHash": "sha256-ejelNyySoAVMaW4vD0KMOdj7nWEm0r+xKcw8/r6Bl+s=",
-        "ref": "master",
+        "ref": "refs/heads/master",
         "rev": "c3019d333cfbd34d245e1113940aa96d89d69c7c",
         "revCount": 25,
         "type": "git",
         "url": "https://code.db.cafe/pauloo27/smsh.git"
       },
       "original": {
-        "ref": "master",
         "type": "git",
         "url": "https://code.db.cafe/pauloo27/smsh.git"
       }
@@ -319,10 +371,25 @@
         "type": "github"
       }
     },
+    "systems_5": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
     "tldr": {
       "inputs": {
-        "flake-utils": "flake-utils_4",
-        "nixpkgs": "nixpkgs_5"
+        "flake-utils": "flake-utils_5",
+        "nixpkgs": "nixpkgs_6"
       },
       "locked": {
         "lastModified": 1767402538,

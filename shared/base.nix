@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   tldr,
   f,
   ...
@@ -47,6 +48,12 @@
   programs.tldr-go = {
     enable = true;
     viewer = "glow";
+  };
+
+  programs.np = {
+    enable = true;
+    profilesPath = "${config.xdg.configHome}/nix-conf/dev";
+    tmux.windowCount = 4;
   };
 
   services.gpg-agent.enable = true;

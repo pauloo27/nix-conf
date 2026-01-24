@@ -10,16 +10,9 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     tldr.url = "github:pauloo27/tldr";
     llame.url = "github:pauloo27/llame";
-    f = {
-      url = "https://code.db.cafe/pauloo27/f.git";
-      type = "git";
-      ref = "master";
-    };
-    smsh = {
-      url = "https://code.db.cafe/pauloo27/smsh.git";
-      type = "git";
-      ref = "master";
-    };
+    f.url = "git+https://code.db.cafe/pauloo27/f.git";
+    smsh.url = "git+https://code.db.cafe/pauloo27/smsh.git";
+    np.url = "git+https://code.db.cafe/pauloo27/np.git";
   };
 
   outputs =
@@ -31,6 +24,7 @@
       tldr,
       llame,
       smsh,
+      np,
       ...
     }@inputs:
     let
@@ -76,6 +70,7 @@
           modules = [
             ./hosts/${name}/home.nix
             nix-flatpak.homeManagerModules.nix-flatpak
+            np.homeManagerModules.default
           ];
           extraSpecialArgs = {
             inherit
