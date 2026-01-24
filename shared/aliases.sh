@@ -9,14 +9,6 @@ alias secret="cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n
 # Clear
 alias c=clear
 
-# Nix
-NIX_DEV_PROFILES_PATH="$HOME/.config/nix-conf/dev"
-
-## Develop shell but not bash
-,nd() {
-  USING_NIX_DEV="local" nix develop -c $SHELL
-}
-
 # Git cool
 alias g=git
 
@@ -186,6 +178,12 @@ mkcd () {
   mkdir "$1"
   cd "$1"
 }
+
+## Develop shell but not bash
+alias ,nd="np dev"
+
+## Load a dev profile
+alias ,np="np run"
 
 # Tmux
 ,t() {
