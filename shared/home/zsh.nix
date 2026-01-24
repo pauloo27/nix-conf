@@ -27,7 +27,10 @@
         error_symbol = "[λ](red)";
       };
       golang = {
-        symbol = " ";
+        symbol = " ";
+      };
+      nix_shell = {
+        symbol = "󱄅 ";
       };
       battery = {
         disabled = true;
@@ -45,7 +48,7 @@
         disabled = true;
       };
       deno = {
-        symbol = " ";
+        symbol = " ";
       };
       hostname = {
         ssh_symbol = "󰖟 ";
