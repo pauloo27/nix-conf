@@ -19,11 +19,11 @@ is_nixos() {
 
 if is_nixos; then
   echo "Cleaning up system generations..."
-  sudo nix-env -p /nix/var/nix/profiles/system --delete-generations old
+  sudo nix-env -p /nix/var/nix/profiles/system --delete-generations +5
 fi
 
 echo "Cleaning up old home-manager generations..."
-nix-env --delete-generations old
+nix-env --delete-generations +5
 
 echo "Running garbage collection..."
 if is_nixos; then
