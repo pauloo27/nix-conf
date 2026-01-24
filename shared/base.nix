@@ -12,6 +12,12 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  nix.gc = {
+    automatic = true;
+    frequency = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   home.sessionPath = [
     "$HOME/.nix-profile/bin"
   ];
