@@ -13,28 +13,14 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../../shared/nixos/base.nix
+    ../../shared/nixos/hyprland.nix
+    ../../shared/nixos/flatpak.nix
   ];
 
   # Finger print sensor
   #services.fprintd.enable = true;
   #services.fprintd.tod.driver = pkgs.libfprint-2-tod1-goodix; # Goodix driver module
-
-  # TODO: move so its reusable
-  services.flatpak.enable = true;
-
-  # TODO: move so its reusable
-  # enable here, but configure at home manager
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true; # recommended for most users
-  };
-
-  # TODO: move so its reusable
-  services.displayManager.gdm.enable = true;
-
-  # TODO: move so its reusable
-  # PAM configuration for hyprlock
-  security.pam.services.hyprlock = { };
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
