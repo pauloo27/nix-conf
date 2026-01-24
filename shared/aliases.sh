@@ -179,53 +179,21 @@ mkcd () {
   cd "$1"
 }
 
+# Nix + Tmux + "np"
+
 ## Develop shell but not bash
 alias ,nd="np dev"
 
 ## Load a dev profile
 alias ,np="np run"
 
-# Tmux
-,t() {
-  SESSION_NAME=$(basename "$PWD")
-  NUM_WINDOWS=4
+## Open tmux with profiles
+alias ,nt="np tmux"
 
-  if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
-    tmux attach-session -t "$SESSION_NAME"
-  else
-    tmux new-session -d -s "$SESSION_NAME"
+## Set tmux folder profile
+alias ,ns="np set"
 
-    for i in $(seq 2 $NUM_WINDOWS); do
-      tmux new-window -t "$SESSION_NAME"
-    done
-
-    if [ -n "$USING_NIX_DEV" ]; then
-      for i in $(seq 1 $NUM_WINDOWS); do
-        tmux send-keys -t "$SESSION_NAME:$i" ",np $USING_NIX_DEV" C-m
-      done
-    fi
-
-    tmux attach-session -t "$SESSION_NAME:1"
-  fi
-}
-
-,nt() {
-  PROFILE=$1
-  if [ -z "$PROFILE" ]; then
-    USING_NIX_DEV="local" ,t
-    return 0
-  fi
-
-  PROFILE_PATH="$NIX_DEV_PROFILES_PATH/$PROFILE"
-  if [ ! -d "$PROFILE_PATH" ]; then
-    echo "profile '$PROFILE' not found"
-    echo "available profiles: $(ls -1 $NIX_DEV_PROFILES_PATH | tr '\n' ' ')"
-    return 1
-  fi
-
-  USING_NIX_DEV="$PROFILE" ,t
-}
-
+## Kill current tmux session
 ,tkk() {
   tmux kill-session
 }
