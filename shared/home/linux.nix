@@ -3,6 +3,8 @@
   # Linux-specific configuration
   # Don't import this on macOS hosts
 
+  xdg.enable = true;
+
   xdg.userDirs = {
     enable = true;
     createDirectories = true;

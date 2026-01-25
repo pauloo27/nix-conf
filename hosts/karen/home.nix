@@ -1,10 +1,10 @@
 { pkgs, f, ... }:
 {
   imports = [
+    ../../shared/home/linux.nix
     ../../shared/home/base.nix
     ../../shared/home/zsh.nix
     ../../shared/home/tmux.nix
-    ../../shared/home/linux.nix
   ];
 
   programs.git = {
