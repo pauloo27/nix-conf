@@ -187,6 +187,12 @@ alias ,nd="np dev"
 ## Load a dev profile
 alias ,np="np run"
 
+## Start nix shell with pkgs
+alias ,ns="np shell"
+
+## Exec package from nixpkgs
+alias ,nx="np x"
+
 ## Open tmux with profiles
 alias ,nt="np tmux"
 
