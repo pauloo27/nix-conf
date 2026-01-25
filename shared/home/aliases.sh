@@ -185,13 +185,13 @@ mkcd () {
 alias ,nd="np dev"
 
 ## Load a dev profile
-alias ,np="np run"
+alias ,np="np profile"
 
 ## Start nix shell with pkgs
 alias ,nz="np shell"
 
 ## Exec package from nixpkgs
-alias ,nx="np x"
+alias ,nx="np run"
 
 ## Open tmux with profiles
 alias ,nt="np tmux"
