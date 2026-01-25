@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## Upgrade
-alias upgrade="flatpak update && yay -Syu --cleanmenu=false --diffmenu=false --editmenu=false --sudoloop && notify-send 'System upgraded'"
+alias upgrade="flatpak update && yay -Syu --cleanmenu=false --diffmenu=false --editmenu=false --sudoloop"
 
 # Random secret
 alias secret="cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1"
