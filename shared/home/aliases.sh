@@ -188,7 +188,7 @@ alias ,nd="np dev"
 alias ,np="np run"
 
 ## Start nix shell with pkgs
-alias ,ns="np shell"
+alias ,nz="np shell"
 
 ## Exec package from nixpkgs
 alias ,nx="np x"
