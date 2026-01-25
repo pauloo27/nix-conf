@@ -111,7 +111,7 @@
   users.users.paulo = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
-    shell = pkgs.zsh;
+    #shell = pkgs.zsh;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJZi/6VQsVTQLy58jWcG33/JttCoLfaweRX26U2gQ1JD git@pauloo27.dev"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFA9yA40Dw4MrwGXTOFEXbiBQFWNGXTgf6hsyegFYpn5 paulo@melinda"
@@ -174,8 +174,6 @@
     enable = true;
     settings.show_cpu_temperature = 1;
   };
-
-  programs.zsh.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
