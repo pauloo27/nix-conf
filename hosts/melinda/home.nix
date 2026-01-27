@@ -12,7 +12,6 @@
 
   home.packages = [
     pkgs.hello
-    pkgs.terraform
   ];
 
   # Override caps:swapescape for desktop (not needed with custom keyboard)

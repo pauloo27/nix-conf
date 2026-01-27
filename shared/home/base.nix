@@ -34,17 +34,9 @@
     pkgs.zip
     pkgs.unzip
     pkgs.imagemagick
-    # TODO: move per repo?
-    pkgs.awscli2
-    pkgs.k9s
-    pkgs.kubectl
-    pkgs.kubernetes-helm
     pkgs.rbw
     pkgs.jq
     f.packages.${pkgs.stdenv.hostPlatform.system}.default
-    # TODO: remove
-    pkgs.clang
-    pkgs.clang-tools
   ];
 
   programs.home-manager.enable = true;
