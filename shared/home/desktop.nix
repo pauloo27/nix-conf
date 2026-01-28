@@ -18,7 +18,6 @@
     pkgs.nemo
     pkgs.xfce.ristretto
     pkgs.xarchiver
-    pkgs.freelens-bin
     llame.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
