@@ -267,11 +267,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1769526705,
-        "narHash": "sha256-YElONmcQahC4JDuxOizbDWLvK7EmjlPcb6ilD+KNEQo=",
+        "lastModified": 1769742629,
+        "narHash": "sha256-315F/CFY0CV/0krHMQ1gaCLZAxAHBWYUIw9VHzPhsU8=",
         "ref": "refs/heads/main",
-        "rev": "ba32604d4f21bc8c2682af6a3e537c5ae2e16fef",
-        "revCount": 18,
+        "rev": "13864fae7955ca33cde44cb14149d45836570bff",
+        "revCount": 26,
         "type": "git",
         "url": "https://code.db.cafe/pauloo27/np.git"
       },

@@ -163,6 +163,9 @@
       # Source extra config (secrets, machine-specific settings)
       [ -f $HOME/.extra.zsh ] && source $HOME/.extra.zsh
 
+      # Load the profile in case it "should" be using one and isn't
+      np load
+
       # System fetch on startup (skip if in nix dev profile)
       [ -z "$USING_NIX_DEV" ] && f
     '';
