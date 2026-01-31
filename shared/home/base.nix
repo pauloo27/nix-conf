@@ -55,7 +55,7 @@
   programs.np = {
     enable = true;
     profilesPath = "${config.xdg.configHome}/nix-conf/dev";
-    tmux.windowCount = 4;
+    tmuxBaseWindowIndex = 1;
   };
 
   services.gpg-agent.enable = true;
