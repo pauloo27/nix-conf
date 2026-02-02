@@ -26,6 +26,8 @@
           default = pkgs.mkShell {
             packages = with pkgs; [
               nodejs_22
+              eslint_d
+              biome
               nodePackages.npm
               nodePackages.pnpm
               nodePackages.yarn
