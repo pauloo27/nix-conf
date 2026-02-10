@@ -44,6 +44,16 @@ is_nixos() {
 info "Updating flake inputs..."
 nix flake update
 
+info "Updating dev environment flakes..."
+for dev_env in ./dev/*; do
+  if [[ -d "$dev_env" && -f "$dev_env/flake.nix" ]]; then
+    env_name=$(basename "$dev_env")
+    info "  Updating $env_name..."
+    (cd "$dev_env" && nix flake update)
+    success "  $env_name updated"
+  fi
+done
+
 if is_nixos; then
   info "Applying system configuration for $HOSTNAME..."
   ./apply-os.sh
