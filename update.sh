@@ -64,7 +64,4 @@ fi
 info "Applying home configuration for $HOSTNAME..."
 ./apply.sh
 
-info "Cleaning up old generations..."
-./clean-up.sh
-
 success "System updated successfully."
