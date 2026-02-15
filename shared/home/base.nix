@@ -25,7 +25,6 @@
   # Common packages for all hosts
   home.packages = [
     pkgs.ripgrep
-    pkgs.claude-code
     pkgs.btop
     pkgs.wget
     pkgs.glow

@@ -101,6 +101,8 @@
         export PATH="$HOME/.nix-profile/bin:$PATH"
       fi
 
+      export PATH="$PATH:$HOME/.local/bin"
+
       export GPG_TTY=$(tty)
 
       # Load Keybinds
