@@ -9,6 +9,7 @@
     ../../shared/home/desktop.nix
     ../../shared/home/waybar_laptop.nix
     ../../shared/home/linux.nix
+    ../../shared/home/nvim/nvim.nix
   ];
 
   home.packages = [
