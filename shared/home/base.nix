@@ -8,7 +8,6 @@
 {
   imports = [
     tldr.homeManagerModules.default
-    ./claude-code.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
