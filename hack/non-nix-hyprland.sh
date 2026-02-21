@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
-SUFFIX=""
+BINDIR="/usr/local/bin"
+DESKTOP="hyprland"
 if [ "$(whoami)" = "work" ]; then
-  SUFFIX="-work"
+  BINDIR="/usr/local/bin/work"
+  DESKTOP="hyprland-work"
+  sudo mkdir -p "$BINDIR"
 fi
 
-sudo cp ./hyprland${SUFFIX}.desktop /usr/share/wayland-sessions/hyprland${SUFFIX}.desktop
-sudo ln -s ~/.nix-profile/bin/Hyprland /usr/local/bin/Hyprland$SUFFIX
-sudo ln -s ~/.nix-profile/bin/uwsm /usr/local/bin/uwsm$SUFFIX
+sudo cp ./${DESKTOP}.desktop /usr/share/wayland-sessions/${DESKTOP}.desktop
+sudo ln -s ~/.nix-profile/bin/Hyprland "$BINDIR/Hyprland"
+sudo ln -s ~/.nix-profile/bin/uwsm "$BINDIR/uwsm"
 
 # Link systemd user units
 mkdir -p ~/.config/systemd/user
