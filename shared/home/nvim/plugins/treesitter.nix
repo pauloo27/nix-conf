@@ -1,18 +1,32 @@
-{ pkgs, ... }:
 {
-  programs.neovim.plugins = [
-    (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [
-      p.c
-      p.json
-      p.lua
-      p.vim
-      p.vimdoc
-      p.query
-      p.markdown
-      p.markdown_inline
-      p.sql
-    ]))
-  ];
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
+  options.myNvim.treesitter.parsers = lib.mkOption {
+    type = lib.types.listOf lib.types.str;
+    default = [ ];
+  };
 
-  programs.neovim.extraLuaConfig = builtins.readFile ./treesitter.lua;
+  config = {
+    myNvim.treesitter.parsers = [
+      "c"
+      "json"
+      "lua"
+      "vim"
+      "vimdoc"
+      "query"
+      "markdown"
+      "markdown_inline"
+      "sql"
+    ];
+
+    programs.neovim.plugins = [
+      (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: map (l: p.${l}) config.myNvim.treesitter.parsers))
+    ];
+
+    programs.neovim.extraLuaConfig = builtins.readFile ./treesitter.lua;
+  };
 }

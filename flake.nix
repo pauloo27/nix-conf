@@ -54,7 +54,9 @@
           arch = "x86_64-linux";
           extraNixosModules = [ ];
           extraUsers = {
-            melinda-work = { homeFile = ./hosts/melinda/home-work.nix; };
+            melinda-work = {
+              homeFile = ./hosts/melinda/home-work.nix;
+            };
           };
         };
       };
@@ -71,7 +73,9 @@
 
       mkHomeSystem =
         name: config:
-        { homeFile ? ./hosts/${name}/home.nix }:
+        {
+          homeFile ? ./hosts/${name}/home.nix,
+        }:
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${config.arch};
           modules = [

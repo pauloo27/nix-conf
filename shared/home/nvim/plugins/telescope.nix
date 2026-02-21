@@ -6,7 +6,10 @@
     pkgs.vimPlugins.plenary-nvim
   ];
 
-  programs.neovim.extraPackages = [ pkgs.ripgrep pkgs.fd ];
+  programs.neovim.extraPackages = [
+    pkgs.ripgrep
+    pkgs.fd
+  ];
 
   programs.neovim.extraLuaConfig = builtins.readFile ./telescope.lua;
 }
