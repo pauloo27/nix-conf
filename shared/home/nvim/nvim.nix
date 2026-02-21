@@ -5,6 +5,7 @@
     ./plugins/rose-pine.nix
     ./plugins/telescope.nix
     ./plugins/lualine.nix
+    ./plugins/treesitter.nix
   ];
 
   programs.neovim = {
