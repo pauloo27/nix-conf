@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
-sudo cp ./hyprland.desktop /usr/share/wayland-sessions/hyprland.desktop
-sudo ln -s ~/.nix-profile/bin/Hyprland /usr/local/bin/Hyprland
-sudo ln -s ~/.nix-profile/bin/uwsm /usr/local/bin/uwsm
+SUFFIX=""
+if [ "$(whoami)" = "work" ]; then
+  SUFFIX="-work"
+fi
+
+sudo cp ./hyprland${SUFFIX}.desktop /usr/share/wayland-sessions/hyprland${SUFFIX}.desktop
+sudo ln -s ~/.nix-profile/bin/Hyprland /usr/local/bin/Hyprland$SUFFIX
+sudo ln -s ~/.nix-profile/bin/uwsm /usr/local/bin/uwsm$SUFFIX
 
 # Link systemd user units
 mkdir -p ~/.config/systemd/user
