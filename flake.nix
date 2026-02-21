@@ -83,6 +83,26 @@
           };
         };
 
+      mkWorkHomeSystem =
+        name: config:
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.${config.arch};
+          modules = [
+            ./hosts/${name}/home-work.nix
+            nix-flatpak.homeManagerModules.nix-flatpak
+            np.homeManagerModules.default
+          ];
+          extraSpecialArgs = {
+            inherit
+              f
+              tldr
+              llame
+              smsh
+              ;
+            hostname = name;
+          };
+        };
+
     in
     {
       # Generate NixOS configurations for hosts with isNixOS = true
@@ -91,7 +111,11 @@
       );
 
       # Generate Home Manager configurations for all hosts
-      homeConfigurations = lib.mapAttrs (name: config: mkHomeSystem name config) hosts;
+      homeConfigurations =
+        lib.mapAttrs (name: config: mkHomeSystem name config) hosts
+        // {
+          melinda-work = mkWorkHomeSystem "melinda" hosts.melinda;
+        };
 
       # Development shell
       devShells =
