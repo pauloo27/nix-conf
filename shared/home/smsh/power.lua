@@ -82,7 +82,7 @@ if has_windows then
 				present = true,
 				exit_on_close = true,
 				on_yes = function()
-					run_unless_pacman("~/.config/scripts/reboot-into-windows.sh")
+					run_unless_pacman("~/.config/nix-config/scripts/reboot-into-windows.sh")
 					os.exit(0)
 				end,
 			})
