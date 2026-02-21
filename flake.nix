@@ -35,21 +35,27 @@
           isNixOS = true;
           arch = "x86_64-linux";
           extraNixosModules = [ ];
+          extraUsers = { };
         };
         nancy = {
           isNixOS = true;
           arch = "x86_64-linux";
           extraNixosModules = [ ];
+          extraUsers = { };
         };
         zita = {
           isNixOS = false;
           arch = "x86_64-linux";
           extraNixosModules = [ ];
+          extraUsers = { };
         };
         melinda = {
           isNixOS = false;
           arch = "x86_64-linux";
           extraNixosModules = [ ];
+          extraUsers = {
+            melinda-work = { homeFile = ./hosts/melinda/home-work.nix; };
+          };
         };
       };
 
@@ -65,30 +71,11 @@
 
       mkHomeSystem =
         name: config:
+        { homeFile ? ./hosts/${name}/home.nix }:
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${config.arch};
           modules = [
-            ./hosts/${name}/home.nix
-            nix-flatpak.homeManagerModules.nix-flatpak
-            np.homeManagerModules.default
-          ];
-          extraSpecialArgs = {
-            inherit
-              f
-              tldr
-              llame
-              smsh
-              ;
-            hostname = name;
-          };
-        };
-
-      mkWorkHomeSystem =
-        name: config:
-        home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.${config.arch};
-          modules = [
-            ./hosts/${name}/home-work.nix
+            homeFile
             nix-flatpak.homeManagerModules.nix-flatpak
             np.homeManagerModules.default
           ];
@@ -112,10 +99,11 @@
 
       # Generate Home Manager configurations for all hosts
       homeConfigurations =
-        lib.mapAttrs (name: config: mkHomeSystem name config) hosts
-        // {
-          melinda-work = mkWorkHomeSystem "melinda" hosts.melinda;
-        };
+        lib.mapAttrs (name: config: mkHomeSystem name config { }) hosts
+        // lib.foldlAttrs (
+          acc: name: config:
+          acc // lib.mapAttrs (_: userConfig: mkHomeSystem name config userConfig) config.extraUsers
+        ) { } hosts;
 
       # Development shell
       devShells =
