@@ -6,6 +6,7 @@
     ./plugins/telescope.nix
     ./plugins/lualine.nix
     ./plugins/treesitter.nix
+    ./plugins/lsp.nix
   ];
 
   programs.neovim = {
