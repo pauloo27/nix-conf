@@ -38,6 +38,7 @@ map("t", "<C-[>", "<Esc>", { noremap = true })
 
 vim.opt.clipboard = "unnamedplus"
 
+-- FIXME: nix friendly path!!
 -- "sudo" write
 map(
 	"n",

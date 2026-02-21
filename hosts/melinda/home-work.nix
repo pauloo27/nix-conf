@@ -8,6 +8,7 @@
     ../../shared/home/tmux.nix
     ../../shared/home/linux.nix
     ../../shared/home/non-nix.nix
+    ../../shared/home/nvim/nvim.nix
   ];
 
   home.packages = [
