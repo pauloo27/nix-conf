@@ -6,7 +6,7 @@ HOSTNAME=$(cat /etc/hostname)
 
 # Source shared configuration
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "$SCRIPT_DIR/nixos-hosts.sh"
+source "$SCRIPT_DIR/hosts.sh"
 
 is_nixos() {
   for system in "${NIXOS_HOSTNAMES[@]}"; do

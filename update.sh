@@ -14,7 +14,7 @@ UPDATE_LOG="last-update.txt"
 
 # Source shared configuration
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "$SCRIPT_DIR/nixos-hosts.sh"
+source "$SCRIPT_DIR/hosts.sh"
 
 info() {
   echo -e "${BLUE}[INFO]${RESET} $1"
