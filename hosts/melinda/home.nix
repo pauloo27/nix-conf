@@ -5,10 +5,16 @@
     ../../shared/home/zsh.nix
     ../../shared/home/git.nix
     ../../shared/home/desktop.nix
-    ../../shared/home/nvim/nvim.nix
     ../../shared/home/tmux.nix
     ../../shared/home/linux.nix
     ../../shared/home/non-nix.nix
+
+    # nvim + langs
+    ../../shared/home/nvim/nvim.nix
+    ../../shared/home/nvim/langs/lua.nix
+    ../../shared/home/nvim/langs/go.nix
+    ../../shared/home/nvim/langs/rust.nix
+    ../../shared/home/nvim/langs/nix.nix
   ];
 
   home.packages = [
