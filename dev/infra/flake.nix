@@ -1,41 +1,51 @@
 {
-  description = "Infrastructure development environment";
+  description = "Nix flake for Helm and Helmfile with plugins";
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
-  };
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/master";
+  inputs.flake-utils.url = "github:numtide/flake-utils";
 
   outputs =
-    { self, nixpkgs }:
-    let
-      systems = [
-        "x86_64-linux"
-        "aarch64-linux"
-        "x86_64-darwin"
-        "aarch64-darwin"
-      ];
-      forAllSystems = nixpkgs.lib.genAttrs systems;
-    in
     {
-      devShells = forAllSystems (
-        system:
-        let
-          pkgs = import nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
+      self,
+      nixpkgs,
+      flake-utils,
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = import nixpkgs {
+          inherit system;
+          config = {
+            allowUnfree = true;
           };
-        in
-        {
-          default = pkgs.mkShell {
-            packages = with pkgs; [
-              awscli2
-              k9s
-              kubectl
-              kubernetes-helm
-              terraform
-            ];
-          };
-        }
-      );
-    };
+        };
+
+        kubernetes-helm-wrapped = pkgs.wrapHelm pkgs.kubernetes-helm {
+          plugins = with pkgs.kubernetes-helmPlugins; [
+            helm-diff
+            helm-secrets
+            helm-git
+            helm-s3
+          ];
+        };
+
+        helmfile-wrapped = pkgs.helmfile-wrapped.override {
+          inherit (kubernetes-helm-wrapped) pluginsDir;
+        };
+
+      in
+      {
+        devShells.default = pkgs.mkShell {
+          packages = [
+            kubernetes-helm-wrapped
+            helmfile-wrapped
+            pkgs.kustomize
+            pkgs.awscli2
+            pkgs.k9s
+            pkgs.kubectl
+            pkgs.terraform
+          ];
+        };
+      }
+    );
 }
