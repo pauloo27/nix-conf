@@ -3,8 +3,8 @@
   imports = [
     ../../shared/home/linux.nix
     ../../shared/home/base.nix
-    ../../shared/home/zsh.nix
-    ../../shared/home/tmux.nix
+    ../../shared/home/shell/zsh.nix
+    ../../shared/home/shell/tmux.nix
   ];
 
   programs.git = {

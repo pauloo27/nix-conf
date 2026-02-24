@@ -2,24 +2,24 @@
 {
   imports = [
     ../../shared/home/base.nix
-    ../../shared/home/zsh.nix
-    ../../shared/home/git.nix
-    ../../shared/home/hyprland.nix
-    ../../shared/home/tmux.nix
+    ../../shared/home/shell/zsh.nix
+    ../../shared/home/shell/git.nix
+    ../../shared/home/desktop/hyprland/hyprland.nix
+    ../../shared/home/shell/tmux.nix
     ../../shared/home/linux.nix
     ../../shared/home/non-nix.nix
 
     # nvim + langs
-    ../../shared/home/nvim/nvim.nix
-    ../../shared/home/nvim/langs/lua.nix
-    ../../shared/home/nvim/langs/go.nix
-    ../../shared/home/nvim/langs/rust.nix
-    ../../shared/home/nvim/langs/nix.nix
-    ../../shared/home/nvim/langs/js_and_ts.nix
-    ../../shared/home/nvim/langs/svelte.nix
-    ../../shared/home/nvim/langs/tailwindcss.nix
-    ../../shared/home/nvim/langs/terraform.nix
-    ../../shared/home/nvim/langs/yaml.nix
+    ../../shared/home/editor/nvim/nvim.nix
+    ../../shared/home/editor/nvim/langs/lua.nix
+    ../../shared/home/editor/nvim/langs/go.nix
+    ../../shared/home/editor/nvim/langs/rust.nix
+    ../../shared/home/editor/nvim/langs/nix.nix
+    ../../shared/home/editor/nvim/langs/js_and_ts.nix
+    ../../shared/home/editor/nvim/langs/svelte.nix
+    ../../shared/home/editor/nvim/langs/tailwindcss.nix
+    ../../shared/home/editor/nvim/langs/terraform.nix
+    ../../shared/home/editor/nvim/langs/yaml.nix
   ];
 
   home.packages = [

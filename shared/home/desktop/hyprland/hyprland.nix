@@ -1,14 +1,14 @@
 { pkgs, ... }:
 {
   imports = [
-    ./fonts.nix
-    ./flatpak.nix
-    ./gtk.nix
-    ./alacritty.nix
-    ./llame.nix
-    ./mpv.nix
+    ../fonts.nix
+    ../../apps/flatpak.nix
+    ../gtk.nix
+    ../../apps/alacritty.nix
+    ../../apps/llame.nix
+    ../../apps/mpv.nix
     ./hyprlock.nix
-    ./smsh/smsh.nix
+    ../smsh/smsh.nix
     ./waybar.nix
   ];
 
