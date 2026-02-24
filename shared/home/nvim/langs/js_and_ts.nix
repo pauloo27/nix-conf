@@ -7,10 +7,22 @@
   ];
 
   myNvim.conform.formatters_by_ft = {
-    javascript = [ "biome" "prettierd" ];
-    javascriptreact = [ "biome" "prettierd" ];
-    typescript = [ "biome" "prettierd" ];
-    typescriptreact = [ "biome" "prettierd" ];
+    javascript = [
+      "biome"
+      "prettierd"
+    ];
+    javascriptreact = [
+      "biome"
+      "prettierd"
+    ];
+    typescript = [
+      "biome"
+      "prettierd"
+    ];
+    typescriptreact = [
+      "biome"
+      "prettierd"
+    ];
   };
 
   myNvim.tailwindcss.filetypes = [

@@ -20,7 +20,6 @@
     ../../shared/home/nvim/langs/tailwindcss.nix
     ../../shared/home/nvim/langs/terraform.nix
     ../../shared/home/nvim/langs/yaml.nix
-    ../../shared/home/nvim/langs/helm.nix
   ];
 
   home.packages = [
