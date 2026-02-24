@@ -7,6 +7,7 @@
     ./plugins/lualine.nix
     ./plugins/treesitter.nix
     ./plugins/lsp.nix
+    ./plugins/conform.nix
   ];
 
   programs.neovim = {

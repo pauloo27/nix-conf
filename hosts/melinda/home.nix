@@ -15,6 +15,12 @@
     ../../shared/home/nvim/langs/go.nix
     ../../shared/home/nvim/langs/rust.nix
     ../../shared/home/nvim/langs/nix.nix
+    ../../shared/home/nvim/langs/js_and_ts.nix
+    ../../shared/home/nvim/langs/svelte.nix
+    ../../shared/home/nvim/langs/tailwindcss.nix
+    ../../shared/home/nvim/langs/terraform.nix
+    ../../shared/home/nvim/langs/yaml.nix
+    ../../shared/home/nvim/langs/helm.nix
   ];
 
   home.packages = [
