@@ -8,6 +8,7 @@
     ./plugins/treesitter.nix
     ./plugins/lsp.nix
     ./plugins/conform.nix
+    ./plugins/blink.nix
   ];
 
   programs.neovim = {
