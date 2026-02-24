@@ -4,7 +4,7 @@
     ../../shared/home/base.nix
     ../../shared/home/zsh.nix
     ../../shared/home/git.nix
-    ../../shared/home/desktop.nix
+    ../../shared/home/hyprland.nix
     ../../shared/home/tmux.nix
     ../../shared/home/linux.nix
     ../../shared/home/non-nix.nix

@@ -5,19 +5,7 @@
   ...
 }:
 {
-  imports = [
-    ./fonts.nix
-    ./flatpak.nix
-    ./gtk.nix
-    ./hyprland.nix
-    ./alacritty.nix
-  ];
-
   home.packages = [
-    pkgs.wl-clipboard
-    pkgs.nemo
-    pkgs.xfce.ristretto
-    pkgs.xarchiver
     llame.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
@@ -25,9 +13,4 @@
   xdg.configFile."llame/config.toml".text = ''
     css_file_path = "${config.home.homeDirectory}/.config/llame/style.css"
   '';
-
-  programs.mpv = {
-    enable = true;
-    scripts = [ pkgs.mpvScripts.mpris ];
-  };
 }

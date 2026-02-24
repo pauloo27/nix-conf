@@ -1,6 +1,12 @@
 { pkgs, ... }:
 {
   imports = [
+    ./fonts.nix
+    ./flatpak.nix
+    ./gtk.nix
+    ./alacritty.nix
+    ./llame.nix
+    ./mpv.nix
     ./hyprlock.nix
     ./smsh/smsh.nix
     ./waybar.nix
@@ -27,6 +33,10 @@
   };
 
   home.packages = with pkgs; [
+    wl-clipboard
+    nemo
+    xfce.ristretto
+    xarchiver
     grimblast
     hyprpicker
     xfce.xfce4-notifyd
