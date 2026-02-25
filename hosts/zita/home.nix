@@ -3,12 +3,14 @@
   imports = [
     ../../shared/home/base.nix
     ../../shared/home/shell/zsh.nix
-    ../../shared/home/desktop/hyprland/hyprland.nix
-    ../../shared/home/desktop/hyprland/waybar_laptop.nix
     ../../shared/home/shell/git.nix
     ../../shared/home/shell/tmux.nix
     ../../shared/home/linux.nix
     ../../shared/home/non-nix.nix
+
+    # desktop
+    ../../shared/home/desktop/niri/niri.nix
+    ../../shared/home/desktop/niri/waybar_laptop.nix
 
     # nvim + langs
     ../../shared/home/editor/nvim/nvim.nix
