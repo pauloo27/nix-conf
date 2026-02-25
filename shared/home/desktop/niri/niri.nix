@@ -1,4 +1,9 @@
+extraConfigs:
 { pkgs, ... }:
+let
+  base = builtins.readFile ./base.kdl;
+  extras = builtins.concatStringsSep "\n" (map builtins.readFile extraConfigs);
+in
 {
   imports = [
     ../fonts.nix
@@ -33,5 +38,5 @@
     };
   };
 
-  xdg.configFile."niri/config.kdl".source = ./config.kdl;
+  xdg.configFile."niri/config.kdl".text = base + "\n" + extras;
 }

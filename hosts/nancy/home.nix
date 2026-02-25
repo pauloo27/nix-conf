@@ -2,13 +2,20 @@
 {
 
   imports = [
+    # base os stuff
+    ../../shared/home/linux.nix
+
+    # generic crap most stuff currently need
     ../../shared/home/base.nix
+
+    # shell stuff
     ../../shared/home/shell/zsh.nix
     ../../shared/home/shell/git.nix
     ../../shared/home/shell/tmux.nix
+
+    # desktop
     ../../shared/home/desktop/hyprland/hyprland.nix
     ../../shared/home/desktop/hyprland/waybar_laptop.nix
-    ../../shared/home/linux.nix
 
     # nvim + langs
     ../../shared/home/editor/nvim/nvim.nix

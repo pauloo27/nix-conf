@@ -1,0 +1,22 @@
+input {
+    keyboard {
+        xkb {
+            layout "us"
+            variant "altgr-intl"
+            options "caps:swapescape"
+        }
+
+        numlock
+    }
+
+    touchpad {
+        tap
+        natural-scroll
+    }
+
+    mouse {
+    }
+
+    trackpoint {
+    }
+}

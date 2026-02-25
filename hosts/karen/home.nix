@@ -1,8 +1,13 @@
 { pkgs, f, ... }:
 {
   imports = [
+    # base os stuff
     ../../shared/home/linux.nix
+
+    # generic crap most stuff currently need
     ../../shared/home/base.nix
+
+    # shell stuff
     ../../shared/home/shell/zsh.nix
     ../../shared/home/shell/tmux.nix
   ];

@@ -1,15 +1,22 @@
 { pkgs, ... }:
 {
   imports = [
-    ../../shared/home/base.nix
-    ../../shared/home/shell/zsh.nix
-    ../../shared/home/shell/git.nix
-    ../../shared/home/shell/tmux.nix
+    # base os stuff
     ../../shared/home/linux.nix
     ../../shared/home/non-nix.nix
 
+    # generic crap most stuff currently need
+    ../../shared/home/base.nix
+
+    # shell stuff
+    ../../shared/home/shell/zsh.nix
+    ../../shared/home/shell/git.nix
+    ../../shared/home/shell/tmux.nix
+
     # desktop
-    ../../shared/home/desktop/niri/niri.nix
+    (import ../../shared/home/desktop/niri/niri.nix [
+      ../../shared/home/desktop/niri/input-swapescape.kdl
+    ])
     ../../shared/home/desktop/niri/waybar_laptop.nix
 
     # nvim + langs
