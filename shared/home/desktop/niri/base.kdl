@@ -124,6 +124,8 @@ layout {
 // spawn-at-startup "waybar"
 // commented out, done by systemd
 
+spawn-at-startup "xwayland-satellite"
+
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 

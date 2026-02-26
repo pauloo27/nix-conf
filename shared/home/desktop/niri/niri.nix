@@ -24,6 +24,7 @@ in
     xfce.xfce4-notifyd
     pavucontrol
     niri
+    xwayland-satellite
     # used in the screenshot tool
     grimblast
     hyprpicker

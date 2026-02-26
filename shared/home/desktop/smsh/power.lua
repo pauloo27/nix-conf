@@ -62,7 +62,7 @@ local options = {
 				present = true,
 				exit_on_close = true,
 				on_yes = function()
-					run_unless_pacman("hyprctl dispatch exit exit || swaymsg exit")
+					run_unless_pacman("hyprctl dispatch exit exit || niri msg action quit || swaymsg exit")
 					os.exit(0)
 				end,
 			})
