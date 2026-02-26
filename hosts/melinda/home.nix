@@ -14,11 +14,10 @@
     ../../shared/home/shell/tmux.nix
 
     # desktop
-    ../../shared/home/desktop/hyprland/hyprland.nix
-    # (import ../../shared/home/desktop/niri/niri.nix [
-    #   ../../shared/home/desktop/niri/input.kdl
-    #   ./niri-monitors.kdl
-    # ])
+    (import ../../shared/home/desktop/niri/niri.nix [
+      ../../shared/home/desktop/niri/input.kdl
+      ./niri-monitors.kdl
+    ])
 
     # nvim + langs
     ../../shared/home/editor/nvim/nvim.nix
