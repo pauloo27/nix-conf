@@ -1,3 +1,5 @@
+# TODO: fix screenshot (replace grimblast with grim+slurp)
+# TODO: fix portals so screen sharing works
 extraConfigs:
 { pkgs, ... }:
 let
@@ -36,6 +38,16 @@ in
       splash = false;
       preload = "/home/paulo/medias/pictures/wp.png";
       wallpaper = ",/home/paulo/medias/pictures/wp.png";
+    };
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome ];
+    config.common = {
+      default = [ "gtk" ];
+      "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
+      "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
     };
   };
 
