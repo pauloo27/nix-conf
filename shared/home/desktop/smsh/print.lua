@@ -54,15 +54,6 @@ new_window({
         children = {
           {
             type = "button",
-            icon = "edit-select-symbolic",
-            tooltip = "Select an area",
-            classes = { "print_action_btn" },
-            action = function()
-              take_screenshot('-g "$(slurp)"')
-            end,
-          },
-          {
-            type = "button",
             icon = "window-new-symbolic",
             tooltip = "Pick a window to capture",
             classes = { "print_action_btn" },
@@ -86,6 +77,15 @@ new_window({
             classes = { "print_action_btn" },
             action = function()
               take_screenshot('-g "$(slurp -o)"')
+            end,
+          },
+          {
+            type = "button",
+            icon = "edit-select-symbolic",
+            tooltip = "Select an area",
+            classes = { "print_action_btn" },
+            action = function()
+              take_screenshot('-g "$(slurp)"')
             end,
           },
         },
@@ -170,7 +170,8 @@ new_window({
               if is_recording then
                 os.execute("pkill wl-screenrec")
               else
-                os.execute("wl-screenrec -g \"$(slurp -o)\" --codec hevc -b '2 MB' -m 27 -f " .. os.getenv("HOME") .. "/medias/videos/recordings/" .. os.date("%Y%m%d-%H%M%S") .. ".mp4 &")
+                os.execute("wl-screenrec -g \"$(slurp -o)\" --codec hevc -b '2 MB' -m 27 -f " ..
+                os.getenv("HOME") .. "/medias/videos/recordings/" .. os.date("%Y%m%d-%H%M%S") .. ".mp4 &")
               end
               os.exit(0)
             end,
