@@ -82,10 +82,10 @@ new_window({
           {
             type = "button",
             icon = "video-display-symbolic",
-            tooltip = "Capture entire screen",
+            tooltip = "Capture a screen",
             classes = { "print_action_btn" },
             action = function()
-              take_screenshot("")
+              take_screenshot('-g "$(slurp -o)"')
             end,
           },
         },
@@ -170,7 +170,7 @@ new_window({
               if is_recording then
                 os.execute("pkill wl-screenrec")
               else
-                os.execute("wl-screenrec -g \"$(slurp -o)\" -f " .. os.getenv("HOME") .. "/medias/videos/recordings/" .. os.date("%Y%m%d-%H%M%S") .. ".mp4 &")
+                os.execute("wl-screenrec -g \"$(slurp -o)\" --codec hevc -b '2 MB' -m 27 -f " .. os.getenv("HOME") .. "/medias/videos/recordings/" .. os.date("%Y%m%d-%H%M%S") .. ".mp4 &")
               end
               os.exit(0)
             end,
