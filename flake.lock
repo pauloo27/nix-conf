@@ -298,11 +298,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1768963253,
-        "narHash": "sha256-ejelNyySoAVMaW4vD0KMOdj7nWEm0r+xKcw8/r6Bl+s=",
+        "lastModified": 1772164898,
+        "narHash": "sha256-nCzjAYPe62pqyWRmKXsq78uVeuvHD+CRJ1EM0u6scfs=",
         "ref": "refs/heads/master",
-        "rev": "c3019d333cfbd34d245e1113940aa96d89d69c7c",
-        "revCount": 25,
+        "rev": "c16b5032dd2fdd8c738e09d1fb6bcf4cf4a45b4f",
+        "revCount": 26,
         "type": "git",
         "url": "https://code.db.cafe/pauloo27/smsh.git"
       },

@@ -441,7 +441,7 @@ binds {
     // Mod+Shift+Space { switch-layout "prev"; }
 
     Print { spawn-sh "smsh ~/.config/smsh/print.lua"; }
-    Mod+Shift+S { spawn-sh "grimblast copy area"; }
+    Mod+Shift+S { spawn-sh "grim -g \"$(slurp)\" - | wl-copy"; }
     Ctrl+Alt+E { spawn "emo"; }
 
     // Applications such as remote-desktop clients and software KVM switches may

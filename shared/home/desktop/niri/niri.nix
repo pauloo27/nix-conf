@@ -1,4 +1,3 @@
-# TODO: fix screenshot (replace grimblast with grim+slurp?)
 extraConfigs:
 { pkgs, ... }:
 let
@@ -24,6 +23,11 @@ in
     xarchiver
     xfce.xfce4-notifyd
     pavucontrol
+    grim
+    slurp
+    hyprpicker
+    swappy
+    wl-screenrec
     niri
     xwayland-satellite
   ];

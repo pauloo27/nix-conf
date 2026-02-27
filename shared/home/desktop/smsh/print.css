@@ -1,0 +1,61 @@
+/* root */
+box.print_root {
+  padding: 24px 32px;
+  min-width: 320px;
+}
+
+/* heading */
+label.print_heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+/* screenshot action buttons */
+box.print_actions {
+  margin-bottom: 2px;
+}
+
+button.print_action_btn {
+  padding: 12px 16px;
+  margin: 0 8px;
+  border-radius: 8px;
+}
+
+button.print_action_btn:focus {
+  outline: 3px solid #7f849c;
+  outline-offset: 2px;
+}
+
+/* separator line */
+box.print_separator {
+  min-height: 1px;
+  background-color: #45475a;
+  margin: 12px 0;
+}
+
+/* subheading */
+label.print_subheading {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+/* save destination toggle */
+box.print_save_group {
+  margin-bottom: 4px;
+}
+
+button.print_save_btn {
+  font-size: 13px;
+  padding: 8px 16px;
+  margin: 0 4px;
+  border-radius: 8px;
+}
+
+button.print_save_btn:focus {
+  outline: 3px solid #7f849c;
+  outline-offset: 2px;
+}
+

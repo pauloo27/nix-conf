@@ -14,7 +14,8 @@
 
 ---@class ButtonComponent : Component
 ---@field type "button"
----@field text string
+---@field text? string
+---@field icon? string
 ---@field tooltip? string
 ---@field classes? string[]
 ---@field action? Action
@@ -28,14 +29,16 @@
 
 ---@class ToggleButtonComponent : Component
 ---@field type "togglebutton"
----@field text string
+---@field text? string
+---@field icon? string
 ---@field tooltip? string
 ---@field active? boolean
 ---@field classes? string[]
 ---@field action? Action
 
 ---@class ToggleButtonData
----@field text string
+---@field text? string
+---@field icon? string
 ---@field tooltip? string
 ---@field active? boolean
 ---@field classes? string[]
@@ -72,12 +75,12 @@
 ---@param win_def Window The window definition
 ---@return nil
 function new_window(win_def)
-	window(win_def)
+  window(win_def)
 end
 
 ---Load a CSS file for styling
 ---@param path string Path to the CSS file
 ---@return nil
 function load_stylesheet(path)
-	load_css(path)
+  load_css(path)
 end
