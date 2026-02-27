@@ -2,8 +2,9 @@
 {
   targets.genericLinux.enable = true;
 
-  # Don't install hyprlock package (use system package), but keep config
+  # Don't install swaylock/hyprlock package (use system package), but keep config
   programs.hyprlock.package = lib.mkForce null;
+  programs.swaylock.package = lib.mkForce null;
 
   # Add user flatpak data directory for application launchers
   home.sessionVariables = {

@@ -1,5 +1,4 @@
-# TODO: fix screenshot (replace grimblast with grim+slurp)
-# TODO: fix portals so screen sharing works
+# TODO: fix screenshot (replace grimblast with grim+slurp?)
 extraConfigs:
 { pkgs, ... }:
 let
@@ -27,11 +26,13 @@ in
     pavucontrol
     niri
     xwayland-satellite
-    # used in the screenshot tool
-    grimblast
-    hyprpicker
   ];
 
+  programs.swaylock = {
+    enable = true;
+  };
+
+  # TODO: replace? i mean, if it works on niri, should be fine right??
   services.hyprpaper = {
     enable = true;
     settings = {
@@ -43,7 +44,10 @@ in
 
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome ];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gnome
+    ];
     config.common = {
       default = [ "gtk" ];
       "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
