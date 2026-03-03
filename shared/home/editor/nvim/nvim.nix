@@ -9,6 +9,10 @@
     ./plugins/lsp.nix
     ./plugins/conform.nix
     ./plugins/blink.nix
+    ./plugins/rest.nix
+    ./plugins/tmux.nix
+    ./plugins/lsp-signature.nix
+    ./plugins/dressing.nix
   ];
 
   programs.neovim = {
