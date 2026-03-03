@@ -4,10 +4,15 @@
     ../../shared/home/base.nix
     ../../shared/home/shell/zsh.nix
     ../../shared/home/shell/git.nix
-    ../../shared/home/desktop/hyprland/hyprland.nix
     ../../shared/home/shell/tmux.nix
     ../../shared/home/linux.nix
     ../../shared/home/non-nix.nix
+
+    # desktop
+    (import ../../shared/home/desktop/niri/niri.nix [
+      ../../shared/home/desktop/niri/input.kdl
+      ./niri-monitors.kdl
+    ])
 
     # nvim + langs
     ../../shared/home/editor/nvim/nvim.nix
