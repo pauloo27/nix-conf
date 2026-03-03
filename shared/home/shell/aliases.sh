@@ -22,52 +22,5 @@ ig() {
   echo "$@" >> .gitignore
 }
 
-## TODO: drop those
-
-## Upgrade
+## this is arch specific, fix later
 alias upgrade="flatpak update && yay -Syu --cleanmenu=false --diffmenu=false --editmenu=false --sudoloop"
-
-## Log
-alias ,l="git log"
-alias ,ls="git log --show-signatures"
-
-## Status
-alias ,s="git status -s" # Cool looking Status 😎
-alias ,st="git status"
-alias ,ms="git diff --name-only --diff-filter=U" # Files to be merged
-
-## Show
-alias ,ss="git show"
-
-## Add 
-alias ,a="git add" 
-alias ,aa="git add ." 
-alias ,ap="git add -p" # Interactive
-
-## Un-add (remove?)
-alias ,rm="git restore --staged"
-
-## Edit last commit
-alias ,ed="git commit --amend" # Edit last commit
-
-## Commit
-alias ,c="git commit"
-alias ,ca="git commit -a" # Add all
-alias ,cm="git commit -m" # Commit with message
-
-alias ,d="git diff"
-alias ,dc="git diff --cached" # All cached 
-alias ,ds="git diff --staged" # All (even added)
-
-## Clone
-alias ,cl="git clone"
-
-## Reset
-alias ,rs="git restore" # Reset
-
-## Branch
-alias ,b="git branch" # Create new branch
-alias ,sw="git switch" # Switch branch
-
-## Stash
-alias ,sh="git stash --include-untracked"

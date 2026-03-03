@@ -25,6 +25,13 @@
       rerere = {
         enabled = true;
       };
+      alias = {
+        s = "status -s";
+        rs = "restore";
+        ds = "diff --staged";
+        d = "diff";
+        unadd = "restore --staged";
+      };
     };
   };
 }
