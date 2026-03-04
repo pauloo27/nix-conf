@@ -74,8 +74,16 @@
 
         clock = {
           on-click = "planify";
-          format = "<span color='#cba6f7'> </span>{:%H:%M}";
+          format = "<span color='#cba6f7'> </span>{:%H:%M %Z}";
           tooltip-format = "<big>{:%a, %d %b • %H:%M}</big>\n<tt><small>{calendar}</small></tt>";
+          timezones = [
+            "America/Sao_Paulo"
+            "Europe/Berlin"
+          ];
+          actions = {
+            "on-scroll-up" = "tz_up";
+            "on-scroll-down" = "tz_down";
+          };
         };
 
         "niri/window" = {

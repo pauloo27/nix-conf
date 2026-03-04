@@ -36,6 +36,7 @@ in
     ../../shared/home/editor/nvim/nvim.nix
     ../../shared/home/editor/nvim/langs/lua.nix
     ../../shared/home/editor/nvim/langs/go.nix
+    ../../shared/home/editor/nvim/langs/nix.nix
   ];
 
   home.packages = [
