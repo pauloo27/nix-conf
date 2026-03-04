@@ -14,6 +14,10 @@
       ./niri-monitors.kdl
     ])
 
+    # apps
+    ../../shared/home/apps/teams.nix
+    ../../shared/home/apps/slack.nix
+
     # nvim + langs
     ../../shared/home/editor/nvim/nvim.nix
     ../../shared/home/editor/nvim/langs/lua.nix
