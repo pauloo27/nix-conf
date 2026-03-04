@@ -1,4 +1,18 @@
 { pkgs, lib, ... }:
+let
+  kubernetes-helm-wrapped = pkgs.wrapHelm pkgs.kubernetes-helm {
+    plugins = with pkgs.kubernetes-helmPlugins; [
+      helm-diff
+      helm-secrets
+      helm-git
+      helm-s3
+    ];
+  };
+
+  helmfile-wrapped = pkgs.helmfile-wrapped.override {
+    inherit (kubernetes-helm-wrapped) pluginsDir;
+  };
+in
 {
   imports = [
     ../../shared/home/base.nix
@@ -26,6 +40,13 @@
 
   home.packages = [
     pkgs.hello
+    kubernetes-helm-wrapped
+    helmfile-wrapped
+    pkgs.kustomize
+    pkgs.awscli2
+    pkgs.k9s
+    pkgs.kubectl
+    pkgs.terraform
   ];
 
   # Override caps:swapescape for desktop (not needed with custom keyboard)
