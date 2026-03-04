@@ -16,6 +16,7 @@
     # desktop
     (import ../../shared/home/desktop/niri/niri.nix [
       ../../shared/home/desktop/niri/input-swapescape.kdl
+      ./niri-monitors.kdl
     ])
     ../../shared/home/desktop/niri/waybar_laptop.nix
 
