@@ -7,6 +7,9 @@ alias v=nvim
 alias k="kubectl"
 alias p=pnpm
 
+alias diff='diff --color=auto'
+alias ls="ls --color=auto"
+
 mkcd () {
   mkdir "$1"
   cd "$1"
