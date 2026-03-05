@@ -73,7 +73,7 @@
         };
 
         clock = {
-          on-click = "planify";
+          on-click = "flatpak run io.github.alainm23.planify";
           format = "<span color='#cba6f7'> </span>{:%H:%M %Z}";
           tooltip-format = "<big>{:%a, %d %b • %H:%M}</big>\n<tt><small>{calendar}</small></tt>";
           timezones = [
