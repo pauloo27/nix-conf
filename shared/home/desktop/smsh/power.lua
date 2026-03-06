@@ -13,7 +13,7 @@ local options = {
     tooltip = "Lock",
     classes = { "main_button" },
     action = function()
-      os.execute("swaylock --daemonize --image ~/medias/pictures/wallpapers/skynet.png")
+      os.execute("swaylock --daemonize --image ~/medias/pictures/wallpapers/lock.jpg")
       os.exit(0)
     end,
   },
