@@ -226,7 +226,7 @@ binds {
     XF86AudioPrev        allow-when-locked=true { spawn-sh "rstroller previous"; }
     XF86AudioNext        allow-when-locked=true { spawn-sh "rstroller next"; }
 
-    MouseBack                  { spawn-sh "rstroller play-pause"; }
+    MouseBack                  { spawn-sh "xte \"key F8\""; }
     MouseForward               { spawn-sh "rstroller play-pause"; }
     Alt+MouseForward           { spawn-sh "rstroller volume 0.05+"; }
     Alt+MouseBack              { spawn-sh "rstroller volume 0.05-"; }
