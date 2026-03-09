@@ -28,6 +28,7 @@
     pkgs.curl
     pkgs.btop
     pkgs.wget
+    pkgs.tea
     pkgs.glow
     pkgs.file
     pkgs.nix-index
