@@ -13,6 +13,7 @@
     ./plugins/tmux.nix
     ./plugins/lsp-signature.nix
     ./plugins/dressing.nix
+    ./plugins/neo-tree.nix
   ];
 
   programs.neovim = {
