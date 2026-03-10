@@ -5,6 +5,7 @@
     EDITOR = "nvim";
     GOPATH = "$HOME/dev/go";
     ZVM_INIT_MODE = "sourcing";
+    LANG = "en_US.UTF-8";
   };
 
   home.sessionPath = [
