@@ -14,6 +14,8 @@
     ./plugins/lsp-signature.nix
     ./plugins/dressing.nix
     ./plugins/neo-tree.nix
+    ./plugins/fugitive.nix
+    ./plugins/gitsigns.nix
   ];
 
   programs.neovim = {
