@@ -14,6 +14,7 @@
         modules-center = [ "custom/rstroller" ];
         modules-right = [
           "pulseaudio"
+          "custom/dnd"
           "tray"
           "privacy"
           "clock"
@@ -25,6 +26,27 @@
           on-click = "rstroller-gui";
           on-scroll-up = "rstroller scroll-player up";
           on-scroll-down = "rstroller scroll-player down";
+        };
+
+        "custom/dnd" = {
+          exec = ''
+            while true; do
+              if [ "$(xfconf-query -c xfce4-notifyd -p /do-not-disturb)" = "true" ]; then
+                echo '{"text": "󱏩", "tooltip": "Do Not Disturb: ON", "class": "on"}'
+              else
+                echo '{"text": "", "tooltip": "Do Not Disturb: OFF", "class": "off"}'
+              fi
+              sleep 1
+            done
+          '';
+          return-type = "json";
+          on-click = ''
+            if [ "$(xfconf-query -c xfce4-notifyd -p /do-not-disturb)" = "true" ]; then
+              xfconf-query -c xfce4-notifyd -p /do-not-disturb -s false
+            else
+              xfconf-query -c xfce4-notifyd -p /do-not-disturb -s true
+            fi
+          '';
         };
 
         privacy = {
@@ -132,6 +154,19 @@
       #workspaces button.active {
         color: #cdd6f4;
         font-weight: bold;
+      }
+
+      #custom-dnd {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      #custom-dnd.on {
+        color: #f38ba8;
+      }
+
+      #custom-dnd.off {
+        color: #908caa;
       }
 
       #clock,
