@@ -47,6 +47,7 @@ in
     pkgs.kustomize
     pkgs.awscli2
     pkgs.k9s
+    pkgs.k3d
     pkgs.kubectl
     pkgs.terraform
   ];
