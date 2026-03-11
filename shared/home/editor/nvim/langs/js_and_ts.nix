@@ -33,6 +33,7 @@
 
   programs.neovim.extraPackages = [
     pkgs.typescript-language-server
+    pkgs.vscode-langservers-extracted
     pkgs.biome
     pkgs.prettierd
   ];

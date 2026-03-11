@@ -16,6 +16,7 @@
     ./plugins/neo-tree.nix
     ./plugins/fugitive.nix
     ./plugins/gitsigns.nix
+    ./plugins/auto-import.nix
   ];
 
   programs.neovim = {
