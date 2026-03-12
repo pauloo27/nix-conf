@@ -48,6 +48,7 @@ in
     pkgs.awscli2
     pkgs.k9s
     pkgs.k3d
+    pkgs.kubectx
     pkgs.kubectl
     pkgs.terraform
   ];

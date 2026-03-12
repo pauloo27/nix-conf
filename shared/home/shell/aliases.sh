@@ -5,6 +5,7 @@ alias c=clear
 alias g=git
 alias v=nvim
 alias k="kubectl"
+alias kc="kubectx"
 alias p=pnpm
 
 alias diff='diff --color=auto'
