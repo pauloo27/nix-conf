@@ -43,6 +43,7 @@
             pkgs.awscli2
             pkgs.k9s
             pkgs.kubectl
+            pkgs.argocd
             pkgs.terraform
           ];
         };
