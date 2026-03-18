@@ -1,14 +1,7 @@
 #!/usr/bin/env bash
-BINDIR="/usr/local/bin"
-DESKTOP="niri"
-if [ "$(whoami)" = "work" ]; then
-  BINDIR="/usr/local/bin/work"
-  DESKTOP="niri-work"
-  sudo mkdir -p "$BINDIR"
-fi
-
-sudo cp ./${DESKTOP}.desktop /usr/share/wayland-sessions/${DESKTOP}.desktop
-sudo ln -s ~/.nix-profile/bin/niri-session "$BINDIR/niri-session"
+sudo cp ./niri.desktop /usr/share/wayland-sessions/niri.desktop
+sudo cp ./niri-session-wrapper /usr/local/bin/niri-session-wrapper
+sudo chmod +x /usr/local/bin/niri-session-wrapper
 
 # Link systemd user units
 mkdir -p ~/.config/systemd/user

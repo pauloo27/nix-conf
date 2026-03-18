@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+HOME_DIR=$(eval echo "~$(whoami)")
+exec "$HOME_DIR/.nix-profile/bin/niri-session" "$@"

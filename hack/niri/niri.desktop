@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Niri
 Comment=A scrollable-tiling Wayland compositor
-Exec=/usr/local/bin/niri-session
+Exec=/usr/local/bin/niri-session-wrapper
 Type=Application
 DesktopNames=niri
