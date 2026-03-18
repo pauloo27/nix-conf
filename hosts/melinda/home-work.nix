@@ -38,6 +38,8 @@ in
     ../../shared/home/editor/nvim/langs/go.nix
     ../../shared/home/editor/nvim/langs/yaml.nix
     ../../shared/home/editor/nvim/langs/nix.nix
+    ../../shared/home/editor/nvim/langs/tailwindcss.nix
+    ../../shared/home/editor/nvim/langs/js_and_ts.nix
   ];
 
   home.packages = [
