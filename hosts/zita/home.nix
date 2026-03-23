@@ -24,6 +24,8 @@
     ../../shared/home/editor/nvim/nvim.nix
     ../../shared/home/editor/nvim/langs/lua.nix
     ../../shared/home/editor/nvim/langs/go.nix
+    ../../shared/home/editor/nvim/langs/tailwindcss.nix
+    ../../shared/home/editor/nvim/langs/js_and_ts.nix
     ../../shared/home/editor/nvim/langs/nix.nix
   ];
 
