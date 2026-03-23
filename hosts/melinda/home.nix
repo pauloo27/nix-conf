@@ -34,6 +34,7 @@
     ../../shared/home/editor/nvim/langs/tailwindcss.nix
     ../../shared/home/editor/nvim/langs/terraform.nix
     ../../shared/home/editor/nvim/langs/yaml.nix
+    ../../shared/home/editor/nvim/plugins/wakatime.nix
   ];
 
   home.packages = [
