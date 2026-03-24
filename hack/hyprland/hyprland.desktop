@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Hyprland (UWSM + Nix)
 Comment=An intelligent dynamic tiling Wayland compositor, UWSM managed
-Exec=/usr/local/bin/uwsm start -F /usr/local/bin/Hyprland
+Exec=/usr/local/bin/hyprland-wrapper
 Type=Application
 DesktopNames=Hyprland
 Keywords=tiling;wayland;compositor;

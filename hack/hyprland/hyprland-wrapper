@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+HOME_DIR=$(eval echo "~$(whoami)")
+BINDIR="$HOME_DIR/.nix-profile/bin"
+exec "$BINDIR/uwsm" start -F "$BINDIR/Hyprland" "$@"
