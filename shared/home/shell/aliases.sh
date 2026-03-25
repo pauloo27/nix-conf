@@ -25,6 +25,3 @@ psc() {
 ig() {
   echo "$@" >> .gitignore
 }
-
-## this is arch specific, fix later
-alias upgrade="flatpak update && yay -Syu --cleanmenu=false --diffmenu=false --editmenu=false --sudoloop"
