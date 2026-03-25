@@ -22,6 +22,7 @@
     ./plugins/fugitive.nix
     ./plugins/gitsigns.nix
     ./plugins/auto-import.nix
+    ./plugins/snipe.nix
     ./debugger/dap.nix
   ];
 
