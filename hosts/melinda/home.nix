@@ -19,6 +19,9 @@
       ./niri-monitors.kdl
     ])
 
+    # infra
+    ../../shared/home/infra.nix
+
     # apps
     ../../shared/home/apps/teams.nix
     ../../shared/home/apps/slack.nix

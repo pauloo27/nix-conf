@@ -20,6 +20,9 @@
     ])
     ../../shared/home/desktop/niri/waybar_laptop.nix
 
+    # infra
+    ../../shared/home/infra.nix
+
     # nvim + langs
     ../../shared/home/editor/nvim/nvim.nix
     ../../shared/home/editor/nvim/langs/lua.nix
