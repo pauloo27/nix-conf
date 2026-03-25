@@ -23,7 +23,19 @@
           pkgs = nixpkgs.legacyPackages.${system};
         in
         {
-          default = pkgs.mkShell {
+          "24" = pkgs.mkShell {
+            packages = with pkgs; [
+              nodejs_24
+              eslint_d
+              biome
+              nodePackages.npm
+              nodePackages.pnpm
+              nodePackages.yarn
+              nodePackages.typescript
+              nodePackages.typescript-language-server
+            ];
+          };
+          "22" = pkgs.mkShell {
             packages = with pkgs; [
               nodejs_22
               eslint_d
