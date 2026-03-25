@@ -1,5 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
+  options.myNvim.tailwindcss.filetypes = lib.mkOption {
+    type = lib.types.listOf lib.types.str;
+    default = [ ];
+  };
+
   imports = [
     ./plugins/map-leader.nix
     ./plugins/rose-pine.nix
@@ -17,9 +22,10 @@
     ./plugins/fugitive.nix
     ./plugins/gitsigns.nix
     ./plugins/auto-import.nix
+    ./debugger/dap.nix
   ];
 
-  programs.neovim = {
+  config.programs.neovim = {
     enable = true;
     defaultEditor = true;
     viAlias = true;

@@ -10,3 +10,14 @@ vim.lsp.config("gopls", {
 })
 
 vim.lsp.enable("gopls")
+
+require("dap-go").setup({
+  dap_configurations = {
+    {
+      type = "go",
+      name = "Debug package",
+      request = "launch",
+      program = "${fileDirname}",
+    },
+  },
+})

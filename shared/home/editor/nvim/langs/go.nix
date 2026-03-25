@@ -7,7 +7,12 @@
     "gosum"
   ];
 
-  programs.neovim.extraPackages = [ pkgs.gopls ];
+  programs.neovim.plugins = [ pkgs.vimPlugins.nvim-dap-go ];
+
+  programs.neovim.extraPackages = [
+    pkgs.gopls
+    pkgs.delve
+  ];
 
   programs.neovim.extraLuaConfig = builtins.readFile ./go.lua;
 }

@@ -24,6 +24,7 @@
         in
         {
           default = pkgs.mkShell {
+            hardeningDisable = [ "fortify" ];
             packages = with pkgs; [
               go
               gopls
