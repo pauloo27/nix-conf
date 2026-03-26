@@ -20,6 +20,9 @@
     ])
     ../../shared/home/desktop/niri/waybar_laptop.nix
 
+    # apps
+    ../../shared/home/apps/voxtype-cpu.nix
+
     # infra
     ../../shared/home/infra.nix
 

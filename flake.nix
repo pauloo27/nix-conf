@@ -13,11 +13,13 @@
     f.url = "git+https://code.db.cafe/pauloo27/f.git";
     smsh.url = "git+https://code.db.cafe/pauloo27/smsh.git";
     np.url = "git+https://code.db.cafe/pauloo27/np.git";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
   outputs =
     {
       nixpkgs,
+      nixpkgs-unstable,
       home-manager,
       nix-flatpak,
       f,
@@ -91,6 +93,7 @@
               smsh
               ;
             hostname = name;
+            unstable = nixpkgs-unstable.legacyPackages.${config.arch};
           };
         };
 
