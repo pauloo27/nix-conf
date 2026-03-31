@@ -58,6 +58,9 @@
     enable = true;
     profilesPath = "${config.xdg.configHome}/nix-conf/dev";
     tmuxBaseWindowIndex = 1;
+    aliases = {
+      psql = { package = "postgresql_18"; command = "psql"; };
+    };
   };
 
   services.gpg-agent.enable = true;
