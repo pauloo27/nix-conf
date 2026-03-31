@@ -22,6 +22,8 @@
 
     # apps
     ../../shared/home/apps/voxtype-cpu.nix
+    ../../shared/home/apps/teams.nix
+    ../../shared/home/apps/slack.nix
 
     # infra
     ../../shared/home/infra.nix
