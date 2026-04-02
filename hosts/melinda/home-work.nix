@@ -35,7 +35,6 @@
   home.packages = [
     pkgs.hello
     pkgs.k3d
-    pkgs.kubectx
   ];
 
   # Override caps:swapescape for desktop (not needed with custom keyboard)

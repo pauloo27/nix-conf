@@ -18,6 +18,7 @@ in
     kubernetes-helm-wrapped
     helmfile-wrapped
     pkgs.kustomize
+    pkgs.kubectx
     pkgs.awscli2
     pkgs.k9s
     pkgs.kubectl
