@@ -24,5 +24,6 @@ in
     pkgs.kubectl
     pkgs.argocd
     pkgs.terraform
+    pkgs.openssl
   ];
 }
