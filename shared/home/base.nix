@@ -25,6 +25,7 @@
   # Common packages for all hosts
   home.packages = [
     pkgs.ripgrep
+    pkgs.claude-code
     pkgs.curl
     pkgs.btop
     pkgs.wget
@@ -59,7 +60,10 @@
     profilesPath = "${config.xdg.configHome}/nix-conf/dev";
     tmuxBaseWindowIndex = 1;
     aliases = {
-      psql = { package = "postgresql_18"; command = "psql"; };
+      psql = {
+        package = "postgresql_18";
+        command = "psql";
+      };
     };
   };
 

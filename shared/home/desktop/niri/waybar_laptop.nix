@@ -14,9 +14,16 @@
       scroll-step = 5;
     };
 
+    memory = {
+      interval = 5;
+      format = " {}%";
+      tooltip-format = "{used:0.1f}G / {total:0.1f}G";
+    };
+
     "group/laptop" = {
       modules = [
         "battery"
+        "memory"
         "backlight"
       ];
       orientation = "horizontal";
