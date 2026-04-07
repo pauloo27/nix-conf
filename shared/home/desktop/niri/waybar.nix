@@ -176,7 +176,9 @@
       #pulseaudio,
       #network,
       #workspaces,
-      #battery {
+      #battery,
+      #backlight,
+      #memory {
         color: #cdd6f4;
         padding-left: 10px;
         padding-right: 10px;

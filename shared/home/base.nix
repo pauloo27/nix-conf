@@ -25,6 +25,7 @@
   # Common packages for all hosts
   home.packages = [
     pkgs.ripgrep
+    pkgs.xfce.xfconf
     pkgs.claude-code
     pkgs.curl
     pkgs.btop
