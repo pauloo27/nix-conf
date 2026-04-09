@@ -34,7 +34,6 @@
 
   home.packages = [
     pkgs.hello
-    pkgs.k3d
   ];
 
   # Override caps:swapescape for desktop (not needed with custom keyboard)

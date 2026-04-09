@@ -19,6 +19,7 @@ in
     helmfile-wrapped
     pkgs.kustomize
     pkgs.kubectx
+    pkgs.k3d
     pkgs.freelens-bin
     pkgs.postman
     pkgs.awscli2
