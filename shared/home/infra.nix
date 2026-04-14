@@ -20,6 +20,7 @@ in
     pkgs.kustomize
     pkgs.kubectx
     pkgs.k3d
+    pkgs.just
     pkgs.freelens-bin
     pkgs.postman
     pkgs.awscli2
