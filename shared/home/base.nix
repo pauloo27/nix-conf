@@ -39,6 +39,7 @@
     pkgs.imagemagick
     pkgs.rbw
     pkgs.jq
+    pkgs.yq-go
     pkgs.dbeaver-bin
     f.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
