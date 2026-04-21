@@ -18,7 +18,7 @@
           # fallback to default monospaced
           style = "Regular";
         };
-        size = 9;
+        size = 10;
       };
 
       cursor = {
