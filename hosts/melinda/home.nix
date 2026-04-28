@@ -25,7 +25,6 @@
     # apps
     ../../shared/home/apps/teams.nix
     ../../shared/home/apps/slack.nix
-    ../../shared/home/apps/voxtype-gpu.nix
 
     # nvim + langs
     ../../shared/home/editor/nvim/nvim.nix
