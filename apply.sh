@@ -8,7 +8,7 @@ else
   FLAKE_KEY="$HOSTNAME"
 fi
 
-nix build .#homeConfigurations.$FLAKE_KEY.activationPackage && ./result/activate
+home-manager switch --flake .#$FLAKE_KEY
 
 # Pre-build dev shells so they're cached in the nix store
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
