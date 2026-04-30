@@ -26,4 +26,9 @@
     automatic = true;
     dates = [ "weekly" ];
   };
+
+  # Home Manager CLI
+  environment.systemPackages = with pkgs; [
+    home-manager
+  ];
 }
