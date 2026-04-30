@@ -10,6 +10,10 @@
     # shell stuff
     ../../shared/home/shell/zsh.nix
     ../../shared/home/shell/tmux.nix
+
+    # nvim + langs
+    ../../shared/home/editor/nvim/nvim.nix
+    ../../shared/home/editor/nvim/langs/nix.nix
   ];
 
   programs.git = {

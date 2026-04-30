@@ -83,6 +83,10 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJZi/6VQsVTQLy58jWcG33/JttCoLfaweRX26U2gQ1JD git@pauloo27.dev"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFA9yA40Dw4MrwGXTOFEXbiBQFWNGXTgf6hsyegFYpn5 paulo@melinda"
+    ];
   };
 
   # programs.firefox.enable = true;
@@ -105,8 +109,9 @@
 
   # Enable the OpenSSH daemon.
   services.openssh = {
-enable = true;
+    enable = true;
     settings.PermitRootLogin = "no";
+    settings.PasswordAuthentication = false;
   };
 
   # Open ports in the firewall.
