@@ -25,7 +25,6 @@
   # Common packages for all hosts
   home.packages = [
     pkgs.ripgrep
-    pkgs.xfce.xfconf
     pkgs.claude-code
     pkgs.curl
     pkgs.btop
@@ -40,7 +39,6 @@
     pkgs.rbw
     pkgs.jq
     pkgs.yq-go
-    pkgs.dbeaver-bin
     f.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 

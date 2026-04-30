@@ -7,6 +7,7 @@
 
     # generic crap most stuff currently need
     ../../shared/home/base.nix
+    ../../shared/home/base-gui.nix
 
     # shell stuff
     ../../shared/home/shell/zsh.nix
