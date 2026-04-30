@@ -33,7 +33,7 @@
       lib = nixpkgs.lib;
 
       hosts = {
-        karen = {
+        kraken = {
           isNixOS = true;
           arch = "x86_64-linux";
           extraNixosModules = [ ];
