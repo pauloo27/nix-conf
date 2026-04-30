@@ -5,10 +5,10 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ../../shared/nixos/base.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -17,8 +17,25 @@
 
   networking.hostName = "kraken"; # Define your hostname.
 
-  # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
+  networking = {
+    nameservers = [
+      "1.1.1.1"
+      "9.9.9.9"
+    ];
+    interfaces.ens18 = {
+      ipv4.addresses = [
+        {
+          address = "10.0.0.77";
+          prefixLength = 24;
+        }
+      ];
+    };
+    defaultGateway = {
+      address = "10.0.0.10";
+      interface = "ens18";
+    };
+  };
 
   # Set your time zone.
   # time.timeZone = "Europe/Amsterdam";
@@ -60,12 +77,12 @@
   # services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  programs.zsh.enable = true;
+
   users.users.paulo = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      tree
-    ];
+    extraGroups = [ "wheel" ];
+    shell = pkgs.zsh;
   };
 
   # programs.firefox.enable = true;
@@ -73,10 +90,7 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    vim 
-    wget
     git
-    home-manager
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
