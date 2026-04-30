@@ -95,13 +95,6 @@
   # You can use https://search.nixos.org/ to find more packages (and options).
   services.thermald.enable = true;
 
-  services.cron = {
-    enable = true;
-    systemCronJobs = [
-      "*/5 * * * *      root    /home/paulo/scripts/ping-the-dead.sh > /tmp/pinglog.txt"
-    ];
-  };
-
   programs.neovim = {
     enable = true;
     defaultEditor = true;
