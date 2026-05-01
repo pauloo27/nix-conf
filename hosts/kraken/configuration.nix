@@ -21,6 +21,9 @@
   boot.loader.grub.device = "nodev";
 
   networking.hostName = "kraken"; # Define your hostname.
+  networking.hostId = "e9a52955";
+
+  boot.supportedFilesystems = [ "zfs" ];
 
   networking.networkmanager.enable = true;
   networking = {
@@ -104,7 +107,27 @@
 
   environment.systemPackages = with pkgs; [
     git
+    smartmontools
   ];
+
+  services.zfs = {
+    autoScrub = {
+      enable = true;
+      interval = "monthly";
+      pools = [ "tank" ];
+    };
+  };
+
+  services.smartd = {
+    enable = true;
+    devices = [
+      { device = "/dev/sdb"; }
+      { device = "/dev/sdc"; }
+      { device = "/dev/sdd"; }
+      { device = "/dev/sde"; }
+      { device = "/dev/sdf"; }
+    ];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
