@@ -119,6 +119,17 @@
     };
   };
 
+  services.k3s = {
+    enable = true;
+    role = "server";
+    clusterInit = true;
+    extraFlags = "--default-local-storage-path /data/k3s/storage --tls-san k8s.kraken.db.cafe --tls-san 10.0.0.77";
+  };
+
+  networking.firewall.extraCommands = ''
+    iptables -A INPUT -p tcp -s 10.0.0.0/24 --dport 6443 -j ACCEPT
+  '';
+
   services.smartd = {
     enable = true;
     devices = [
