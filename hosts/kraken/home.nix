@@ -1,4 +1,4 @@
-{ pkgs, f, ... }:
+{ pkgs, lib, f, ... }:
 {
   imports = [
     # base os stuff
@@ -10,31 +10,18 @@
     # shell stuff
     ../../shared/home/shell/zsh.nix
     ../../shared/home/shell/tmux.nix
+    ../../shared/home/shell/git.nix
 
     # nvim + langs
     ../../shared/home/editor/nvim/nvim.nix
     ../../shared/home/editor/nvim/langs/nix.nix
   ];
 
-  programs.git = {
-    enable = true;
-
-    settings = {
-      user = {
-        name = "kraken admin";
-        email = "admin@kraken.db.cafe";
-      };
-      pull = {
-        rebase = false;
-      };
-      init = {
-        defaultBranch = "main";
-      };
-      rerere = {
-        enabled = true;
-      };
-    };
+  programs.git.settings.user = lib.mkForce {
+    name = "kraken admin";
+    email = "admin@kraken.db.cafe";
   };
+  programs.git.signing.signByDefault = lib.mkForce false;
 
   home.packages = [ ];
 
