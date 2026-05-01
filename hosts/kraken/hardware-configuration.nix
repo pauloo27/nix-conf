@@ -40,6 +40,11 @@
     ];
   };
 
+  fileSystems."/data" = {
+    device = "tank/data";
+    fsType = "zfs";
+  };
+
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
