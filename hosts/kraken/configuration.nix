@@ -109,6 +109,8 @@
   environment.systemPackages = with pkgs; [
     git
     smartmontools
+    sdparm
+    sysstat
   ];
 
   services.zfs = {
@@ -149,9 +151,17 @@
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
+  programs.htop = {
+    enable = true;
+    settings.show_cpu_temperature = 1;
+  };
 
-  # Enable the OpenSSH daemon.
+  # services.openvpn.servers = {
+  #   kraken = {
+  #     config = "config /etc/ovpn/kraken/kraken.ovpn";
+  #   };
+  # };
+
   services.openssh = {
     enable = true;
     settings.PermitRootLogin = "no";
