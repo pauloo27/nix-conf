@@ -13,6 +13,7 @@
     f.url = "git+https://code.db.cafe/pauloo27/f.git";
     smsh.url = "git+https://code.db.cafe/pauloo27/smsh.git";
     np.url = "git+https://code.db.cafe/pauloo27/np.git";
+    rstroller.url = "git+https://code.db.cafe/pauloo27/rstroller.git";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
@@ -27,6 +28,7 @@
       llame,
       smsh,
       np,
+      rstroller,
       ...
     }@inputs:
     let
@@ -91,6 +93,7 @@
               tldr
               llame
               smsh
+              rstroller
               ;
             hostname = name;
             unstable = nixpkgs-unstable.legacyPackages.${config.arch};
