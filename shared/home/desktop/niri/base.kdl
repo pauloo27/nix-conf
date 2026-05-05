@@ -209,7 +209,6 @@ binds {
     Mod+Shift+Return { spawn "llame"; }
     Mod+D { spawn-sh "smsh ~/.config/smsh/prompt.lua | xargs sh -c"; }
     Mod+A { spawn "nemo"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
