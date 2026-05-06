@@ -1,21 +1,27 @@
 { pkgs, lib, ... }:
 {
   imports = [
-    ../../shared/home/base.nix
-    ../../shared/home/shell/zsh.nix
-    ../../shared/home/shell/git.nix
-    ../../shared/home/shell/tmux.nix
+    # base os stuff
     ../../shared/home/linux.nix
     ../../shared/home/non-nix.nix
 
-    # infra
-    ../../shared/home/infra.nix
+    # generic crap most stuff currently need
+    ../../shared/home/base.nix
+    ../../shared/home/base-gui.nix
+
+    # shell stuff
+    ../../shared/home/shell/zsh.nix
+    ../../shared/home/shell/git.nix
+    ../../shared/home/shell/tmux.nix
 
     # desktop
     (import ../../shared/home/desktop/niri/niri.nix [
       ../../shared/home/desktop/niri/input.kdl
       ./niri-monitors.kdl
     ])
+
+    # infra
+    ../../shared/home/infra.nix
 
     # apps
     ../../shared/home/apps/teams.nix
@@ -25,10 +31,10 @@
     ../../shared/home/editor/nvim/nvim.nix
     ../../shared/home/editor/nvim/langs/lua.nix
     ../../shared/home/editor/nvim/langs/go.nix
-    ../../shared/home/editor/nvim/langs/yaml.nix
     ../../shared/home/editor/nvim/langs/nix.nix
-    ../../shared/home/editor/nvim/langs/tailwindcss.nix
     ../../shared/home/editor/nvim/langs/js_and_ts.nix
+    ../../shared/home/editor/nvim/langs/tailwindcss.nix
+    ../../shared/home/editor/nvim/langs/yaml.nix
     ../../shared/home/editor/nvim/plugins/wakatime.nix
   ];
 
