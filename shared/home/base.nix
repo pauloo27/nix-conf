@@ -27,6 +27,7 @@
     pkgs.ripgrep
     pkgs.claude-code
     pkgs.curl
+    pkgs.curlie
     pkgs.btop
     pkgs.wget
     pkgs.tea
