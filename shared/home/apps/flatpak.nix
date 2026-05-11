@@ -8,6 +8,9 @@
       "com.github.iwalton3.jellyfin-media-player"
       "com.stremio.Stremio"
       "io.github.alainm23.planify"
+      "md.obsidian.Obsidian"
+      "com.nextcloud.desktopclient.nextcloud"
+      "org.libreoffice.LibreOffice"
     ];
     update.auto = {
       enable = true;

@@ -38,6 +38,8 @@
     pkgs.unzip
     pkgs.imagemagick
     pkgs.rbw
+    pkgs.dogdns
+    pkgs.wol
     pkgs.jq
     pkgs.yq-go
     f.packages.${pkgs.stdenv.hostPlatform.system}.default
