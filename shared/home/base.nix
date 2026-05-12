@@ -40,6 +40,7 @@
     pkgs.rbw
     pkgs.dogdns
     pkgs.wol
+    pkgs.bc
     pkgs.jq
     pkgs.yq-go
     f.packages.${pkgs.stdenv.hostPlatform.system}.default
