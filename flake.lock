@@ -478,11 +478,11 @@
         "nixpkgs": "nixpkgs_7"
       },
       "locked": {
-        "lastModified": 1767402538,
-        "narHash": "sha256-cFeL80Mk7YjRmnWlaaOF1ELaDnb1Mt/cAzwS9SCehP4=",
+        "lastModified": 1779298338,
+        "narHash": "sha256-iHf6f4h9OFJt2BhLTXWEW/GGg+S5J5sMPjyizKX/OWY=",
         "owner": "pauloo27",
         "repo": "tldr",
-        "rev": "fa50377d8242b354bca1a1fa9717e0867300ccdb",
+        "rev": "700c626c34635439050fc9c3739832fc7dd3697f",
         "type": "github"
       },
       "original": {
