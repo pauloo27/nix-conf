@@ -26,6 +26,7 @@
   home.packages = [
     pkgs.cloudflared
     pkgs.ripgrep
+    pkgs.mosh
     pkgs.claude-code
     pkgs.curl
     pkgs.curlie
