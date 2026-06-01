@@ -30,6 +30,7 @@
     pkgs.curl
     pkgs.curlie
     pkgs.btop
+    pkgs.gh
     pkgs.wget
     pkgs.tea
     pkgs.glow
