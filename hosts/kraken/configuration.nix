@@ -126,11 +126,14 @@
     enable = true;
     role = "server";
     clusterInit = true;
-    extraFlags = "--default-local-storage-path /data/k3s/storage --tls-san k8s.kraken.db.cafe --tls-san 10.0.0.77";
+    extraFlags = "--default-local-storage-path /data/k3s/storage --tls-san k8s.kraken.db.cafe --tls-san kraken.ndo.cafe --tls-san 10.0.0.77 --tls-san 100.123.26.28";
   };
 
   networking.firewall.extraCommands = ''
     iptables -A INPUT -p tcp -s 10.0.0.0/24 --dport 6443 -j ACCEPT
+    iptables -A INPUT -i tailscale0 -p tcp --dport 6443 -j ACCEPT
+    iptables -A INPUT -p tcp -s 10.0.0.0/24 --dport 22 -j ACCEPT
+    iptables -A INPUT -i tailscale0 -p tcp --dport 22 -j ACCEPT
   '';
 
   services.smartd = {
@@ -165,6 +168,7 @@
 
   services.openssh = {
     enable = true;
+    openFirewall = false;
     settings.PermitRootLogin = "no";
     settings.PasswordAuthentication = false;
   };
