@@ -6,6 +6,21 @@
   nixpkgs,
   ...
 }:
+let
+  # Arch's PipeWire libs aren't visible to the nix-linked claude-code binary,
+  # which breaks its built-in voice mode (ALSA can't find the pipewire plugin).
+  # Wrap so ALSA can find it, scoped to claude-code only.
+  claudeCodeWrapped = pkgs.symlinkJoin {
+    name = "claude-code-arch-wrapped";
+    paths = [ pkgs.claude-code ];
+    nativeBuildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram $out/bin/claude \
+        --set ALSA_PLUGIN_DIR /usr/lib/alsa-lib \
+        --prefix LD_LIBRARY_PATH : /usr/lib
+    '';
+  };
+in
 {
   imports = [
     tldr.homeManagerModules.default
@@ -35,7 +50,7 @@
   home.packages = [
     pkgs.cloudflared
     pkgs.ripgrep
-    pkgs.claude-code
+    claudeCodeWrapped
     pkgs.curl
     pkgs.netcat-openbsd
     pkgs.curlie
