@@ -126,7 +126,6 @@ layout {
 
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "awww-daemon"
-spawn-sh-at-startup "sleep 1 && awww img /home/paulo/medias/pictures/wp.png --resize fit"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"

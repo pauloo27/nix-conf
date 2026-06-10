@@ -19,6 +19,7 @@
     (import ../../shared/home/desktop/niri/niri.nix [
       ../../shared/home/desktop/niri/input.kdl
       ./niri-monitors.kdl
+      ./niri-wallpaper.kdl
     ])
 
     # infra

@@ -1,0 +1,1 @@
+spawn-sh-at-startup "sleep 1 && awww img -o HDMI-A-1 /home/work/medias/pictures/wallpapers/enabled/1.jpg --resize crop --transition-type none && awww img -o DP-1 /home/work/medias/pictures/wallpapers/enabled/2.jpg --resize fit --transition-type none"

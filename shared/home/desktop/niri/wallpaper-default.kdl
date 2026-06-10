@@ -1,0 +1,1 @@
+spawn-sh-at-startup "sleep 1 && awww img /home/paulo/medias/pictures/wp.png --resize fit --transition-type none"
