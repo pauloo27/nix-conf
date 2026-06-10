@@ -33,7 +33,7 @@
     pkgs.btop
     pkgs.gh
     pkgs.wget
-    pkgs.tea
+    pkgs.forgejo-cli
     pkgs.glow
     pkgs.file
     pkgs.nix-index
