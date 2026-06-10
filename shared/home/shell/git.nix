@@ -5,6 +5,7 @@
 
     ignores = [
       ".envrc.local"
+      "**/.claude/settings.local.json"
     ];
 
     signing = {
