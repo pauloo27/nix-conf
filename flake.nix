@@ -133,7 +133,7 @@
               default = pkgs.mkShell {
                 packages = with pkgs; [
                   nil # Nix language server
-                  nixfmt-rfc-style # Nix formatter
+                  nixfmt # Nix formatter
                   stylua # Lua formatter
                   lua-language-server # Lua language server
                 ];
