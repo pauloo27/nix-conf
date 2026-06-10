@@ -14,7 +14,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../shared/nixos/base.nix
-    ../../shared/nixos/hyprland.nix
+    ../../shared/nixos/niri.nix
     ../../shared/nixos/flatpak.nix
   ];
 

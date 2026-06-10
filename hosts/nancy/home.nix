@@ -16,8 +16,12 @@
     ../../shared/home/cli/tmux.nix
 
     # desktop
-    ../../shared/home/desktop/hyprland/hyprland.nix
-    ../../shared/home/desktop/hyprland/waybar_laptop.nix
+    (import ../../shared/home/desktop/niri/niri.nix [
+      ../../shared/home/desktop/niri/input-swapescape.kdl
+      ./niri-monitors.kdl
+      ../../shared/home/desktop/niri/wallpaper-default.kdl
+    ])
+    ../../shared/home/desktop/niri/waybar_laptop.nix
 
     # nvim + langs
     ../../shared/home/editor/nvim/nvim.nix
