@@ -9,6 +9,8 @@
   programs.niri.enable = true;
 
   services.displayManager.gdm.enable = true;
+  services.displayManager.gdm.wayland = true;
+  services.displayManager.sessionPackages = [ pkgs.niri ];
 
   security.pam.services.swaylock = { };
 }
