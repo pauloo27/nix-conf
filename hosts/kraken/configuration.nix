@@ -24,6 +24,7 @@
   networking.hostId = "e9a52955";
 
   boot.supportedFilesystems = [ "zfs" ];
+  boot.zfs.forceImportRoot = false;
   boot.zfs.extraPools = [ "tank" ];
 
   networking.networkmanager.enable = true;
