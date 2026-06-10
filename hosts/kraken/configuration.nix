@@ -26,6 +26,7 @@
   boot.supportedFilesystems = [ "zfs" ];
   boot.zfs.forceImportRoot = false;
   boot.zfs.extraPools = [ "tank" ];
+  boot.zfs.forceImportRoot = false;
 
   networking.networkmanager.enable = true;
   networking = {
