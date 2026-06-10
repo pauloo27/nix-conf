@@ -29,6 +29,7 @@
     # apps
     ../../shared/home/apps/teams.nix
     ../../shared/home/apps/slack.nix
+    (import ../../shared/home/apps/voxtype.nix "vulkan")
 
     # nvim + langs
     ../../shared/home/editor/nvim/nvim.nix

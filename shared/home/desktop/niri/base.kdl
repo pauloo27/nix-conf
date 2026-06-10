@@ -221,6 +221,8 @@ binds {
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
+    XF86Calculator { spawn-sh "voxtype record toggle"; }
+
     XF86AudioPlay        allow-when-locked=true { spawn-sh "rstroller play-pause"; }
     XF86AudioPause       allow-when-locked=true { spawn-sh "rstroller play-pause"; }
     XF86AudioPrev        allow-when-locked=true { spawn-sh "rstroller previous"; }

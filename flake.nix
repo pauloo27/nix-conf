@@ -14,6 +14,7 @@
     smsh.url = "git+https://code.db.cafe/pauloo27/smsh.git";
     np.url = "git+https://code.db.cafe/pauloo27/np.git";
     rstroller.url = "git+https://code.db.cafe/pauloo27/rstroller.git";
+    voxtype.url = "github:peteonrails/voxtype";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
@@ -29,6 +30,7 @@
       smsh,
       np,
       rstroller,
+      voxtype,
       ...
     }@inputs:
     let
@@ -86,6 +88,7 @@
             homeFile
             nix-flatpak.homeManagerModules.nix-flatpak
             np.homeManagerModules.default
+            voxtype.homeManagerModules.default
           ];
           extraSpecialArgs = {
             inherit
@@ -94,6 +97,7 @@
               llame
               smsh
               rstroller
+              voxtype
               nixpkgs
               ;
             hostname = name;
