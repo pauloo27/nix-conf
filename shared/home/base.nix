@@ -3,6 +3,7 @@
   config,
   tldr,
   f,
+  nixpkgs,
   ...
 }:
 {
@@ -11,6 +12,9 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
+
+  nix.registry.nixpkgs.flake = nixpkgs;
+  nix.settings.nix-path = [ "nixpkgs=flake:nixpkgs" ];
 
   nix.gc = {
     automatic = true;

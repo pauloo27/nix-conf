@@ -94,6 +94,7 @@
               llame
               smsh
               rstroller
+              nixpkgs
               ;
             hostname = name;
             unstable = nixpkgs-unstable.legacyPackages.${config.arch};
