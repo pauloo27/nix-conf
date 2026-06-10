@@ -3,6 +3,10 @@
   programs.git = {
     enable = true;
 
+    ignores = [
+      ".envrc.local"
+    ];
+
     signing = {
       key = "9C547E6289CF30DB";
       signByDefault = true;
