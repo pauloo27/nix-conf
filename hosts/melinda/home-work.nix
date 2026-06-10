@@ -11,6 +11,7 @@
 
     # shell stuff
     ../../shared/home/shell/zsh.nix
+    ../../shared/home/shell/bash.nix
     ../../shared/home/shell/git.nix
     ../../shared/home/shell/tmux.nix
     ../../shared/home/shell/starship-k8s.nix

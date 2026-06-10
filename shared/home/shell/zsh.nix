@@ -156,18 +156,7 @@
       # Source stuff
       source ${./aliases.sh}
 
-      # Lazy-load kubectl completion + apply $KUBE_CONTEXT if set
-      kubectl() {
-        if [[ -z "$_KUBECTL_COMPLETION_LOADED" ]]; then
-          source <(command kubectl completion zsh)
-          export _KUBECTL_COMPLETION_LOADED=1
-        fi
-        if [[ -n "$KUBE_CONTEXT" ]]; then
-          command kubectl --context "$KUBE_CONTEXT" "$@"
-        else
-          command kubectl "$@"
-        fi
-      }
+      source ${./kubectl-wrapper.sh}
 
       # Source extra config (secrets, machine-specific settings)
       [ -f $HOME/.extra.zsh ] && source $HOME/.extra.zsh
