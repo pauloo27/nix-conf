@@ -13,13 +13,18 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  nix.registry.nixpkgs.flake = nixpkgs;
-  nix.settings.nix-path = [ "nixpkgs=flake:nixpkgs" ];
-
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 30d";
+  nix = {
+    package = pkgs.nix;
+    registry.nixpkgs.flake = nixpkgs;
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+      nix-path = [ "nixpkgs=flake:nixpkgs" ];
+    };
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
   };
 
   home.sessionPath = [

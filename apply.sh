@@ -8,6 +8,8 @@ else
   FLAKE_KEY="$HOSTNAME"
 fi
 
+export NIX_CONFIG="experimental-features = nix-command flakes"
+
 home-manager switch --flake .#$FLAKE_KEY
 
 # Pre-build dev shells so they're cached in the nix store

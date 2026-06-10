@@ -102,6 +102,9 @@
         export PATH="$HOME/.nix-profile/bin:$PATH"
       fi
 
+      # nix.sh sets NIX_PATH to the (unused) channels dir; point it at our flake instead
+      export NIX_PATH="nixpkgs=flake:nixpkgs"
+
       export PATH="$PATH:$HOME/.local/bin"
 
       export GPG_TTY=$(tty)

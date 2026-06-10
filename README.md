@@ -14,9 +14,6 @@
 ## Setup
 
 ```bash
-# Enable flakes
-./setup-nix-conf.sh
-
 # Apply configuration
 ./apply.sh
 
