@@ -109,7 +109,7 @@
       # Load Keybinds
       autoload -U select-word-style
       select-word-style bash
-      source ${./zsh_keybinds}
+      source ${./zsh-keybinds}
 
       # Completion - cache compinit for faster startup
       autoload -Uz compinit

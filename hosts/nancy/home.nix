@@ -12,8 +12,8 @@
     # shell stuff
     ../../shared/home/shell/zsh.nix
     ../../shared/home/shell/bash.nix
-    ../../shared/home/shell/git.nix
-    ../../shared/home/shell/tmux.nix
+    ../../shared/home/cli/git.nix
+    ../../shared/home/cli/tmux.nix
 
     # desktop
     ../../shared/home/desktop/hyprland/hyprland.nix
