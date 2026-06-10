@@ -1,8 +1,8 @@
 { pkgs, rstroller, ... }:
 {
   home.packages = [
-    pkgs.xfce.xfconf
+    pkgs.xfconf
     pkgs.dbeaver-bin
-    rstroller.packages.${pkgs.system}.default
+    rstroller.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }

@@ -11,5 +11,5 @@
 
   programs.neovim.extraPackages = [ pkgs.terraform-ls ];
 
-  programs.neovim.extraLuaConfig = builtins.readFile ./terraform.lua;
+  programs.neovim.initLua = builtins.readFile ./terraform.lua;
 }

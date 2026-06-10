@@ -14,5 +14,5 @@
     pkgs.delve
   ];
 
-  programs.neovim.extraLuaConfig = builtins.readFile ./go.lua;
+  programs.neovim.initLua = builtins.readFile ./go.lua;
 }

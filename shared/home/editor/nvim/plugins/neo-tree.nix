@@ -7,5 +7,5 @@
     nui-nvim
   ];
 
-  programs.neovim.extraLuaConfig = builtins.readFile ./neo-tree.lua;
+  programs.neovim.initLua = builtins.readFile ./neo-tree.lua;
 }

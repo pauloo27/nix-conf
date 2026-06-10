@@ -19,9 +19,9 @@ in
   home.packages = with pkgs; [
     wl-clipboard
     nemo
-    xfce.ristretto
+    ristretto
     xarchiver
-    xfce.xfce4-notifyd
+    xfce4-notifyd
     pavucontrol
     grim
     slurp

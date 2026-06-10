@@ -11,5 +11,5 @@
     pkgs.fd
   ];
 
-  programs.neovim.extraLuaConfig = builtins.readFile ./mini-pick.lua;
+  programs.neovim.initLua = builtins.readFile ./mini-pick.lua;
 }

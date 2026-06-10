@@ -2,7 +2,7 @@
 {
   programs.neovim.extraPackages = [ pkgs.tailwindcss-language-server ];
 
-  programs.neovim.extraLuaConfig = ''
+  programs.neovim.initLua = ''
     vim.lsp.config("tailwindcss", {
       filetypes = vim.json.decode('${builtins.toJSON config.myNvim.tailwindcss.filetypes}'),
     })

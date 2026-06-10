@@ -2,5 +2,5 @@
 {
   programs.neovim.plugins = [ pkgs.vimPlugins.nvim-lspconfig ];
 
-  programs.neovim.extraLuaConfig = builtins.readFile ./lsp.lua;
+  programs.neovim.initLua = builtins.readFile ./lsp.lua;
 }

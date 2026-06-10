@@ -6,5 +6,5 @@
 
   programs.neovim.extraPackages = [ pkgs.rust-analyzer ];
 
-  programs.neovim.extraLuaConfig = builtins.readFile ./rust.lua;
+  programs.neovim.initLua = builtins.readFile ./rust.lua;
 }

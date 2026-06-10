@@ -2,5 +2,5 @@
 {
   programs.neovim.plugins = [ pkgs.vimPlugins.nvim-dap ];
 
-  programs.neovim.extraLuaConfig = builtins.readFile ./dap.lua;
+  programs.neovim.initLua = builtins.readFile ./dap.lua;
 }

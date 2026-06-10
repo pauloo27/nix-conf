@@ -26,7 +26,5 @@
     programs.neovim.plugins = [
       (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: map (l: p.${l}) config.myNvim.treesitter.parsers))
     ];
-
-    programs.neovim.extraLuaConfig = builtins.readFile ./treesitter.lua;
   };
 }

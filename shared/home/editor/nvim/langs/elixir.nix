@@ -6,5 +6,5 @@
 
   programs.neovim.extraPackages = [ pkgs.elixir-ls ];
 
-  programs.neovim.extraLuaConfig = builtins.readFile ./elixir.lua;
+  programs.neovim.initLua = builtins.readFile ./elixir.lua;
 }

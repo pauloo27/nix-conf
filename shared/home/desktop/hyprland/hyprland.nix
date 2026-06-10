@@ -35,11 +35,11 @@
   home.packages = with pkgs; [
     wl-clipboard
     nemo
-    xfce.ristretto
+    ristretto
     xarchiver
     grimblast
     hyprpicker
-    xfce.xfce4-notifyd
+    xfce4-notifyd
     pavucontrol
     uwsm
     xdg-desktop-portal-gtk

@@ -6,5 +6,5 @@
 
   programs.neovim.extraPackages = [ pkgs.jdt-language-server ];
 
-  programs.neovim.extraLuaConfig = builtins.readFile ./java.lua;
+  programs.neovim.initLua = builtins.readFile ./java.lua;
 }

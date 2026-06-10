@@ -2,5 +2,5 @@
 {
   programs.neovim.plugins = [ pkgs.vimPlugins.gitsigns-nvim ];
 
-  programs.neovim.extraLuaConfig = builtins.readFile ./gitsigns.lua;
+  programs.neovim.initLua = builtins.readFile ./gitsigns.lua;
 }

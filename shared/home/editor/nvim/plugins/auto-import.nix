@@ -1,3 +1,3 @@
 {
-  programs.neovim.extraLuaConfig = builtins.readFile ./auto-import.lua;
+  programs.neovim.initLua = builtins.readFile ./auto-import.lua;
 }

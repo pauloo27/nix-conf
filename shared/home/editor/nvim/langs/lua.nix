@@ -2,5 +2,5 @@
 {
   programs.neovim.extraPackages = [ pkgs.lua-language-server ];
 
-  programs.neovim.extraLuaConfig = builtins.readFile ./lua.lua;
+  programs.neovim.initLua = builtins.readFile ./lua.lua;
 }

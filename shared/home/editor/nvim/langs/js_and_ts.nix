@@ -38,5 +38,5 @@
     pkgs.prettierd
   ];
 
-  programs.neovim.extraLuaConfig = builtins.readFile ./js_and_ts.lua;
+  programs.neovim.initLua = builtins.readFile ./js_and_ts.lua;
 }

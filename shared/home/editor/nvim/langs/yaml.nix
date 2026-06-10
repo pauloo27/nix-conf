@@ -6,5 +6,5 @@
 
   programs.neovim.extraPackages = [ pkgs.yaml-language-server ];
 
-  programs.neovim.extraLuaConfig = builtins.readFile ./yaml.lua;
+  programs.neovim.initLua = builtins.readFile ./yaml.lua;
 }

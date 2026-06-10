@@ -6,5 +6,5 @@
 
   programs.neovim.extraPackages = [ pkgs.gleam ];
 
-  programs.neovim.extraLuaConfig = builtins.readFile ./gleam.lua;
+  programs.neovim.initLua = builtins.readFile ./gleam.lua;
 }

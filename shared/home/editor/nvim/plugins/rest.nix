@@ -9,5 +9,5 @@
 
   home.packages = [ pkgs.jq ];
 
-  programs.neovim.extraLuaConfig = builtins.readFile ./rest.lua;
+  programs.neovim.initLua = builtins.readFile ./rest.lua;
 }

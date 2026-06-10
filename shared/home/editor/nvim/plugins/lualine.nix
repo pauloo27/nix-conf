@@ -5,5 +5,5 @@
     pkgs.vimPlugins.nvim-web-devicons
   ];
 
-  programs.neovim.extraLuaConfig = builtins.readFile ./lualine.lua;
+  programs.neovim.initLua = builtins.readFile ./lualine.lua;
 }

@@ -13,7 +13,7 @@
   config = {
     programs.neovim.plugins = [ pkgs.vimPlugins.conform-nvim ];
 
-    programs.neovim.extraLuaConfig = ''
+    programs.neovim.initLua = ''
       require("conform").setup({
         formatters_by_ft = vim.json.decode('${builtins.toJSON config.myNvim.conform.formatters_by_ft}'),
         default_format_opts = {

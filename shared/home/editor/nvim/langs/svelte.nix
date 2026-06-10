@@ -19,5 +19,5 @@
     pkgs.prettierd
   ];
 
-  programs.neovim.extraLuaConfig = builtins.readFile ./svelte.lua;
+  programs.neovim.initLua = builtins.readFile ./svelte.lua;
 }

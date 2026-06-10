@@ -41,7 +41,7 @@
     pkgs.unzip
     pkgs.imagemagick
     pkgs.rbw
-    pkgs.dogdns
+    pkgs.doggo
     pkgs.wol
     pkgs.bc
     pkgs.jq
@@ -82,6 +82,6 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    matchBlocks."*".addKeysToAgent = "yes";
+    settings."*".AddKeysToAgent = "yes";
   };
 }

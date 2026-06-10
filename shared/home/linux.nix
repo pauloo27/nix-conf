@@ -8,6 +8,7 @@
   xdg.userDirs = {
     enable = true;
     createDirectories = true;
+    setSessionVariables = true;
     desktop = "$HOME/desktop";
     download = "$HOME/downloads";
     templates = "$HOME/documents/templates";

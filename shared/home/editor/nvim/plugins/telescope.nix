@@ -11,5 +11,5 @@
     pkgs.fd
   ];
 
-  programs.neovim.extraLuaConfig = builtins.readFile ./telescope.lua;
+  programs.neovim.initLua = builtins.readFile ./telescope.lua;
 }

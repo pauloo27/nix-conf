@@ -12,6 +12,8 @@ alias g=git
 alias v=nvim
 alias k="kubectl"
 alias kc="kubectx"
+alias dig="doggo"
+alias dog="doggo"
 alias p=pnpm
 
 alias diff='diff --color=auto'

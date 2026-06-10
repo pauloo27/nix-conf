@@ -2,5 +2,5 @@
 {
   programs.neovim.extraPackages = [ pkgs.clang-tools ];
 
-  programs.neovim.extraLuaConfig = builtins.readFile ./c.lua;
+  programs.neovim.initLua = builtins.readFile ./c.lua;
 }
