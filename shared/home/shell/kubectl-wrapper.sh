@@ -1,6 +1,12 @@
-# kubectl wrapper: lazy-load completion + apply $KUBE_CONTEXT if set.
-# Sourced from both bash.nix and zsh.nix — the completion source line
-# uses $0-style detection so it loads the right completion for each shell.
+# kubectl wrapper: lazy-load completion only.
+# Context selection is done via $KUBECONFIG (merged list of per-cluster
+# files under ~/.kube/configs/, or a single file for a scoped shell).
+
+if [ -d "$HOME/.kube/configs" ]; then
+  _extra=$(find "$HOME/.kube/configs" -type f -print0 2>/dev/null | tr '\0' ':')
+  export KUBECONFIG="$HOME/.kube/config:${_extra%:}"
+  unset _extra
+fi
 
 kubectl() {
   if [ -z "$_KUBECTL_COMPLETION_LOADED" ]; then
@@ -11,9 +17,5 @@ kubectl() {
     fi
     export _KUBECTL_COMPLETION_LOADED=1
   fi
-  if [ -n "$KUBE_CONTEXT" ]; then
-    command kubectl --context "$KUBE_CONTEXT" "$@"
-  else
-    command kubectl "$@"
-  fi
+  command kubectl "$@"
 }
