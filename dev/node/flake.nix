@@ -2,7 +2,7 @@
   description = "Node.js development environment";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
   };
 
   outputs =
@@ -28,11 +28,10 @@
               nodejs_24
               eslint_d
               biome
-              nodePackages.npm
-              nodePackages.pnpm
-              nodePackages.yarn
-              nodePackages.typescript
-              nodePackages.typescript-language-server
+              pnpm
+              yarn
+              typescript
+              typescript-language-server
             ];
           };
         in
@@ -44,11 +43,10 @@
               nodejs_22
               eslint_d
               biome
-              nodePackages.npm
-              nodePackages.pnpm
-              nodePackages.yarn
-              nodePackages.typescript
-              nodePackages.typescript-language-server
+              pnpm
+              yarn
+              typescript
+              typescript-language-server
             ];
           };
         }
