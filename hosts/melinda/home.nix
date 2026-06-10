@@ -55,18 +55,6 @@
     "HDMI-A-1,2560x1080@75,0x0,1,transform,1"
   ];
 
-  # Override wallpaper
-  services.hyprpaper.settings = lib.mkForce {
-    preload = [
-      "/home/paulo/medias/pictures/wallpapers/enabled/1.jpg"
-      "/home/paulo/medias/pictures/wallpapers/enabled/2.png"
-    ];
-    wallpaper = [
-      "HDMI-A-1,/home/paulo/medias/pictures/wallpapers/enabled/1.jpg"
-      "DP-1,/home/paulo/medias/pictures/wallpapers/enabled/2.png"
-    ];
-  };
-
   home.stateVersion = "25.05";
   home.username = "paulo";
   home.homeDirectory = "/home/paulo";

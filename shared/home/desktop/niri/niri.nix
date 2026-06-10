@@ -30,20 +30,11 @@ in
     wl-screenrec
     niri
     xwayland-satellite
+    awww
   ];
 
   programs.swaylock = {
     enable = true;
-  };
-
-  # TODO: replace? i mean, if it works on niri, should be fine right??
-  services.hyprpaper = {
-    enable = true;
-    settings = {
-      splash = false;
-      preload = "/home/paulo/medias/pictures/wp.png";
-      wallpaper = ",/home/paulo/medias/pictures/wp.png";
-    };
   };
 
   xdg.portal = {
