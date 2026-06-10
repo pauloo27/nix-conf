@@ -109,6 +109,12 @@
 
       export GPG_TTY=$(tty)
 
+      # tmux server caches env at first launch, so new panes inherit stale
+      # DIRENV_* vars — clear them so the direnv hook re-evaluates from scratch.
+      if [[ -n "$TMUX" && -n "$DIRENV_DIR" ]]; then
+        unset -m "DIRENV_*"
+      fi
+
       # Load Keybinds
       autoload -U select-word-style
       select-word-style bash
