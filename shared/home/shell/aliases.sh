@@ -1,6 +1,12 @@
 #!/bin/bash
 
-alias secret="cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1"
+secret() {
+  cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w "${1:-32}" | head -n 1
+}
+
+secretx() {
+  cat /dev/urandom | tr -dc '[:graph:]' | fold -w "${1:-32}" | head -n 1
+}
 alias c=clear
 alias g=git
 alias v=nvim
