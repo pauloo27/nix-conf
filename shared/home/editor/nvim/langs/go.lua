@@ -5,7 +5,7 @@ vim.lsp.config("gopls", {
     },
   },
   init_options = {
-    usePlaceholders = true,
+    usePlaceholders = false,
   },
 })
 

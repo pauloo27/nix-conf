@@ -4,6 +4,11 @@ vim.lsp.config("rust_analyzer", {
       check = {
         command = "clippy",
       },
+      completion = {
+        callable = {
+          snippets = "add_parentheses",
+        },
+      },
     },
   },
 })
