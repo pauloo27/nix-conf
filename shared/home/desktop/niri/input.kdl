@@ -20,4 +20,12 @@ input {
 
     trackpoint {
     }
+
+    tablet {
+        map-to-output "DP-1"
+    }
+
+    touch {
+        map-to-output "DP-1"
+    }
 }
