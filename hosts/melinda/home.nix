@@ -21,6 +21,7 @@
       ./niri-monitors.kdl
       ./niri-wallpaper.kdl
     ])
+    ../../shared/home/desktop/opentabletdriver/opentabletdriver.nix
 
     # infra
     ../../shared/home/infra.nix
