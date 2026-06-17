@@ -1,5 +1,7 @@
 { pkgs, config, ... }:
 {
+  imports = [ ./fjapi.nix ];
+
   home.sessionVariables = {
     ZDOTDIR = "$XDG_CONFIG_HOME/zsh";
     EDITOR = "nvim";
