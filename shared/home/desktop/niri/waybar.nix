@@ -42,9 +42,9 @@
           return-type = "json";
           on-click = ''
             if [ "$(xfconf-query -c xfce4-notifyd -p /do-not-disturb)" = "true" ]; then
-              xfconf-query -c xfce4-notifyd -p /do-not-disturb -s false
+              xfconf-query -c xfce4-notifyd -p /do-not-disturb -n -t bool -s false
             else
-              xfconf-query -c xfce4-notifyd -p /do-not-disturb -s true
+              xfconf-query -c xfce4-notifyd -p /do-not-disturb -n -t bool -s true
             fi
           '';
         };
