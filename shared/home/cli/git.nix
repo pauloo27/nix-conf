@@ -37,10 +37,6 @@
         d = "diff";
         unadd = "restore --staged";
       };
-      url = {
-        "git@github.com:".insteadOf = "https://github.com/";
-        "git@code.db.cafe:".insteadOf = "https://code.db.cafe/";
-      };
     };
   };
 }
