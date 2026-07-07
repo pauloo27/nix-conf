@@ -14,6 +14,7 @@
     ../../shared/home/shell/bash.nix
     ../../shared/home/cli/git.nix
     ../../shared/home/cli/tmux.nix
+    ../../shared/home/shell/starship-k8s.nix
 
     # desktop
     (import ../../shared/home/desktop/niri/niri.nix [
