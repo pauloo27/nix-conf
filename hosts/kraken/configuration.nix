@@ -101,6 +101,9 @@
   # You can use https://search.nixos.org/ to find more packages (and options).
   services.thermald.enable = true;
 
+  # QEMU guest agent so Proxmox can report accurate stats (memory, IP, etc.)
+  services.qemuGuest.enable = true;
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
