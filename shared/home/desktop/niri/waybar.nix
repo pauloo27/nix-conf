@@ -183,6 +183,15 @@
         padding-left: 10px;
         padding-right: 10px;
       }
+
+      #battery.warning {
+        color: #f38ba8;
+      }
+
+      #battery.critical {
+        color: #f38ba8;
+        font-weight: bold;
+      }
     '';
   };
 }

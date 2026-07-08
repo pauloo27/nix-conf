@@ -39,7 +39,7 @@
       weighted-average = true;
       interval = 10;
       states = {
-        warning = 30;
+        warning = 20;
         critical = 15;
       };
       format = "{icon} {capacity}%";
