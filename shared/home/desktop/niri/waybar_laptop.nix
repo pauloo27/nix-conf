@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./battery-notify.nix
+  ];
+
   programs.waybar.settings.mainBar = {
     modules-right = [
       "group/laptop"
