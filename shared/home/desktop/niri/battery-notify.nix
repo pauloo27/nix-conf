@@ -27,14 +27,14 @@ let
     }
 
     if [ "$capacity" -le 3 ]; then
-      notify critical battery-caution "Battery empty — shutting down"
+      notify critical dialog-warning "Battery empty — shutting down"
       # give the notification a moment to reach the daemon before we go down
       sleep 5
       ${pkgs.systemd}/bin/systemctl poweroff
     elif [ "$capacity" -le 10 ]; then
-      notify critical battery-caution "Battery critically low"
+      notify critical dialog-warning "Battery critically low"
     elif [ "$capacity" -le 20 ]; then
-      notify normal battery-low "Battery low"
+      notify normal dialog-warning "Battery low"
     fi
   '';
 in
