@@ -29,5 +29,6 @@ in
     pkgs.argocd
     pkgs.terraform
     pkgs.openssl
+    pkgs.postgresql_18
   ];
 }
