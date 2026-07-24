@@ -29,7 +29,6 @@ if [ "$1" != "--skip-dev" ] && should_cache; then
   SYSTEM=$(nix eval --impure --raw --expr 'builtins.currentSystem')
   for dev in dev/*/; do
     echo "Caching dev shell: $dev"
-    nix build "./${dev}#devShells.${SYSTEM}.default" --no-link &
+    nix build "./${dev}#devShells.${SYSTEM}.default" --no-link
   done
-  wait
 fi
