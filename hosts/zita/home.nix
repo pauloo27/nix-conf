@@ -27,7 +27,6 @@
     # apps
     ../../shared/home/apps/teams.nix
     ../../shared/home/apps/slack.nix
-    (import ../../shared/home/apps/voxtype.nix "default")
 
     # infra
     ../../shared/home/infra.nix

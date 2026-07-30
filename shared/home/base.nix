@@ -6,24 +6,6 @@
   nixpkgs,
   ...
 }:
-let
-  # The system PipeWire libs aren't visible to the nix-linked claude-code binary,
-  # which breaks its built-in voice mode (ALSA can't find the pipewire plugin).
-  # Wrap so ALSA can find it, scoped to claude-code only. ALSA_PLUGIN_DIR is a
-  # SINGLE directory (not a colon-separated search path), so pick the right one
-  # at runtime to keep this shared module host-agnostic: Fedora uses
-  # /usr/lib64/alsa-lib, Arch uses /usr/lib/alsa-lib.
-  claudeCodeWrapped = pkgs.symlinkJoin {
-    name = "claude-code-wrapped";
-    paths = [ pkgs.claude-code ];
-    nativeBuildInputs = [ pkgs.makeWrapper ];
-    postBuild = ''
-      wrapProgram $out/bin/claude \
-        --run 'for d in /usr/lib64/alsa-lib /usr/lib/alsa-lib; do [ -e "$d/libasound_module_pcm_pipewire.so" ] && export ALSA_PLUGIN_DIR="$d" && break; done' \
-        --prefix LD_LIBRARY_PATH : /usr/lib64:/usr/lib
-    '';
-  };
-in
 {
   imports = [
     tldr.homeManagerModules.default
@@ -35,7 +17,10 @@ in
     package = pkgs.nix;
     registry.nixpkgs.flake = nixpkgs;
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       nix-path = [ "nixpkgs=flake:nixpkgs" ];
     };
     gc = {
@@ -53,7 +38,7 @@ in
   home.packages = [
     pkgs.cloudflared
     pkgs.ripgrep
-    claudeCodeWrapped
+    pkgs.claude-code
     pkgs.curl
     pkgs.netcat-openbsd
     pkgs.curlie
