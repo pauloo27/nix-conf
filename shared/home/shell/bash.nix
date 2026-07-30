@@ -8,7 +8,10 @@
 
     historyFileSize = 10000;
     historySize = 10000;
-    historyControl = [ "ignoredups" "ignorespace" ];
+    historyControl = [
+      "ignoredups"
+      "ignorespace"
+    ];
 
     initExtra = ''
       source ${./aliases.sh}

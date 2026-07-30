@@ -1,4 +1,9 @@
-{ pkgs, lib, f, ... }:
+{
+  pkgs,
+  lib,
+  f,
+  ...
+}:
 {
   imports = [
     # base os stuff
