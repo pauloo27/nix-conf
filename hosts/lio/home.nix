@@ -6,7 +6,12 @@
 
     # shell stuff
     ../../shared/home/shell/zsh.nix
+    ../../shared/home/shell/bash.nix
     ../../shared/home/cli/git.nix
+    ../../shared/home/cli/tmux.nix
+
+    # infra
+    ../../shared/home/infra.nix
   ];
 
   home.stateVersion = "26.05";

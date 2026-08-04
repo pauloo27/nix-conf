@@ -1,4 +1,8 @@
 { pkgs, ... }:
+let
+  # wl-copy is wayland only, macOS ships pbcopy
+  copyCmd = if pkgs.stdenv.hostPlatform.isDarwin then "pbcopy" else "wl-copy";
+in
 {
   programs.tmux = {
     enable = true;
@@ -6,7 +10,7 @@
     extraConfig = ''
       # make color and stuff work
       set -g default-terminal 'tmux-256color'
-      set -as terminal-overrides ",alacritty*:Tc"
+      set -as terminal-overrides ",alacritty*:Tc,xterm-ghostty:Tc"
 
       # mouse!
       set -g mouse on
@@ -35,7 +39,7 @@
       # vim-like visual mode
       set-window-option -g mode-keys vi
       bind -T copy-mode-vi v send-keys -X begin-selection
-      bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'wl-copy'
+      bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel '${copyCmd}'
 
       # nvim <-> tmux
       is_vim="ps -o state= -o comm= -t '#{pane_tty}' | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?\.?(view|n?vim?x?)(-wrapped)?(diff)?$'"
