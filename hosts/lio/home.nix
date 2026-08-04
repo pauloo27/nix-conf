@@ -9,6 +9,7 @@
     ../../shared/home/shell/bash.nix
     ../../shared/home/cli/git.nix
     ../../shared/home/cli/tmux.nix
+    ../../shared/home/cli/claude/claude.nix
 
     # infra
     ../../shared/home/infra.nix
