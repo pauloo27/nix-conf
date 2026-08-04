@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-HOSTNAME=$(cat /etc/hostname)
+HOSTNAME=$(hostname -s)
 USER=$(whoami)
 
 if [ "$USER" != "paulo" ]; then

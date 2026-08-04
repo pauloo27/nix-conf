@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-HOSTNAME=$(cat /etc/hostname)
+HOSTNAME=$(hostname -s)
 sudo nixos-rebuild switch --flake .#$HOSTNAME

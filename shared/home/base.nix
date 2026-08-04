@@ -38,9 +38,7 @@
   home.packages = [
     pkgs.cloudflared
     pkgs.ripgrep
-    pkgs.claude-code
     pkgs.curl
-    pkgs.netcat-openbsd
     pkgs.curlie
     pkgs.btop
     pkgs.gh

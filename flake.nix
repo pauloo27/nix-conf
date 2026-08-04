@@ -55,6 +55,12 @@
           extraNixosModules = [ ];
           extraUsers = { };
         };
+        lio = {
+          isNixOS = false;
+          arch = "aarch64-darwin";
+          extraNixosModules = [ ];
+          extraUsers = { };
+        };
         melinda = {
           isNixOS = false;
           arch = "x86_64-linux";

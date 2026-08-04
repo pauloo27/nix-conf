@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-HOSTNAME=$(cat /etc/hostname)
+HOSTNAME=$(hostname -s)
 
 # Source shared configuration
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
