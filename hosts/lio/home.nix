@@ -12,6 +12,9 @@
 
     # infra
     ../../shared/home/infra.nix
+
+    # apps
+    ../../shared/home/apps/ghostty.nix
   ];
 
   home.stateVersion = "26.05";
