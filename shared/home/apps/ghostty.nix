@@ -8,6 +8,7 @@
 
     theme = Rose Pine
     background-opacity = 0.9
+    background-blur = true
 
     # cmd+q closes the window, quitting moves to cmd+shift+q
     keybind = cmd+q=close_window
