@@ -7,5 +7,10 @@
     working-directory = home
 
     theme = Rose Pine
+    background-opacity = 0.9
+
+    # cmd+q closes the window, quitting moves to cmd+shift+q
+    keybind = cmd+q=close_window
+    keybind = cmd+shift+q=quit
   '';
 }
