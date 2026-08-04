@@ -25,6 +25,10 @@
     ../../shared/home/editor/nvim/langs/tailwindcss.nix
   ];
 
+  # linux.nix does this for the other hosts, but it is not importable here.
+  # zsh.nix needs $XDG_CONFIG_HOME to be exported
+  xdg.enable = true;
+
   home.stateVersion = "26.05";
   home.username = "paulo";
   home.homeDirectory = "/Users/paulo";
