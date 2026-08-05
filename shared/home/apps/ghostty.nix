@@ -8,8 +8,5 @@
     background-blur = true
 
     confirm-close-surface = false
-
-    keybind = cmd+q=close_window
-    keybind = cmd+shift+q=quit
   '';
 }
