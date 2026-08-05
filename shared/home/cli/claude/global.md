@@ -22,6 +22,10 @@ These apply across all projects. Project-level CLAUDE.md overrides anything here
 
 ## Shell & infra safety
 
+- Never run a command that applies, writes or deletes state unless explicitly
+  told to: no apply/switch/rebuild/install/migrate, no rm/mv over real files, no
+  service restarts. Stick to reads and cheap local checks (build, eval, lint,
+  diff, dry-run). Prepare the change and let me run it.
 - kubectl: read-only commands only (get, describe, logs, top…) unless the user
   explicitly asks for a mutating one (apply, delete, scale, edit, rollout…).
 - Same spirit for anything destructive or outward-facing (dropping data, force
