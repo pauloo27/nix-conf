@@ -13,8 +13,10 @@
 
   homebrew = {
     enable = true;
+    brews = [ "docker-compose" ];
     casks = [
       "ghostty"
+      "podman-desktop"
       "microsoft-teams"
       "slack"
       "zed"

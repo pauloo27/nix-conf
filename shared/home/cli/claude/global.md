@@ -16,6 +16,9 @@ These apply across all projects. Project-level CLAUDE.md overrides anything here
   narrating obvious steps, TODOs with no owner). Comment the *why*, not the *what*.
 - Don't leave dead code, commented-out blocks, or debug prints behind.
 - Follow existing conventions in the repo before importing new ones.
+- Plain ASCII in code, comments, log lines and commit messages: no emojis, no
+  arrows (→, ✓, ✗), no fancy dashes or quotes. Only when explicitly asked, or
+  when the surrounding file already does it.
 
 ## Shell & infra safety
 
