@@ -30,6 +30,11 @@
   # zsh.nix needs $XDG_CONFIG_HOME to be exported
   xdg.enable = true;
 
+  # nix-darwin's /etc/zshenv is disabled, so darwin-rebuild needs to be found here.
+  home.sessionPath = [
+    "/run/current-system/sw/bin"
+  ];
+
   home.stateVersion = "26.05";
   home.username = "paulo";
   home.homeDirectory = "/Users/paulo";

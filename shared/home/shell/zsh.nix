@@ -83,7 +83,7 @@
 
     # History configuration
     history = {
-      path = "$XDG_CONFIG_HOME/zsh/.zsh_history";
+      path = "${config.xdg.configHome}/zsh/.zsh_history";
       size = 10000;
       save = 10000;
       share = true;

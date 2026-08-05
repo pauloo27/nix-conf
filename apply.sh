@@ -12,6 +12,10 @@ export NIX_CONFIG="experimental-features = nix-command flakes"
 
 home-manager switch --flake .#$FLAKE_KEY
 
+if [ "$(uname -s)" = "Darwin" ]; then
+  sudo darwin-rebuild switch --flake .#$HOSTNAME
+fi
+
 # Pre-build dev shells so they're cached in the nix store
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/hosts.sh"

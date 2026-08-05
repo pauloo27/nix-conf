@@ -7,6 +7,10 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     tldr.url = "github:pauloo27/tldr";
     llame.url = "github:pauloo27/llame";
@@ -23,6 +27,7 @@
       nixpkgs,
       nixpkgs-unstable,
       home-manager,
+      nix-darwin,
       nix-flatpak,
       f,
       tldr,
@@ -83,6 +88,15 @@
           ++ config.extraNixosModules;
         };
 
+      mkDarwinSystem =
+        name: config:
+        nix-darwin.lib.darwinSystem {
+          modules = [
+            { nixpkgs.hostPlatform = config.arch; }
+            ./hosts/${name}/darwin.nix
+          ];
+        };
+
       mkHomeSystem =
         name: config:
         {
@@ -116,6 +130,11 @@
       # Generate NixOS configurations for hosts with isNixOS = true
       nixosConfigurations = lib.filterAttrs (_: v: v != { }) (
         lib.mapAttrs (name: config: if config.isNixOS then mkNixosSystem name config else { }) hosts
+      );
+
+      # Generate nix-darwin configurations for darwin hosts
+      darwinConfigurations = lib.mapAttrs mkDarwinSystem (
+        lib.filterAttrs (_: config: lib.hasSuffix "darwin" config.arch) hosts
       );
 
       # Generate Home Manager configurations for all hosts
