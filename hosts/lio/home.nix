@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [
     # generic crap most stuff currently need
@@ -25,6 +25,9 @@
     ../../shared/home/editor/nvim/langs/js_and_ts.nix
     ../../shared/home/editor/nvim/langs/tailwindcss.nix
   ];
+
+  # fonts.nix is not importable here (its fontconfig block is linux-only).
+  home.packages = [ pkgs.nerd-fonts.symbols-only ];
 
   # linux.nix does this for the other hosts, but it is not importable here.
   # zsh.nix needs $XDG_CONFIG_HOME to be exported
