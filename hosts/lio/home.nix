@@ -26,8 +26,15 @@
     ../../shared/home/editor/nvim/langs/tailwindcss.nix
   ];
 
-  # fonts.nix is not importable here (its fontconfig block is linux-only).
-  home.packages = [ pkgs.nerd-fonts.symbols-only ];
+  # fonts.nix is not importable here (its fontconfig block is linux-only), and there
+  # is no fontconfig to reject the non-mono face either, so ship the mono one alone.
+  home.packages = [
+    (pkgs.runCommand "symbols-nerd-font-mono" { } ''
+      mkdir -p $out/share/fonts/truetype
+      cp ${pkgs.nerd-fonts.symbols-only}/share/fonts/truetype/NerdFonts/Symbols/SymbolsNerdFontMono-Regular.ttf \
+        $out/share/fonts/truetype/
+    '')
+  ];
 
   # linux.nix does this for the other hosts, but it is not importable here.
   # zsh.nix needs $XDG_CONFIG_HOME to be exported
