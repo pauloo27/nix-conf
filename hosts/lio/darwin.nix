@@ -21,6 +21,7 @@
       "ghostty"
       "openvpn-connect"
       "raycast"
+      "freelens"
       "podman-desktop"
       "microsoft-teams"
       "slack"

@@ -10,6 +10,7 @@
     ../../shared/home/cli/git.nix
     ../../shared/home/cli/tmux.nix
     ../../shared/home/cli/claude/claude.nix
+    ../../shared/home/shell/starship-k8s.nix
 
     # infra
     ../../shared/home/infra.nix

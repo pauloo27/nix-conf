@@ -15,9 +15,17 @@ seven_pct=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // emp
 
 parts=()
 
-# k8s context — for user "work" or host "zita", mirrors the starship kubernetes
-# module: cluster name is captured from the live context; first match wins.
-if { [ "$USER" = "work" ] || [ "$(hostname -s 2>/dev/null)" = "zita" ]; } && command -v kubectl >/dev/null 2>&1; then
+# k8s context — mirrors the starship kubernetes module: cluster name is captured
+# from the live context; first match wins.
+k8s_users=(work)
+k8s_hosts=(zita lio)
+
+host=$(hostname -s 2>/dev/null)
+k8s_enabled=""
+for u in "${k8s_users[@]}"; do [ "$u" = "$USER" ] && k8s_enabled=1; done
+for h in "${k8s_hosts[@]}"; do [ "$h" = "$host" ] && k8s_enabled=1; done
+
+if [ -n "$k8s_enabled" ] && command -v kubectl >/dev/null 2>&1; then
   k8s_ctx=$(kubectl config current-context 2>/dev/null)
   if [ -n "$k8s_ctx" ]; then
     if [[ "$k8s_ctx" =~ ^([[:alnum:]_-]+)-prod$ ]]; then
