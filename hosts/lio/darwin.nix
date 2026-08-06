@@ -13,9 +13,14 @@
 
   homebrew = {
     enable = true;
-    brews = [ "docker-compose" ];
+    brews = [
+      "docker-compose"
+      "wireguard-tools"
+    ];
     casks = [
       "ghostty"
+      "openvpn-connect"
+      "raycast"
       "podman-desktop"
       "microsoft-teams"
       "slack"
