@@ -25,6 +25,9 @@
       "podman-desktop"
       "microsoft-teams"
       "slack"
+      "jellyfin"
+      "stremio"
+      "obsidian"
       "zed"
     ];
     onActivation.cleanup = "zap";
