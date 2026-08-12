@@ -5,6 +5,7 @@
 
     ignores = [
       ".envrc.local"
+      ".DS_Store"
       "**/.claude/settings.local.json"
     ];
 
