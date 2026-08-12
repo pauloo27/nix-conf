@@ -12,6 +12,10 @@ in
       set -g default-terminal 'tmux-256color'
       set -as terminal-overrides ",alacritty*:Tc,xterm-ghostty:Tc"
 
+      # pass modified keys (shift+enter and friends) through to the app
+      set -s extended-keys on
+      set -as terminal-features ",alacritty*:extkeys,xterm-ghostty:extkeys"
+
       # mouse!
       set -g mouse on
 

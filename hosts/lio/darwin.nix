@@ -26,6 +26,7 @@
       "microsoft-teams"
       "slack"
       "jellyfin"
+      "discord"
       "stremio"
       "obsidian"
       "zed"
