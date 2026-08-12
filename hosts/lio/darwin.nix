@@ -19,8 +19,8 @@
     ];
     casks = [
       "ghostty"
+      "vorssaint"
       "openvpn-connect"
-      "raycast"
       "freelens"
       "podman-desktop"
       "microsoft-teams"
