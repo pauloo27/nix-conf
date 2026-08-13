@@ -46,6 +46,11 @@
     "/run/current-system/sw/bin"
   ];
 
+  home.sessionVariables = {
+    TMPDIR = "/tmp";
+    DOCKER_HOST = "unix:///tmp/podman/podman-machine-default-api.sock";
+  };
+
   home.stateVersion = "26.05";
   home.username = "paulo";
   home.homeDirectory = "/Users/paulo";
