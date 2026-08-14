@@ -30,6 +30,7 @@
   # fonts.nix is not importable here (its fontconfig block is linux-only), and there
   # is no fontconfig to reject the non-mono face either, so ship the mono one alone.
   home.packages = [
+    pkgs.pinentry-curses
     (pkgs.runCommand "symbols-nerd-font-mono" { } ''
       mkdir -p $out/share/fonts/truetype
       cp ${pkgs.nerd-fonts.symbols-only}/share/fonts/truetype/NerdFonts/Symbols/SymbolsNerdFontMono-Regular.ttf \
