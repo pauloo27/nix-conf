@@ -18,6 +18,7 @@
       "jellyfin"
       "discord"
       "stremio"
+      "pear-devs/pear/pear-desktop"
       "obsidian"
       "zed"
     ];
