@@ -30,6 +30,16 @@
       mouse = {
         hide_when_typing = true;
       };
+
+      # alacritty sends a bare \r for shift+enter, so tmux has no distinct key
+      # to pass through. emit the kitty-protocol sequence explicitly instead.
+      keyboard.bindings = [
+        {
+          key = "Return";
+          mods = "Shift";
+          chars = "[13;2u";
+        }
+      ];
     };
   };
 }
