@@ -1,10 +1,7 @@
 {
-  config,
-  lib,
   pkgs,
   ...
 }:
-
 {
   # Nix settings
   nix.settings = {
@@ -13,6 +10,8 @@
       "flakes"
     ];
   };
+
+  nixpkgs.config.allowUnfree = true;
 
   # Nix garbage collection
   nix.gc = {

@@ -13,6 +13,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../shared/nixos/base.nix
+    ../../shared/nixos/claude.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
