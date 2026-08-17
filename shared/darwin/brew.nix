@@ -15,7 +15,7 @@
       "podman-desktop"
       "microsoft-teams"
       "slack"
-      "jellyfin"
+      "jellyfin-media-player"
       "discord"
       "stremio"
       "pear-devs/pear/pear-desktop"
