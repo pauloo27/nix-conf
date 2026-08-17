@@ -3,8 +3,6 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
 {
-  config,
-  lib,
   pkgs,
   ...
 }:
@@ -14,6 +12,7 @@
     ./hardware-configuration.nix
     ../../shared/nixos/base.nix
     ../../shared/nixos/claude.nix
+    ../../shared/nixos/ollama.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
