@@ -18,7 +18,6 @@
       "jellyfin-media-player"
       "discord"
       "stremio"
-      "nextcloud"
       "pear-devs/pear/pear-desktop"
       "obsidian"
       "zed"
