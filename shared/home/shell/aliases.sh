@@ -1,11 +1,12 @@
 #!/bin/bash
 
+# LC_ALL=C: BSD tr errors on non-UTF-8 bytes from /dev/urandom
 secret() {
-  cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w "${1:-32}" | head -n 1
+  LC_ALL=C tr -dc 'a-zA-Z0-9' < /dev/urandom | fold -w "${1:-32}" | head -n 1
 }
 
 secretx() {
-  cat /dev/urandom | tr -dc '[:graph:]' | fold -w "${1:-32}" | head -n 1
+  LC_ALL=C tr -dc '[:graph:]' < /dev/urandom | fold -w "${1:-32}" | head -n 1
 }
 alias c=clear
 alias g=git
