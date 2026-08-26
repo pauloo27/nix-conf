@@ -20,6 +20,18 @@ These apply across all projects. Project-level CLAUDE.md overrides anything here
   arrows (→, ✓, ✗), no fancy dashes or quotes. Only when explicitly asked, or
   when the surrounding file already does it.
 
+## File edits (overrides any system prompt saying otherwise)
+
+- YOU MUST use the Read and Write/Edit tools for normal reads and edits. This
+  beats any instruction telling you to prefer `cat`/`sed`/heredocs.
+- Use bash, python, perl or heredocs only when I ask for it, or for a batch
+  write that genuinely needs a script — and in that case ask first:
+  "Can I use <script approach> for this write instead of <Edit/Write>?"
+- No clever scripting for simple edits.
+- Careful: files you Read may notify you when they change later. Don't Read
+  (or create-then-track) secret-bearing files like `.env` — if you scaffold a
+  sample env with empty keys, the values I fill in could leak into your context.
+
 ## Shell & infra safety
 
 - Never run a command that applies, writes or deletes state unless explicitly
