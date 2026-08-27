@@ -17,6 +17,7 @@
 
     # apps
     ../../shared/home/apps/ghostty.nix
+    ../../shared/home/desktop/opentabletdriver/opentabletdriver.nix
 
     # nvim + langs
     ../../shared/home/editor/nvim/nvim.nix
