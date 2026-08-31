@@ -35,6 +35,7 @@ in
     verbose = false;
     agentPushNotifEnabled = true;
     skipAutoPermissionPrompt = true;
+    remoteControlAtStartup = false;
 
     voice = {
       enabled = true;
