@@ -48,3 +48,5 @@ These apply across all projects. Project-level CLAUDE.md overrides anything here
 - Commit or push only when asked. Branch off main before committing if on it.
 - Disable commit signing (e.g. `git -c commit.gpgsign=false commit` or `--no-gpg-sign`).
 - Create git worktrees under `.claude/worktree/` in the repo, not in sibling folders.
+- For docs that don't need to be tracked, write on `.claude/ignore` (it is globally
+gitiginored).

@@ -8,6 +8,7 @@
       ".DS_Store"
       "**/.claude/settings.local.json"
       "**/.claude/worktree/"
+      "**/.claude/ignore/"
     ];
 
     signing = {
