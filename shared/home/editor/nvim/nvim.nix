@@ -24,6 +24,7 @@
     ./plugins/auto-import.nix
     ./plugins/snipe.nix
     ./debugger/dap.nix
+    ./misc/spell.nix
   ];
 
   config.programs.neovim = {
