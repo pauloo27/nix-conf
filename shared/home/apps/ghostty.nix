@@ -4,6 +4,7 @@
     window-inherit-working-directory = false
 
     font-family = Comic Code
+    macos-option-as-alt = left
     font-style = Medium
     font-style-bold = Bold
     font-style-italic = Medium Italic
