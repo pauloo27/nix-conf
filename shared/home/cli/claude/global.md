@@ -42,6 +42,10 @@ These apply across all projects. Project-level CLAUDE.md overrides anything here
   explicitly asks for a mutating one (apply, delete, scale, edit, rollout…).
 - Same spirit for anything destructive or outward-facing (dropping data, force
   push, deploys): confirm first unless clearly authorized.
+- My shell is zsh: unquoted `$var` does NOT word-split (unquoted `$(...)` does),
+  so `set -- $pair` and `for x in $list` pass one blob. Read fields explicitly
+  (`while read -r a b`) or use an array; `${=v}` only as a last resort. If it's
+  really a bash script, shebang it `#!/usr/bin/env bash` and run it with bash.
 
 ## Git
 
