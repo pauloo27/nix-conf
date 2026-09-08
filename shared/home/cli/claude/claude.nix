@@ -27,6 +27,7 @@ in
       "frontend-design@claude-plugins-official" = true;
       "rust-analyzer-lsp@claude-plugins-official" = true;
       "atlassian@claude-plugins-official" = true;
+      "linear@claude-plugins-official" = true;
     };
 
     effortLevel = "medium";
