@@ -22,6 +22,10 @@
       "obsidian"
       "zed"
     ];
-    onActivation.cleanup = "zap";
+    onActivation = {
+      cleanup = "zap";
+      autoUpdate = true;
+      upgrade = true;
+    };
   };
 }
