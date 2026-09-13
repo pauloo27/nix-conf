@@ -18,6 +18,7 @@
       "jellyfin-media-player"
       "discord"
       "stremio"
+      "skim"
       "pear-devs/pear/pear-desktop"
       "obsidian"
       "zed"
