@@ -19,6 +19,7 @@
       "discord"
       "stremio"
       "skim"
+      "session-manager-plugin"
       "pear-devs/pear/pear-desktop"
       "obsidian"
       "zed"
