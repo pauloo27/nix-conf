@@ -130,7 +130,7 @@
     enable = true;
     role = "server";
     clusterInit = true;
-    extraFlags = "--default-local-storage-path /data/k3s/storage --tls-san k8s.kraken.db.cafe --tls-san kraken.ndo.cafe --tls-san 10.0.0.77 --tls-san 100.123.26.28";
+    extraFlags = "--default-local-storage-path /data/k3s/storage --tls-san k8s.kraken.db.cafe --tls-san kraken.ndo.cafe --tls-san k8s.kraken.ndo.cafe --tls-san 10.0.0.77 --tls-san 100.123.26.28";
   };
 
   networking.firewall.extraCommands = ''
