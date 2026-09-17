@@ -43,6 +43,7 @@
     pkgs.btop
     pkgs.gh
     pkgs.wget
+    pkgs.rclone
     pkgs.forgejo-cli
     pkgs.glow
     pkgs.file
