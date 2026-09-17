@@ -32,6 +32,7 @@
   # is no fontconfig to reject the non-mono face either, so ship the mono one alone.
   home.packages = [
     pkgs.pinentry-curses
+    pkgs.watch
     (pkgs.runCommand "symbols-nerd-font-mono" { } ''
       mkdir -p $out/share/fonts/truetype
       cp ${pkgs.nerd-fonts.symbols-only}/share/fonts/truetype/NerdFonts/Symbols/SymbolsNerdFontMono-Regular.ttf \
