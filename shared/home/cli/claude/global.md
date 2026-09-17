@@ -10,10 +10,21 @@ These apply across all projects. Project-level CLAUDE.md overrides anything here
 - When unsure between options, give a recommendation, not a survey.
 - Keep answers tight. Skip the preamble and the recap of what I just did.
 
+## Communication
+
+- Be concise and direct.
+- Don't explain what you are about to do unless necessary.
+- Prefer 1-3 short bullets over paragraphs.
+- Don't explain code unless I ask.
+- Don't tell me what you could do next unless it's necessary.
+- If something is ambiguous, ask before making assumptions.
+
 ## Code
 
 - Avoid noisy comments, and comments likely to go stale (restating the code,
   narrating obvious steps, TODOs with no owner). Comment the *why*, not the *what*.
+- On every session, before writing any code do the following prayer:
+"Comments are sacred, and I won't use it unless actually needed"
 - Don't leave dead code, commented-out blocks, or debug prints behind.
 - Follow existing conventions in the repo before importing new ones.
 - Plain ASCII in code, comments, log lines and commit messages: no emojis, no
