@@ -115,6 +115,7 @@ in
       Type = "oneshot";
       ExecStart = pkgs.writeShellScript "disk-report" (builtins.readFile ./disk-report.sh);
       StateDirectory = "disk-report";
+      TimeoutStartSec = "5min";
     };
   };
 

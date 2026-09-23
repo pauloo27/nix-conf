@@ -55,6 +55,7 @@ table=$(printf '%-24s %-6s %5s %7s %8s %7s %11s %9s  %s' \
 disk_issues=0
 oldest=0
 temps=()
+new_counts=()
 
 for id in $DISK_IDS; do
   out=$(smartctl -x "/dev/disk/by-id/$id")
@@ -78,7 +79,7 @@ for id in $DISK_IDS; do
   state="$STATE_DIRECTORY/$id"
   if [ -n "$nme" ]; then
     [ -f "$state" ] && delta=$(( nme - $(cat "$state") ))
-    echo "$nme" > "$state"
+    new_counts+=("$id $nme")
   fi
 
   if [ "$health" != OK ]; then
@@ -148,7 +149,13 @@ body=$(
 html_body=$(sed -e 's/&/\&amp;/g' -e 's/</\&lt;/g' -e 's/>/\&gt;/g' <<<"$body")
 
 if ! printf 'To: %s\nSubject: kraken disk report: %s\nContent-Type: text/html; charset=utf-8\n\n<pre>\n%s\n</pre>\n' \
-  "$REPORT_TO" "$status" "$html_body" | msmtp -C "$MSMTP_CONFIG" -t; then
+  "$REPORT_TO" "$status" "$html_body" | timeout 120 msmtp -C "$MSMTP_CONFIG" -t; then
   echo "weekly disk report email failed to send" | kraken-ntfy "kraken: disk report email failed" high warning
   exit 1
 fi
+
+# only after a successful send, so a failed run doesn't reset the weekly baseline
+for entry in "${new_counts[@]}"; do
+  read -r id nme <<<"$entry"
+  echo "$nme" > "$STATE_DIRECTORY/$id"
+done
