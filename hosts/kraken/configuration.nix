@@ -11,6 +11,7 @@
   imports = [
     ./hardware-configuration.nix
     ./disk-monitoring.nix
+    ./ntfy.nix
     ../../shared/nixos/base.nix
     ../../shared/nixos/claude.nix
   ];
