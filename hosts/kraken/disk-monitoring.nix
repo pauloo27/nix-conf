@@ -15,7 +15,8 @@ let
     "scsi-35000c500964bbbd3"
   ];
 
-  nonMediumErrorDailyThreshold = 1000;
+  # the GE11-firmware drives grow ~13-20k/day while healthy
+  nonMediumErrorDailyThreshold = 50000;
 
   # usage: kraken-ntfy <title> <priority> <tags>, message on stdin
   ntfy = pkgs.writeShellScriptBin "kraken-ntfy" ''
