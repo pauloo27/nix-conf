@@ -10,6 +10,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./disk-monitoring.nix
     ../../shared/nixos/base.nix
     ../../shared/nixos/claude.nix
   ];
@@ -139,17 +140,6 @@
     iptables -A INPUT -p tcp -s 10.0.0.0/24 --dport 22 -j ACCEPT
     iptables -A INPUT -i tailscale0 -p tcp --dport 22 -j ACCEPT
   '';
-
-  services.smartd = {
-    enable = true;
-    devices = [
-      { device = "/dev/sdb"; }
-      { device = "/dev/sdc"; }
-      { device = "/dev/sdd"; }
-      { device = "/dev/sde"; }
-      { device = "/dev/sdf"; }
-    ];
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
