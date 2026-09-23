@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   lib,
   ...
@@ -6,6 +7,7 @@
 
 let
   ntfyTopicFile = "/var/lib/secrets/ntfy-topic";
+  msmtpConfigFile = "/var/lib/secrets/msmtprc";
 
   diskIds = [
     "scsi-35000c500571d23bf"
@@ -88,6 +90,39 @@ in
     wantedBy = [ "timers.target" ];
     timerConfig = {
       OnCalendar = "daily";
+      Persistent = true;
+    };
+  };
+
+  systemd.services.disk-report = {
+    description = "Weekly disk health report by email";
+    path = [
+      config.boot.zfs.package
+      pkgs.smartmontools
+      pkgs.msmtp
+      pkgs.gawk
+      pkgs.gnused
+      pkgs.coreutils
+      ntfy
+    ];
+    environment = {
+      POOL = "tank";
+      DISK_IDS = lib.concatStringsSep " " diskIds;
+      REPORT_TO = "admin@mail.db.cafe";
+      MSMTP_CONFIG = msmtpConfigFile;
+    };
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = pkgs.writeShellScript "disk-report" (builtins.readFile ./disk-report.sh);
+      StateDirectory = "disk-report";
+    };
+  };
+
+  # Sunday after the 03:00 short self-test
+  systemd.timers.disk-report = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "Sun 08:00";
       Persistent = true;
     };
   };
