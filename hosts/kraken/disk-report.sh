@@ -101,7 +101,8 @@ for id in $DISK_IDS; do
   if [[ "$test_desc" != *Completed* ]]; then
     raise ATTENTION "Disk $id last self-test did not pass: $test_desc"
     disk_issues=1
-  elif [ $(( hours - ${test_hours:-0} )) -gt 192 ]; then
+  # SAS self-test log stamps are 16-bit: past 65535 power-on hours every test shows 65535
+  elif [ "${test_hours:-0}" -ne 65535 ] && [ $(( hours - ${test_hours:-0} )) -gt 192 ]; then
     raise ATTENTION "Disk $id has not run a self-test in $(( (hours - test_hours) / 24 )) days. smartd's test schedule may be broken."
     disk_issues=1
   fi
