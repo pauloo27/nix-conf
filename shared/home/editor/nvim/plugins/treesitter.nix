@@ -23,6 +23,12 @@
       "sql"
     ];
 
+    programs.neovim.initLua = ''
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function(args) pcall(vim.treesitter.start, args.buf) end,
+      })
+    '';
+
     programs.neovim.plugins = [
       (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: map (l: p.${l}) config.myNvim.treesitter.parsers))
     ];
