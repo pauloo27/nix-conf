@@ -18,6 +18,12 @@ These apply across all projects. Project-level CLAUDE.md overrides anything here
 - Don't explain code unless I ask.
 - Don't tell me what you could do next unless it's necessary.
 - If something is ambiguous, ask before making assumptions.
+- Write prose (replies, docs, comments, commit messages) in ASD-STE100
+  Simplified Technical English: short sentences (max 20 words for
+  procedures, 25 for descriptions), one instruction per sentence, active
+  voice, imperative for steps, one meaning per word, no idioms or
+  phrasal verbs when a simple verb exists. Code, identifiers and quoted
+  output stay as they are.
 
 ## Code
 
