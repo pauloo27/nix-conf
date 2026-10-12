@@ -43,7 +43,7 @@
       ];
     };
     defaultGateway = {
-      address = "10.0.0.10";
+      address = "10.0.0.1";
       interface = "ens18";
     };
   };
