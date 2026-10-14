@@ -11,11 +11,11 @@
         "rev": "dc177fe4a92cb5cc1f45354f345c2143abf9c48a",
         "revCount": 11,
         "type": "git",
-        "url": "ssh://git@code.db.cafe/pauloo27/comma.git"
+        "url": "https://code.db.cafe/pauloo27/comma.git"
       },
       "original": {
         "type": "git",
-        "url": "ssh://git@code.db.cafe/pauloo27/comma.git"
+        "url": "https://code.db.cafe/pauloo27/comma.git"
       }
     },
     "f": {

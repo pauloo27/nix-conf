@@ -18,7 +18,7 @@
     smsh.url = "git+https://code.db.cafe/pauloo27/smsh.git";
     np.url = "git+https://code.db.cafe/pauloo27/np.git";
     rstroller.url = "git+https://code.db.cafe/pauloo27/rstroller.git";
-    comma.url = "git+ssh://git@code.db.cafe/pauloo27/comma.git";
+    comma.url = "git+https://code.db.cafe/pauloo27/comma.git";
     voxtype.url = "github:peteonrails/voxtype";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   };
