@@ -65,7 +65,8 @@ These apply across all projects. Project-level CLAUDE.md overrides anything here
   really a bash script, shebang it `#!/usr/bin/env bash` and run it with bash.
 - Use the `,` tools (my comma repo) for small conversions: base64, URL
   encoding, hashes, JWT decoding, UUIDs. Run `, list` to see them. Each tool
-  reads an argument, `-f <file>` or stdin.
+  reads an argument, `-f <file>` or stdin. When a small conversion repeats
+  and no `,` tool does it, suggest a new tool for the comma repo.
 
 ## Git
 
