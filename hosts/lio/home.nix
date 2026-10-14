@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, comma, ... }:
 {
   imports = [
     # generic crap most stuff currently need
@@ -34,6 +34,7 @@
   home.packages = [
     pkgs.pinentry-curses
     pkgs.watch
+    comma.packages.${pkgs.stdenv.hostPlatform.system}.default
     (pkgs.runCommand "symbols-nerd-font-mono" { } ''
       mkdir -p $out/share/fonts/truetype
       cp ${pkgs.nerd-fonts.symbols-only}/share/fonts/truetype/NerdFonts/Symbols/SymbolsNerdFontMono-Regular.ttf \

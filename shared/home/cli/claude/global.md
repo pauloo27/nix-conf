@@ -63,6 +63,9 @@ These apply across all projects. Project-level CLAUDE.md overrides anything here
   so `set -- $pair` and `for x in $list` pass one blob. Read fields explicitly
   (`while read -r a b`) or use an array; `${=v}` only as a last resort. If it's
   really a bash script, shebang it `#!/usr/bin/env bash` and run it with bash.
+- Use the `,` tools (my comma repo) for small conversions: base64, URL
+  encoding, hashes, JWT decoding, UUIDs. Run `, list` to see them. Each tool
+  reads an argument, `-f <file>` or stdin.
 
 ## Git
 
